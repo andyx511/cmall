@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alex.ni.mapper.AmsProductMapper">
+  <resultMap id="BaseResultMap" type="com.alex.ni.model.AmsProduct">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <id column="is_public" jdbcType="VARCHAR" property="isPublic" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="kind" jdbcType="VARCHAR" property="kind" />
+    <result column="brand" jdbcType="VARCHAR" property="brand" />
+    <result column="pic" jdbcType="VARCHAR" property="pic" />
+    <result column="is_new" jdbcType="VARCHAR" property="isNew" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="unit" jdbcType="VARCHAR" property="unit" />
+    <result column="gift_growth" jdbcType="VARCHAR" property="giftGrowth" />
+    <result column="gift_point" jdbcType="VARCHAR" property="giftPoint" />
+    <result column="detail_pic" jdbcType="VARCHAR" property="detailPic" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, is_public, name, kind, brand, pic, is_new, sort, price, unit, gift_growth, gift_point, 
+    detail_pic
+  </sql>
+  <select id="selectByExample" parameterType="com.alex.ni.model.AmsProductExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from ams_product
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ams_product
+    where id = #{id,jdbcType=INTEGER}
+      and is_public = #{isPublic,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="map">
+    delete from ams_product
+    where id = #{id,jdbcType=INTEGER}
+      and is_public = #{isPublic,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.alex.ni.model.AmsProductExample">
+    delete from ams_product
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.alex.ni.model.AmsProduct">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into ams_product (is_public, name, kind, 
+      brand, pic, is_new, 
+      sort, price, unit, 
+      gift_growth, gift_point, detail_pic
+      )
+    values (#{isPublic,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{kind,jdbcType=VARCHAR}, 
+      #{brand,jdbcType=VARCHAR}, #{pic,jdbcType=VARCHAR}, #{isNew,jdbcType=VARCHAR}, 
+      #{sort,jdbcType=INTEGER}, #{price,jdbcType=DECIMAL}, #{unit,jdbcType=VARCHAR}, 
+      #{giftGrowth,jdbcType=VARCHAR}, #{giftPoint,jdbcType=VARCHAR}, #{detailPic,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.alex.ni.model.AmsProduct">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into ams_product
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="isPublic != null">
+        is_public,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="kind != null">
+        kind,
+      </if>
+      <if test="brand != null">
+        brand,
+      </if>
+      <if test="pic != null">
+        pic,
+      </if>
+      <if test="isNew != null">
+        is_new,
+      </if>
+      <if test="sort != null">
+        sort,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="unit != null">
+        unit,
+      </if>
+      <if test="giftGrowth != null">
+        gift_growth,
+      </if>
+      <if test="giftPoint != null">
+        gift_point,
+      </if>
+      <if test="detailPic != null">
+        detail_pic,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="isPublic != null">
+        #{isPublic,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="kind != null">
+        #{kind,jdbcType=VARCHAR},
+      </if>
+      <if test="brand != null">
+        #{brand,jdbcType=VARCHAR},
+      </if>
+      <if test="pic != null">
+        #{pic,jdbcType=VARCHAR},
+      </if>
+      <if test="isNew != null">
+        #{isNew,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="unit != null">
+        #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="giftGrowth != null">
+        #{giftGrowth,jdbcType=VARCHAR},
+      </if>
+      <if test="giftPoint != null">
+        #{giftPoint,jdbcType=VARCHAR},
+      </if>
+      <if test="detailPic != null">
+        #{detailPic,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.alex.ni.model.AmsProductExample" resultType="java.lang.Long">
+    select count(*) from ams_product
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update ams_product
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.isPublic != null">
+        is_public = #{record.isPublic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kind != null">
+        kind = #{record.kind,jdbcType=VARCHAR},
+      </if>
+      <if test="record.brand != null">
+        brand = #{record.brand,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pic != null">
+        pic = #{record.pic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isNew != null">
+        is_new = #{record.isNew,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sort != null">
+        sort = #{record.sort,jdbcType=INTEGER},
+      </if>
+      <if test="record.price != null">
+        price = #{record.price,jdbcType=DECIMAL},
+      </if>
+      <if test="record.unit != null">
+        unit = #{record.unit,jdbcType=VARCHAR},
+      </if>
+      <if test="record.giftGrowth != null">
+        gift_growth = #{record.giftGrowth,jdbcType=VARCHAR},
+      </if>
+      <if test="record.giftPoint != null">
+        gift_point = #{record.giftPoint,jdbcType=VARCHAR},
+      </if>
+      <if test="record.detailPic != null">
+        detail_pic = #{record.detailPic,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update ams_product
+    set id = #{record.id,jdbcType=INTEGER},
+      is_public = #{record.isPublic,jdbcType=VARCHAR},
+      name = #{record.name,jdbcType=VARCHAR},
+      kind = #{record.kind,jdbcType=VARCHAR},
+      brand = #{record.brand,jdbcType=VARCHAR},
+      pic = #{record.pic,jdbcType=VARCHAR},
+      is_new = #{record.isNew,jdbcType=VARCHAR},
+      sort = #{record.sort,jdbcType=INTEGER},
+      price = #{record.price,jdbcType=DECIMAL},
+      unit = #{record.unit,jdbcType=VARCHAR},
+      gift_growth = #{record.giftGrowth,jdbcType=VARCHAR},
+      gift_point = #{record.giftPoint,jdbcType=VARCHAR},
+      detail_pic = #{record.detailPic,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.alex.ni.model.AmsProduct">
+    update ams_product
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="kind != null">
+        kind = #{kind,jdbcType=VARCHAR},
+      </if>
+      <if test="brand != null">
+        brand = #{brand,jdbcType=VARCHAR},
+      </if>
+      <if test="pic != null">
+        pic = #{pic,jdbcType=VARCHAR},
+      </if>
+      <if test="isNew != null">
+        is_new = #{isNew,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        sort = #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="unit != null">
+        unit = #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="giftGrowth != null">
+        gift_growth = #{giftGrowth,jdbcType=VARCHAR},
+      </if>
+      <if test="giftPoint != null">
+        gift_point = #{giftPoint,jdbcType=VARCHAR},
+      </if>
+      <if test="detailPic != null">
+        detail_pic = #{detailPic,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+      and is_public = #{isPublic,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.alex.ni.model.AmsProduct">
+    update ams_product
+    set name = #{name,jdbcType=VARCHAR},
+      kind = #{kind,jdbcType=VARCHAR},
+      brand = #{brand,jdbcType=VARCHAR},
+      pic = #{pic,jdbcType=VARCHAR},
+      is_new = #{isNew,jdbcType=VARCHAR},
+      sort = #{sort,jdbcType=INTEGER},
+      price = #{price,jdbcType=DECIMAL},
+      unit = #{unit,jdbcType=VARCHAR},
+      gift_growth = #{giftGrowth,jdbcType=VARCHAR},
+      gift_point = #{giftPoint,jdbcType=VARCHAR},
+      detail_pic = #{detailPic,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+      and is_public = #{isPublic,jdbcType=VARCHAR}
+  </update>
+</mapper>

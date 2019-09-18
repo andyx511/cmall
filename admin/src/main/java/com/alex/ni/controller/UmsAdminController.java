@@ -13,14 +13,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.security.Principal;
 import java.util.HashMap;
 import java.util.Map;
@@ -43,11 +43,13 @@ public class UmsAdminController {
     private String tokenHead;
     @Autowired
     private VerificationCodeUtils verificationCodeUtils;
+    @Resource
+    RedisTemplate<String,String> redisTemplate;
 
     private final static Logger logger = LoggerFactory.getLogger(UmsAdminController.class);
 
     //生成登录时的图片验证码
-    @RequestMapping(value = "/getVerify", method = RequestMethod.GET)
+    @RequestMapping(value = "/getTCode", method = RequestMethod.GET)
     @ResponseBody
     public void getVerify(HttpServletRequest request, HttpServletResponse response) {
         try {
@@ -68,22 +70,26 @@ public class UmsAdminController {
     public CommonResult getVCode() throws ClientException {
         boolean flag = verificationCodeUtils.sendrVerificationCode("18257198894");
         String str = verificationCodeUtils.getVerificationCodeByType("18257198894");
-        return CommonResult.success(str);
+        //从session中获取验证码
+        return CommonResult.success(flag);
     }
 
     @ApiOperation(value = "登录以后返回token")
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult login(@RequestBody UmsAdminLoginParam umsAdminLoginParam) {
+        String tcode = umsAdminLoginParam.getTCode();
         String token = adminService.login(umsAdminLoginParam.getUsername(), umsAdminLoginParam.getPassword());
         if (token == null) {
             return CommonResult.validateFailed("用户名或密码错误");
         }
+        redisTemplate.opsForValue().get("code");
         Map<String, String> tokenMap = new HashMap<>();
         tokenMap.put("token", token);
         tokenMap.put("tokenHead", tokenHead);
         return CommonResult.success(tokenMap);
     }
+
     @ApiOperation(value = "获取当前登录用户信息")
     @RequestMapping(value = "/info", method = RequestMethod.GET)
     @ResponseBody

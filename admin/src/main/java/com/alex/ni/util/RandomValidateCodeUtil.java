@@ -2,7 +2,12 @@ package com.alex.ni.util;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
+import javax.annotation.Resource;
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,8 +21,12 @@ import java.util.Random;
  * @date 2019/7/13
  * @des
  */
-public class RandomValidateCodeUtil {
 
+public class RandomValidateCodeUtil {
+    @Resource
+    private RedisTemplate<String, Object> redisTemplate;
+    @Autowired
+    private VerificationCodeUtils verificationCodeUtils;
 
     private static Long EXPIRE_TIME=30L;
 
@@ -58,7 +67,7 @@ public class RandomValidateCodeUtil {
     /**
      * 生成随机图片
      */
-    public void getRandcode(HttpServletRequest request, HttpServletResponse response) {
+    public void getRandcode(HttpServletRequest request, HttpServletResponse response)throws NullPointerException {
         HttpSession session = request.getSession();
         // BufferedImage类是具有缓冲区的Image类,Image类是用于描述图像信息的类
         BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_BGR);
@@ -76,7 +85,6 @@ public class RandomValidateCodeUtil {
             randomString = drowString(g, randomString, i);
         }
         logger.info(randomString);
-
         //将生成的随机字符串保存到session中
         session.removeAttribute(RANDOMCODEKEY);
         session.setAttribute(RANDOMCODEKEY, randomString);
@@ -121,6 +129,10 @@ public class RandomValidateCodeUtil {
      */
     public String getRandomString(int num) {
         return String.valueOf(randString.charAt(num));
+    }
+
+    public void set(){
+        redisTemplate.opsForValue().set("code", "2222");
     }
 }
 

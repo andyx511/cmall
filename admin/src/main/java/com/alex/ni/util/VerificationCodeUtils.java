@@ -46,6 +46,15 @@ public class VerificationCodeUtils {
     public void setVerificationCodeByType(String phone,String code,Integer time){
         redisTemplate.opsForValue().set(phone,code,time, TimeUnit.MINUTES);
     }
+    /**
+    * 存放图图片验证码
+    */
+ /*   public void setCode(String code){
+        redisTemplate.opsForValue().set("code", code);
+    }
+    public String getCode(){
+        return redisTemplate.opsForValue().get("code").toString();
+    }*/
 
     /**
      * 在 redis 中删除验证码
