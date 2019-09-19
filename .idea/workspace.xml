@@ -2,52 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c82b2aba-5ebe-44fa-aa61-d897d628550a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsPerssionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/TestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dto/AmsPermissionList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsPerssionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsPerssionServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/util/NodeUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/mapper/AmsBrandMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/mapper/AmsPerssionMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/mapper/AmsProductMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/mapper/AmsRoleMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/mapper/AmsUserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/mapper/AmsUserRoleRelationMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsBrand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsBrandExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsPerssion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsPerssionExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsProductExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsRoleExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsUserExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsUserRoleRelation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsUserRoleRelationExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/resources/com/alex/ni/mapper/AmsBrandMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/resources/com/alex/ni/mapper/AmsPerssionMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/resources/com/alex/ni/mapper/AmsProductMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/resources/com/alex/ni/mapper/AmsRoleMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/resources/com/alex/ni/mapper/AmsUserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/resources/com/alex/ni/mapper/AmsUserRoleRelationMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/config/Swagger2Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/config/Swagger2Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/UmsAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/UmsAdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dto/UmsAdminLoginParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dto/UmsAdminLoginParam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/util/RandomValidateCodeUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/util/RandomValidateCodeUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/util/VerificationCodeUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/util/VerificationCodeUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/target/classes/com/alex/ni/config/Swagger2Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/admin/target/classes/com/alex/ni/config/Swagger2Config.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/target/classes/com/alex/ni/controller/UmsAdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/admin/target/classes/com/alex/ni/controller/UmsAdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/target/classes/com/alex/ni/dto/UmsAdminLoginParam.class" beforeDir="false" afterPath="$PROJECT_DIR$/admin/target/classes/com/alex/ni/dto/UmsAdminLoginParam.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/target/classes/com/alex/ni/util/RandomValidateCodeUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/admin/target/classes/com/alex/ni/util/RandomValidateCodeUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/target/classes/com/alex/ni/util/VerificationCodeUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/admin/target/classes/com/alex/ni/util/VerificationCodeUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/alex/ni/api/CommonResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/alex/ni/api/CommonResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/alex/ni/api/CommonResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/com/alex/ni/api/CommonResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mbg/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mbg/src/main/resources/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mbg/target/classes/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mbg/target/classes/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsPerssionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsPerssionServiceImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -80,10 +35,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsPerssionServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="44" column="76" selection-start-line="44" selection-start-column="76" selection-end-line="44" selection-end-column="76" />
+            <state relative-caret-position="316">
+              <caret line="41" column="59" lean-forward="true" selection-start-line="41" selection-start-column="59" selection-end-line="41" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2406#2419#0" expanded="true" />
+                <element signature="e#2771#2784#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -265,11 +222,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="211" />
-    <option name="y" value="61" />
-    <option name="width" value="1594" />
-    <option name="height" value="959" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-7" />
+    <option name="y" value="102" />
+    <option name="width" value="1830" />
+    <option name="height" value="875" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -586,7 +543,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35343000" />
+    <option name="totallyTimeSpent" value="38454000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -598,10 +555,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="138" y="360" width="1594" height="959" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31029987" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1977612" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -624,7 +581,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.32903227" />
-      <window_info anchor="bottom" id="Run Dashboard" order="15" visible="true" weight="0.24606061" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="15" visible="true" weight="0.2657267" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1092,10 +1049,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsPerssionServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="44" column="76" selection-start-line="44" selection-start-column="76" selection-end-line="44" selection-end-column="76" />
+        <state relative-caret-position="316">
+          <caret line="41" column="59" lean-forward="true" selection-start-line="41" selection-start-column="59" selection-end-line="41" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2406#2419#0" expanded="true" />
+            <element signature="e#2771#2784#0" expanded="true" />
           </folding>
         </state>
       </provider>
