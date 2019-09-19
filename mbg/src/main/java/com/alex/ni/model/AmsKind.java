@@ -3,23 +3,16 @@ package com.alex.ni.model;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 
-public class AmsUser implements Serializable {
+public class AmsKind implements Serializable {
     private Integer id;
 
     private String name;
 
-    private String password;
+    private String des;
 
-    private String iocn;
-
-    @ApiModelProperty(value = "状态")
     private String status;
 
-    @ApiModelProperty(value = "备注")
-    private String note;
-
-    @ApiModelProperty(value = "是否删除0=>未删除，1=>已删除")
-    private Integer isDelete;
+    private Integer sort;
 
     private static final long serialVersionUID = 1L;
 
@@ -39,20 +32,12 @@ public class AmsUser implements Serializable {
         this.name = name;
     }
 
-    public String getPassword() {
-        return password;
+    public String getDes() {
+        return des;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getIocn() {
-        return iocn;
-    }
-
-    public void setIocn(String iocn) {
-        this.iocn = iocn;
+    public void setDes(String des) {
+        this.des = des;
     }
 
     public String getStatus() {
@@ -63,20 +48,12 @@ public class AmsUser implements Serializable {
         this.status = status;
     }
 
-    public String getNote() {
-        return note;
+    public Integer getSort() {
+        return sort;
     }
 
-    public void setNote(String note) {
-        this.note = note;
-    }
-
-    public Integer getIsDelete() {
-        return isDelete;
-    }
-
-    public void setIsDelete(Integer isDelete) {
-        this.isDelete = isDelete;
+    public void setSort(Integer sort) {
+        this.sort = sort;
     }
 
     @Override
@@ -87,11 +64,9 @@ public class AmsUser implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
         sb.append(", name=").append(name);
-        sb.append(", password=").append(password);
-        sb.append(", iocn=").append(iocn);
+        sb.append(", des=").append(des);
         sb.append(", status=").append(status);
-        sb.append(", note=").append(note);
-        sb.append(", isDelete=").append(isDelete);
+        sb.append(", sort=").append(sort);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

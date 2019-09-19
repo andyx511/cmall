@@ -43,6 +43,8 @@ public class AmsProduct implements Serializable {
     @ApiModelProperty(value = "详细图片")
     private String detailPic;
 
+    private String status;
+
     private static final long serialVersionUID = 1L;
 
     public Integer getId() {
@@ -149,6 +151,14 @@ public class AmsProduct implements Serializable {
         this.detailPic = detailPic;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -168,6 +178,7 @@ public class AmsProduct implements Serializable {
         sb.append(", giftGrowth=").append(giftGrowth);
         sb.append(", giftPoint=").append(giftPoint);
         sb.append(", detailPic=").append(detailPic);
+        sb.append(", status=").append(status);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

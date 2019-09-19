@@ -16,7 +16,7 @@ public class AmsRole implements Serializable {
     private Date createTime;
 
     @ApiModelProperty(value = "是否启用0：启用，1：不启用")
-    private String status;
+    private Integer status;
 
     private static final long serialVersionUID = 1L;
 
@@ -52,11 +52,11 @@ public class AmsRole implements Serializable {
         this.createTime = createTime;
     }
 
-    public String getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 

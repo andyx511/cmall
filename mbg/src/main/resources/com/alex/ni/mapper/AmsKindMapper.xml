@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.alex.ni.mapper.AmsUserMapper">
-  <resultMap id="BaseResultMap" type="com.alex.ni.model.AmsUser">
+<mapper namespace="com.alex.ni.mapper.AmsKindMapper">
+  <resultMap id="BaseResultMap" type="com.alex.ni.model.AmsKind">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="iocn" jdbcType="VARCHAR" property="iocn" />
+    <result column="des" jdbcType="VARCHAR" property="des" />
     <result column="status" jdbcType="VARCHAR" property="status" />
-    <result column="note" jdbcType="VARCHAR" property="note" />
-    <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -69,15 +67,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, name, password, iocn, status, note, is_delete
+    id, name, des, status, sort
   </sql>
-  <select id="selectByExample" parameterType="com.alex.ni.model.AmsUserExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.alex.ni.model.AmsKindExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from ams_user
+    from ams_kind
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -88,84 +86,70 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from ams_user
+    from ams_kind
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from ams_user
+    delete from ams_kind
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.alex.ni.model.AmsUserExample">
-    delete from ams_user
+  <delete id="deleteByExample" parameterType="com.alex.ni.model.AmsKindExample">
+    delete from ams_kind
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.alex.ni.model.AmsUser">
+  <insert id="insert" parameterType="com.alex.ni.model.AmsKind">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into ams_user (name, password, iocn, 
-      status, note, is_delete
-      )
-    values (#{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{iocn,jdbcType=VARCHAR}, 
-      #{status,jdbcType=VARCHAR}, #{note,jdbcType=VARCHAR}, #{isDelete,jdbcType=INTEGER}
-      )
+    insert into ams_kind (name, des, status, 
+      sort)
+    values (#{name,jdbcType=VARCHAR}, #{des,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+      #{sort,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.alex.ni.model.AmsUser">
+  <insert id="insertSelective" parameterType="com.alex.ni.model.AmsKind">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into ams_user
+    insert into ams_kind
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="name != null">
         name,
       </if>
-      <if test="password != null">
-        password,
-      </if>
-      <if test="iocn != null">
-        iocn,
+      <if test="des != null">
+        des,
       </if>
       <if test="status != null">
         status,
       </if>
-      <if test="note != null">
-        note,
-      </if>
-      <if test="isDelete != null">
-        is_delete,
+      <if test="sort != null">
+        sort,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
       </if>
-      <if test="password != null">
-        #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="iocn != null">
-        #{iocn,jdbcType=VARCHAR},
+      <if test="des != null">
+        #{des,jdbcType=VARCHAR},
       </if>
       <if test="status != null">
         #{status,jdbcType=VARCHAR},
       </if>
-      <if test="note != null">
-        #{note,jdbcType=VARCHAR},
-      </if>
-      <if test="isDelete != null">
-        #{isDelete,jdbcType=INTEGER},
+      <if test="sort != null">
+        #{sort,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.alex.ni.model.AmsUserExample" resultType="java.lang.Long">
-    select count(*) from ams_user
+  <select id="countByExample" parameterType="com.alex.ni.model.AmsKindExample" resultType="java.lang.Long">
+    select count(*) from ams_kind
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update ams_user
+    update ams_kind
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=INTEGER},
@@ -173,20 +157,14 @@
       <if test="record.name != null">
         name = #{record.name,jdbcType=VARCHAR},
       </if>
-      <if test="record.password != null">
-        password = #{record.password,jdbcType=VARCHAR},
-      </if>
-      <if test="record.iocn != null">
-        iocn = #{record.iocn,jdbcType=VARCHAR},
+      <if test="record.des != null">
+        des = #{record.des,jdbcType=VARCHAR},
       </if>
       <if test="record.status != null">
         status = #{record.status,jdbcType=VARCHAR},
       </if>
-      <if test="record.note != null">
-        note = #{record.note,jdbcType=VARCHAR},
-      </if>
-      <if test="record.isDelete != null">
-        is_delete = #{record.isDelete,jdbcType=INTEGER},
+      <if test="record.sort != null">
+        sort = #{record.sort,jdbcType=INTEGER},
       </if>
     </set>
     <if test="_parameter != null">
@@ -194,50 +172,40 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update ams_user
+    update ams_kind
     set id = #{record.id,jdbcType=INTEGER},
       name = #{record.name,jdbcType=VARCHAR},
-      password = #{record.password,jdbcType=VARCHAR},
-      iocn = #{record.iocn,jdbcType=VARCHAR},
+      des = #{record.des,jdbcType=VARCHAR},
       status = #{record.status,jdbcType=VARCHAR},
-      note = #{record.note,jdbcType=VARCHAR},
-      is_delete = #{record.isDelete,jdbcType=INTEGER}
+      sort = #{record.sort,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.alex.ni.model.AmsUser">
-    update ams_user
+  <update id="updateByPrimaryKeySelective" parameterType="com.alex.ni.model.AmsKind">
+    update ams_kind
     <set>
       <if test="name != null">
         name = #{name,jdbcType=VARCHAR},
       </if>
-      <if test="password != null">
-        password = #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="iocn != null">
-        iocn = #{iocn,jdbcType=VARCHAR},
+      <if test="des != null">
+        des = #{des,jdbcType=VARCHAR},
       </if>
       <if test="status != null">
         status = #{status,jdbcType=VARCHAR},
       </if>
-      <if test="note != null">
-        note = #{note,jdbcType=VARCHAR},
-      </if>
-      <if test="isDelete != null">
-        is_delete = #{isDelete,jdbcType=INTEGER},
+      <if test="sort != null">
+        sort = #{sort,jdbcType=INTEGER},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.alex.ni.model.AmsUser">
-    update ams_user
+  <update id="updateByPrimaryKey" parameterType="com.alex.ni.model.AmsKind">
+    update ams_kind
     set name = #{name,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
-      iocn = #{iocn,jdbcType=VARCHAR},
+      des = #{des,jdbcType=VARCHAR},
       status = #{status,jdbcType=VARCHAR},
-      note = #{note,jdbcType=VARCHAR},
-      is_delete = #{isDelete,jdbcType=INTEGER}
+      sort = #{sort,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

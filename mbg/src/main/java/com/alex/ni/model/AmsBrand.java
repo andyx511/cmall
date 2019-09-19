@@ -12,6 +12,8 @@ public class AmsBrand implements Serializable {
 
     private Integer sort;
 
+    private String status;
+
     private static final long serialVersionUID = 1L;
 
     public Integer getId() {
@@ -46,6 +48,14 @@ public class AmsBrand implements Serializable {
         this.sort = sort;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -56,6 +66,7 @@ public class AmsBrand implements Serializable {
         sb.append(", name=").append(name);
         sb.append(", logo=").append(logo);
         sb.append(", sort=").append(sort);
+        sb.append(", status=").append(status);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();
