@@ -19,7 +19,7 @@ import javax.annotation.Resource;
  * @des
  */
 @Controller
-@Api(tags = "TestController", description = "测试")
+@Api(tags = "测试", description = "测试")
 @RequestMapping("/test")
 public class TestController {
 

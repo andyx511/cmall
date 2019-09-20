@@ -43,7 +43,7 @@ public class Swagger2Config {
         return new ApiInfoBuilder()
                 .title("CMallSwagger")
                 .description("swagger文档")
-                .contact("Alex")
+                .contact("倪定波")
                 .version("1.0")
                 .build();
     }

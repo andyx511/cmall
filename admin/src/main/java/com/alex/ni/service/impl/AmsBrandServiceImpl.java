@@ -2,13 +2,11 @@ package com.alex.ni.service.impl;
 
 import com.alex.ni.dto.AmsBrandQueryParam;
 import com.alex.ni.mapper.AmsBrandMapper;
-import com.alex.ni.mapper.AmsPerssionMapper;
 import com.alex.ni.model.AmsBrand;
 import com.alex.ni.model.AmsBrandExample;
-import com.alex.ni.model.AmsPerssionExample;
 import com.alex.ni.service.AmsBrandService;
 import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,7 +25,27 @@ public class AmsBrandServiceImpl implements AmsBrandService {
     @Override
     public List<AmsBrand> list(AmsBrandQueryParam amsBrandQueryParam, Integer pageNum, Integer pageSize) {
         PageHelper.startPage(pageNum, pageSize);
-        List<AmsBrand> list = amsBrandMapper.selectByExample(new AmsBrandExample());
+        AmsBrandExample example = new AmsBrandExample();
+        AmsBrandExample.Criteria criteria = example.createCriteria();
+        if (!StringUtils.isEmpty(amsBrandQueryParam.getBrandName())){
+            criteria.andNameLike("%" + amsBrandQueryParam.getBrandName() + "%");
+        }
+        if (amsBrandQueryParam.getId() != null){
+            criteria.andIdEqualTo(amsBrandQueryParam.getId());
+        }
+        List<AmsBrand> list = amsBrandMapper.selectByExample(example);
         return list;
+    }
+
+    @Override
+    public Integer add(AmsBrand amsBrand) {
+        Integer record = amsBrandMapper.insertSelective(amsBrand);
+        return record;
+    }
+
+    @Override
+    public AmsBrand detail(Integer id) {
+        AmsBrand amsBrand =amsBrandMapper.selectByPrimaryKey(id);
+        return amsBrand;
     }
 }

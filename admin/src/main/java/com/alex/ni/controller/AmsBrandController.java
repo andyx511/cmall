@@ -6,12 +6,10 @@ import com.alex.ni.dto.AmsBrandQueryParam;
 import com.alex.ni.model.AmsBrand;
 import com.alex.ni.service.AmsBrandService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,13 +19,14 @@ import java.util.List;
  * @des
  */
 @Controller
-@Api(tags = "AmsBrandController", description = "品牌")
+@Api(tags = "品牌", description = "品牌")
 @RequestMapping("/brand")
 public class AmsBrandController {
     @Autowired
     private AmsBrandService amsBrandService;
 
-    @RequestMapping(value = "list" ,method = RequestMethod.GET)
+    @ApiOperation("brand列表")
+    @RequestMapping(value = "/list" ,method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<CommonPage<AmsBrand>> list(AmsBrandQueryParam amsBrandQueryParam,
                              @RequestParam(value = "pageNum" ,defaultValue = "1") Integer pageNum,
@@ -36,4 +35,19 @@ public class AmsBrandController {
         return CommonResult.success(CommonPage.restPage(list));
     }
 
+    @ApiOperation("brand添加")
+    @RequestMapping(value = "/add",method =RequestMethod.POST)
+    @ResponseBody
+    public CommonResult add(@RequestBody AmsBrand amsBrand ){
+        Integer record = amsBrandService.add(amsBrand);
+        return CommonResult.success(amsBrand.getId());
+    }
+
+    @ApiOperation("单条id详情")
+    @RequestMapping(value = "detail",method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult detail(@RequestParam(value = "id" ,required = true)Integer id){
+        AmsBrand amsBrand = amsBrandService.detail(id);
+        return CommonResult.success(amsBrand);
+    }
 }

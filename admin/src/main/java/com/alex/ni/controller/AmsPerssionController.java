@@ -21,7 +21,7 @@ import java.util.List;
  * @des
  */
 @Controller
-@Api(tags = "AmsPerssionController", description = "权限Controller")
+@Api(tags = "权限Controller", description = "权限Controller")
 @RequestMapping("/perssion")
 public class AmsPerssionController {
     @Autowired

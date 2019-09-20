@@ -11,5 +11,16 @@ import java.util.List;
  * @des
  */
 public interface AmsBrandService {
+    /**
+    * 列表查询
+    */
     List<AmsBrand> list(AmsBrandQueryParam amsBrandQueryParam, Integer pageNum, Integer pageSize);
+    /**
+    * Add
+    */
+    Integer add(AmsBrand amsBrand);
+    /**
+    * detail
+    */
+    AmsBrand detail(Integer id);
 }
