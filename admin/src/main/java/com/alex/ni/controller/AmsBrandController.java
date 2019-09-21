@@ -44,10 +44,20 @@ public class AmsBrandController {
     }
 
     @ApiOperation("单条id详情")
-    @RequestMapping(value = "detail",method = RequestMethod.GET)
+    @RequestMapping(value = "/detail/{id}",method = RequestMethod.GET)
     @ResponseBody
-    public CommonResult detail(@RequestParam(value = "id" ,required = true)Integer id){
+    public CommonResult detail(@PathVariable( "id" ) Integer id){
         AmsBrand amsBrand = amsBrandService.detail(id);
         return CommonResult.success(amsBrand);
     }
+
+    @ApiOperation("更新brand")
+    @RequestMapping(value = "/update",method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult update(@RequestBody AmsBrand amsBrand){
+        Integer record = amsBrandService.update(amsBrand);
+        return CommonResult.success(record);
+    }
+
+
 }

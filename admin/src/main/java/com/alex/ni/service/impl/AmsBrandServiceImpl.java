@@ -48,4 +48,12 @@ public class AmsBrandServiceImpl implements AmsBrandService {
         AmsBrand amsBrand =amsBrandMapper.selectByPrimaryKey(id);
         return amsBrand;
     }
+
+    @Override
+    public Integer update(AmsBrand amsBrand) {
+        AmsBrandExample example = new AmsBrandExample();
+        example.createCriteria().andIdEqualTo(amsBrand.getId());
+        Integer record = amsBrandMapper.updateByExampleSelective(amsBrand,example);
+        return record;
+    }
 }

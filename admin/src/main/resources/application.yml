@@ -1,6 +1,11 @@
 spring:
   profiles:
     active: dev #默认为开发环境
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+      additional-exclude: WEB-INF/**
 mybatis:
   mapper-locations:
     - classpath:dao/*.xml

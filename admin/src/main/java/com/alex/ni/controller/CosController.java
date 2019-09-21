@@ -79,12 +79,14 @@ public class CosController {
             cosClient.shutdown();
 
             CosController.UploadResult rs = new CosController.UploadResult();
+            String str = "";
             if (null != putObjectResult) {
                 rs.setHost("https://alex-1300169762.cos.ap-chengdu.myqcloud.com");
                 rs.setPath(newFileName);
+                str = "https://alex-1300169762.cos.ap-chengdu.myqcloud.com"+ newFileName;
             }
 
-            return new CommonResult().success(rs);
+            return new CommonResult().success(str);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
