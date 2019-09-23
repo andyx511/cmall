@@ -455,62 +455,52 @@ public class AmsProductExample {
             return (Criteria) this;
         }
 
-        public Criteria andIsNewEqualTo(String value) {
+        public Criteria andIsNewEqualTo(Integer value) {
             addCriterion("is_new =", value, "isNew");
             return (Criteria) this;
         }
 
-        public Criteria andIsNewNotEqualTo(String value) {
+        public Criteria andIsNewNotEqualTo(Integer value) {
             addCriterion("is_new <>", value, "isNew");
             return (Criteria) this;
         }
 
-        public Criteria andIsNewGreaterThan(String value) {
+        public Criteria andIsNewGreaterThan(Integer value) {
             addCriterion("is_new >", value, "isNew");
             return (Criteria) this;
         }
 
-        public Criteria andIsNewGreaterThanOrEqualTo(String value) {
+        public Criteria andIsNewGreaterThanOrEqualTo(Integer value) {
             addCriterion("is_new >=", value, "isNew");
             return (Criteria) this;
         }
 
-        public Criteria andIsNewLessThan(String value) {
+        public Criteria andIsNewLessThan(Integer value) {
             addCriterion("is_new <", value, "isNew");
             return (Criteria) this;
         }
 
-        public Criteria andIsNewLessThanOrEqualTo(String value) {
+        public Criteria andIsNewLessThanOrEqualTo(Integer value) {
             addCriterion("is_new <=", value, "isNew");
             return (Criteria) this;
         }
 
-        public Criteria andIsNewLike(String value) {
-            addCriterion("is_new like", value, "isNew");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsNewNotLike(String value) {
-            addCriterion("is_new not like", value, "isNew");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsNewIn(List<String> values) {
+        public Criteria andIsNewIn(List<Integer> values) {
             addCriterion("is_new in", values, "isNew");
             return (Criteria) this;
         }
 
-        public Criteria andIsNewNotIn(List<String> values) {
+        public Criteria andIsNewNotIn(List<Integer> values) {
             addCriterion("is_new not in", values, "isNew");
             return (Criteria) this;
         }
 
-        public Criteria andIsNewBetween(String value1, String value2) {
+        public Criteria andIsNewBetween(Integer value1, Integer value2) {
             addCriterion("is_new between", value1, value2, "isNew");
             return (Criteria) this;
         }
 
-        public Criteria andIsNewNotBetween(String value1, String value2) {
+        public Criteria andIsNewNotBetween(Integer value1, Integer value2) {
             addCriterion("is_new not between", value1, value2, "isNew");
             return (Criteria) this;
         }
@@ -525,62 +515,52 @@ public class AmsProductExample {
             return (Criteria) this;
         }
 
-        public Criteria andIsPublicEqualTo(String value) {
+        public Criteria andIsPublicEqualTo(Integer value) {
             addCriterion("is_public =", value, "isPublic");
             return (Criteria) this;
         }
 
-        public Criteria andIsPublicNotEqualTo(String value) {
+        public Criteria andIsPublicNotEqualTo(Integer value) {
             addCriterion("is_public <>", value, "isPublic");
             return (Criteria) this;
         }
 
-        public Criteria andIsPublicGreaterThan(String value) {
+        public Criteria andIsPublicGreaterThan(Integer value) {
             addCriterion("is_public >", value, "isPublic");
             return (Criteria) this;
         }
 
-        public Criteria andIsPublicGreaterThanOrEqualTo(String value) {
+        public Criteria andIsPublicGreaterThanOrEqualTo(Integer value) {
             addCriterion("is_public >=", value, "isPublic");
             return (Criteria) this;
         }
 
-        public Criteria andIsPublicLessThan(String value) {
+        public Criteria andIsPublicLessThan(Integer value) {
             addCriterion("is_public <", value, "isPublic");
             return (Criteria) this;
         }
 
-        public Criteria andIsPublicLessThanOrEqualTo(String value) {
+        public Criteria andIsPublicLessThanOrEqualTo(Integer value) {
             addCriterion("is_public <=", value, "isPublic");
             return (Criteria) this;
         }
 
-        public Criteria andIsPublicLike(String value) {
-            addCriterion("is_public like", value, "isPublic");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsPublicNotLike(String value) {
-            addCriterion("is_public not like", value, "isPublic");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsPublicIn(List<String> values) {
+        public Criteria andIsPublicIn(List<Integer> values) {
             addCriterion("is_public in", values, "isPublic");
             return (Criteria) this;
         }
 
-        public Criteria andIsPublicNotIn(List<String> values) {
+        public Criteria andIsPublicNotIn(List<Integer> values) {
             addCriterion("is_public not in", values, "isPublic");
             return (Criteria) this;
         }
 
-        public Criteria andIsPublicBetween(String value1, String value2) {
+        public Criteria andIsPublicBetween(Integer value1, Integer value2) {
             addCriterion("is_public between", value1, value2, "isPublic");
             return (Criteria) this;
         }
 
-        public Criteria andIsPublicNotBetween(String value1, String value2) {
+        public Criteria andIsPublicNotBetween(Integer value1, Integer value2) {
             addCriterion("is_public not between", value1, value2, "isPublic");
             return (Criteria) this;
         }
@@ -785,62 +765,52 @@ public class AmsProductExample {
             return (Criteria) this;
         }
 
-        public Criteria andGiftGrowthEqualTo(String value) {
+        public Criteria andGiftGrowthEqualTo(Integer value) {
             addCriterion("gift_growth =", value, "giftGrowth");
             return (Criteria) this;
         }
 
-        public Criteria andGiftGrowthNotEqualTo(String value) {
+        public Criteria andGiftGrowthNotEqualTo(Integer value) {
             addCriterion("gift_growth <>", value, "giftGrowth");
             return (Criteria) this;
         }
 
-        public Criteria andGiftGrowthGreaterThan(String value) {
+        public Criteria andGiftGrowthGreaterThan(Integer value) {
             addCriterion("gift_growth >", value, "giftGrowth");
             return (Criteria) this;
         }
 
-        public Criteria andGiftGrowthGreaterThanOrEqualTo(String value) {
+        public Criteria andGiftGrowthGreaterThanOrEqualTo(Integer value) {
             addCriterion("gift_growth >=", value, "giftGrowth");
             return (Criteria) this;
         }
 
-        public Criteria andGiftGrowthLessThan(String value) {
+        public Criteria andGiftGrowthLessThan(Integer value) {
             addCriterion("gift_growth <", value, "giftGrowth");
             return (Criteria) this;
         }
 
-        public Criteria andGiftGrowthLessThanOrEqualTo(String value) {
+        public Criteria andGiftGrowthLessThanOrEqualTo(Integer value) {
             addCriterion("gift_growth <=", value, "giftGrowth");
             return (Criteria) this;
         }
 
-        public Criteria andGiftGrowthLike(String value) {
-            addCriterion("gift_growth like", value, "giftGrowth");
-            return (Criteria) this;
-        }
-
-        public Criteria andGiftGrowthNotLike(String value) {
-            addCriterion("gift_growth not like", value, "giftGrowth");
-            return (Criteria) this;
-        }
-
-        public Criteria andGiftGrowthIn(List<String> values) {
+        public Criteria andGiftGrowthIn(List<Integer> values) {
             addCriterion("gift_growth in", values, "giftGrowth");
             return (Criteria) this;
         }
 
-        public Criteria andGiftGrowthNotIn(List<String> values) {
+        public Criteria andGiftGrowthNotIn(List<Integer> values) {
             addCriterion("gift_growth not in", values, "giftGrowth");
             return (Criteria) this;
         }
 
-        public Criteria andGiftGrowthBetween(String value1, String value2) {
+        public Criteria andGiftGrowthBetween(Integer value1, Integer value2) {
             addCriterion("gift_growth between", value1, value2, "giftGrowth");
             return (Criteria) this;
         }
 
-        public Criteria andGiftGrowthNotBetween(String value1, String value2) {
+        public Criteria andGiftGrowthNotBetween(Integer value1, Integer value2) {
             addCriterion("gift_growth not between", value1, value2, "giftGrowth");
             return (Criteria) this;
         }
@@ -855,62 +825,52 @@ public class AmsProductExample {
             return (Criteria) this;
         }
 
-        public Criteria andGiftPointEqualTo(String value) {
+        public Criteria andGiftPointEqualTo(Integer value) {
             addCriterion("gift_point =", value, "giftPoint");
             return (Criteria) this;
         }
 
-        public Criteria andGiftPointNotEqualTo(String value) {
+        public Criteria andGiftPointNotEqualTo(Integer value) {
             addCriterion("gift_point <>", value, "giftPoint");
             return (Criteria) this;
         }
 
-        public Criteria andGiftPointGreaterThan(String value) {
+        public Criteria andGiftPointGreaterThan(Integer value) {
             addCriterion("gift_point >", value, "giftPoint");
             return (Criteria) this;
         }
 
-        public Criteria andGiftPointGreaterThanOrEqualTo(String value) {
+        public Criteria andGiftPointGreaterThanOrEqualTo(Integer value) {
             addCriterion("gift_point >=", value, "giftPoint");
             return (Criteria) this;
         }
 
-        public Criteria andGiftPointLessThan(String value) {
+        public Criteria andGiftPointLessThan(Integer value) {
             addCriterion("gift_point <", value, "giftPoint");
             return (Criteria) this;
         }
 
-        public Criteria andGiftPointLessThanOrEqualTo(String value) {
+        public Criteria andGiftPointLessThanOrEqualTo(Integer value) {
             addCriterion("gift_point <=", value, "giftPoint");
             return (Criteria) this;
         }
 
-        public Criteria andGiftPointLike(String value) {
-            addCriterion("gift_point like", value, "giftPoint");
-            return (Criteria) this;
-        }
-
-        public Criteria andGiftPointNotLike(String value) {
-            addCriterion("gift_point not like", value, "giftPoint");
-            return (Criteria) this;
-        }
-
-        public Criteria andGiftPointIn(List<String> values) {
+        public Criteria andGiftPointIn(List<Integer> values) {
             addCriterion("gift_point in", values, "giftPoint");
             return (Criteria) this;
         }
 
-        public Criteria andGiftPointNotIn(List<String> values) {
+        public Criteria andGiftPointNotIn(List<Integer> values) {
             addCriterion("gift_point not in", values, "giftPoint");
             return (Criteria) this;
         }
 
-        public Criteria andGiftPointBetween(String value1, String value2) {
+        public Criteria andGiftPointBetween(Integer value1, Integer value2) {
             addCriterion("gift_point between", value1, value2, "giftPoint");
             return (Criteria) this;
         }
 
-        public Criteria andGiftPointNotBetween(String value1, String value2) {
+        public Criteria andGiftPointNotBetween(Integer value1, Integer value2) {
             addCriterion("gift_point not between", value1, value2, "giftPoint");
             return (Criteria) this;
         }
@@ -995,62 +955,52 @@ public class AmsProductExample {
             return (Criteria) this;
         }
 
-        public Criteria andStatusEqualTo(String value) {
+        public Criteria andStatusEqualTo(Integer value) {
             addCriterion("status =", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotEqualTo(String value) {
+        public Criteria andStatusNotEqualTo(Integer value) {
             addCriterion("status <>", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusGreaterThan(String value) {
+        public Criteria andStatusGreaterThan(Integer value) {
             addCriterion("status >", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusGreaterThanOrEqualTo(String value) {
+        public Criteria andStatusGreaterThanOrEqualTo(Integer value) {
             addCriterion("status >=", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusLessThan(String value) {
+        public Criteria andStatusLessThan(Integer value) {
             addCriterion("status <", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusLessThanOrEqualTo(String value) {
+        public Criteria andStatusLessThanOrEqualTo(Integer value) {
             addCriterion("status <=", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusLike(String value) {
-            addCriterion("status like", value, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusNotLike(String value) {
-            addCriterion("status not like", value, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusIn(List<String> values) {
+        public Criteria andStatusIn(List<Integer> values) {
             addCriterion("status in", values, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotIn(List<String> values) {
+        public Criteria andStatusNotIn(List<Integer> values) {
             addCriterion("status not in", values, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusBetween(String value1, String value2) {
+        public Criteria andStatusBetween(Integer value1, Integer value2) {
             addCriterion("status between", value1, value2, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotBetween(String value1, String value2) {
+        public Criteria andStatusNotBetween(Integer value1, Integer value2) {
             addCriterion("status not between", value1, value2, "status");
             return (Criteria) this;
         }
@@ -1065,62 +1015,52 @@ public class AmsProductExample {
             return (Criteria) this;
         }
 
-        public Criteria andIsDeleteEqualTo(String value) {
+        public Criteria andIsDeleteEqualTo(Integer value) {
             addCriterion("is_delete =", value, "isDelete");
             return (Criteria) this;
         }
 
-        public Criteria andIsDeleteNotEqualTo(String value) {
+        public Criteria andIsDeleteNotEqualTo(Integer value) {
             addCriterion("is_delete <>", value, "isDelete");
             return (Criteria) this;
         }
 
-        public Criteria andIsDeleteGreaterThan(String value) {
+        public Criteria andIsDeleteGreaterThan(Integer value) {
             addCriterion("is_delete >", value, "isDelete");
             return (Criteria) this;
         }
 
-        public Criteria andIsDeleteGreaterThanOrEqualTo(String value) {
+        public Criteria andIsDeleteGreaterThanOrEqualTo(Integer value) {
             addCriterion("is_delete >=", value, "isDelete");
             return (Criteria) this;
         }
 
-        public Criteria andIsDeleteLessThan(String value) {
+        public Criteria andIsDeleteLessThan(Integer value) {
             addCriterion("is_delete <", value, "isDelete");
             return (Criteria) this;
         }
 
-        public Criteria andIsDeleteLessThanOrEqualTo(String value) {
+        public Criteria andIsDeleteLessThanOrEqualTo(Integer value) {
             addCriterion("is_delete <=", value, "isDelete");
             return (Criteria) this;
         }
 
-        public Criteria andIsDeleteLike(String value) {
-            addCriterion("is_delete like", value, "isDelete");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsDeleteNotLike(String value) {
-            addCriterion("is_delete not like", value, "isDelete");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsDeleteIn(List<String> values) {
+        public Criteria andIsDeleteIn(List<Integer> values) {
             addCriterion("is_delete in", values, "isDelete");
             return (Criteria) this;
         }
 
-        public Criteria andIsDeleteNotIn(List<String> values) {
+        public Criteria andIsDeleteNotIn(List<Integer> values) {
             addCriterion("is_delete not in", values, "isDelete");
             return (Criteria) this;
         }
 
-        public Criteria andIsDeleteBetween(String value1, String value2) {
+        public Criteria andIsDeleteBetween(Integer value1, Integer value2) {
             addCriterion("is_delete between", value1, value2, "isDelete");
             return (Criteria) this;
         }
 
-        public Criteria andIsDeleteNotBetween(String value1, String value2) {
+        public Criteria andIsDeleteNotBetween(Integer value1, Integer value2) {
             addCriterion("is_delete not between", value1, value2, "isDelete");
             return (Criteria) this;
         }

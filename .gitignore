@@ -2,15 +2,10 @@
 target/
 
 # IDEA #
-.idea/*
+.idea/
 *.iml
 
 # Eclipse #
 .settings/
 .classpath
 .project
-.vscode/
-Makefile
-*.log
-*.pid
-.sts4-cache

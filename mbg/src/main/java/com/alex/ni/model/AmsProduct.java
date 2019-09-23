@@ -19,11 +19,11 @@ public class AmsProduct implements Serializable {
     @ApiModelProperty(value = "图片")
     private String pic;
 
-    @ApiModelProperty(value = "0-是；1-不是，是否是新品")
-    private String isNew;
+    @ApiModelProperty(value = "0-bushi；1-shi，是否是新品")
+    private Integer isNew;
 
-    @ApiModelProperty(value = "0-yes;1-no，是否上架")
-    private String isPublic;
+    @ApiModelProperty(value = "0-bushi;1-shi，是否上架")
+    private Integer isPublic;
 
     @ApiModelProperty(value = "排序")
     private Integer sort;
@@ -35,17 +35,17 @@ public class AmsProduct implements Serializable {
     private String unit;
 
     @ApiModelProperty(value = "赠送成长值")
-    private String giftGrowth;
+    private Integer giftGrowth;
 
     @ApiModelProperty(value = "赠送积分")
-    private String giftPoint;
+    private Integer giftPoint;
 
     @ApiModelProperty(value = "详细图片")
     private String detailPic;
 
-    private String status;
+    private Integer status;
 
-    private String isDelete;
+    private Integer isDelete;
 
     private static final long serialVersionUID = 1L;
 
@@ -89,19 +89,19 @@ public class AmsProduct implements Serializable {
         this.pic = pic;
     }
 
-    public String getIsNew() {
+    public Integer getIsNew() {
         return isNew;
     }
 
-    public void setIsNew(String isNew) {
+    public void setIsNew(Integer isNew) {
         this.isNew = isNew;
     }
 
-    public String getIsPublic() {
+    public Integer getIsPublic() {
         return isPublic;
     }
 
-    public void setIsPublic(String isPublic) {
+    public void setIsPublic(Integer isPublic) {
         this.isPublic = isPublic;
     }
 
@@ -129,19 +129,19 @@ public class AmsProduct implements Serializable {
         this.unit = unit;
     }
 
-    public String getGiftGrowth() {
+    public Integer getGiftGrowth() {
         return giftGrowth;
     }
 
-    public void setGiftGrowth(String giftGrowth) {
+    public void setGiftGrowth(Integer giftGrowth) {
         this.giftGrowth = giftGrowth;
     }
 
-    public String getGiftPoint() {
+    public Integer getGiftPoint() {
         return giftPoint;
     }
 
-    public void setGiftPoint(String giftPoint) {
+    public void setGiftPoint(Integer giftPoint) {
         this.giftPoint = giftPoint;
     }
 
@@ -153,19 +153,19 @@ public class AmsProduct implements Serializable {
         this.detailPic = detailPic;
     }
 
-    public String getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
-    public String getIsDelete() {
+    public Integer getIsDelete() {
         return isDelete;
     }
 
-    public void setIsDelete(String isDelete) {
+    public void setIsDelete(Integer isDelete) {
         this.isDelete = isDelete;
     }
 

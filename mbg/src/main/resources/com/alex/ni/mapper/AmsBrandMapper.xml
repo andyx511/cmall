@@ -6,8 +6,8 @@
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="logo" jdbcType="VARCHAR" property="logo" />
     <result column="sort" jdbcType="INTEGER" property="sort" />
-    <result column="status" jdbcType="VARCHAR" property="status" />
-    <result column="is_delete" jdbcType="VARCHAR" property="isDelete" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -107,7 +107,7 @@
     insert into ams_brand (name, logo, sort, 
       status, is_delete)
     values (#{name,jdbcType=VARCHAR}, #{logo,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER}, 
-      #{status,jdbcType=VARCHAR}, #{isDelete,jdbcType=VARCHAR})
+      #{status,jdbcType=INTEGER}, #{isDelete,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.alex.ni.model.AmsBrand">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
@@ -142,10 +142,10 @@
         #{sort,jdbcType=INTEGER},
       </if>
       <if test="status != null">
-        #{status,jdbcType=VARCHAR},
+        #{status,jdbcType=INTEGER},
       </if>
       <if test="isDelete != null">
-        #{isDelete,jdbcType=VARCHAR},
+        #{isDelete,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -171,10 +171,10 @@
         sort = #{record.sort,jdbcType=INTEGER},
       </if>
       <if test="record.status != null">
-        status = #{record.status,jdbcType=VARCHAR},
+        status = #{record.status,jdbcType=INTEGER},
       </if>
       <if test="record.isDelete != null">
-        is_delete = #{record.isDelete,jdbcType=VARCHAR},
+        is_delete = #{record.isDelete,jdbcType=INTEGER},
       </if>
     </set>
     <if test="_parameter != null">
@@ -187,8 +187,8 @@
       name = #{record.name,jdbcType=VARCHAR},
       logo = #{record.logo,jdbcType=VARCHAR},
       sort = #{record.sort,jdbcType=INTEGER},
-      status = #{record.status,jdbcType=VARCHAR},
-      is_delete = #{record.isDelete,jdbcType=VARCHAR}
+      status = #{record.status,jdbcType=INTEGER},
+      is_delete = #{record.isDelete,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -206,10 +206,10 @@
         sort = #{sort,jdbcType=INTEGER},
       </if>
       <if test="status != null">
-        status = #{status,jdbcType=VARCHAR},
+        status = #{status,jdbcType=INTEGER},
       </if>
       <if test="isDelete != null">
-        is_delete = #{isDelete,jdbcType=VARCHAR},
+        is_delete = #{isDelete,jdbcType=INTEGER},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -219,8 +219,8 @@
     set name = #{name,jdbcType=VARCHAR},
       logo = #{logo,jdbcType=VARCHAR},
       sort = #{sort,jdbcType=INTEGER},
-      status = #{status,jdbcType=VARCHAR},
-      is_delete = #{isDelete,jdbcType=VARCHAR}
+      status = #{status,jdbcType=INTEGER},
+      is_delete = #{isDelete,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

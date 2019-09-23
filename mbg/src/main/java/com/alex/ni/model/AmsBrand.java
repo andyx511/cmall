@@ -12,9 +12,9 @@ public class AmsBrand implements Serializable {
 
     private Integer sort;
 
-    private String status;
+    private Integer status;
 
-    private String isDelete;
+    private Integer isDelete;
 
     private static final long serialVersionUID = 1L;
 
@@ -50,19 +50,19 @@ public class AmsBrand implements Serializable {
         this.sort = sort;
     }
 
-    public String getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
-    public String getIsDelete() {
+    public Integer getIsDelete() {
         return isDelete;
     }
 
-    public void setIsDelete(String isDelete) {
+    public void setIsDelete(Integer isDelete) {
         this.isDelete = isDelete;
     }
 

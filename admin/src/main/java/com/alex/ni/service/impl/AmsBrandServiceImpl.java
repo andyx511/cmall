@@ -33,7 +33,7 @@ public class AmsBrandServiceImpl implements AmsBrandService {
         if (amsBrandQueryParam.getId() != null){
             criteria.andIdEqualTo(amsBrandQueryParam.getId());
         }
-        criteria.andIsDeleteEqualTo("未删除");
+        criteria.andIsDeleteEqualTo(0);
         example.setOrderByClause("id desc");
         List<AmsBrand> list = amsBrandMapper.selectByExample(example);
         return list;
@@ -64,7 +64,7 @@ public class AmsBrandServiceImpl implements AmsBrandService {
         AmsBrandExample example = new AmsBrandExample();
         example.createCriteria().andIdIn(ids);
         AmsBrand amsBrand = new AmsBrand();
-        amsBrand.setIsDelete("已删除");
+        amsBrand.setIsDelete(1);
         Integer count = amsBrandMapper.updateByExampleSelective(amsBrand, example);
         return count;
     }

@@ -27,7 +27,9 @@ public interface AmsBrandService {
      * update
      */
     Integer update(AmsBrand amsBrand);
-
+    /**
+    * delete
+    */
     Integer delete(List<Integer> ids);
 
 }

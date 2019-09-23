@@ -6,7 +6,6 @@ import com.alex.ni.model.AmsProduct;
 import com.alex.ni.model.AmsProductExample;
 import com.alex.ni.service.AmsProductService;
 import com.github.pagehelper.util.StringUtil;
-import io.swagger.annotations.Api;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,10 +35,10 @@ public class AmsProductServiceImpl implements AmsProductService {
         if (!StringUtils.isEmpty(param.getBrand())){
             criteria.andBrandEqualTo(param.getBrand());
         }
-        if (!StringUtils.isEmpty(param.getIsNew())){
+        if (param.getIsNew()!=null){
             criteria.andIsNewEqualTo(param.getIsNew());
         }
-        if (!StringUtils.isEmpty(param.getIsPublic())){
+        if (param.getIsPublic()!=null){
             criteria.andIsPublicEqualTo(param.getIsPublic());
         }
         if (!StringUtils.isEmpty(param.getKind())){
@@ -54,6 +53,7 @@ public class AmsProductServiceImpl implements AmsProductService {
         if (param.getMaxPrice()!=null){
             criteria.andPicLessThanOrEqualTo(param.getMaxPrice().toString());
         }
+        example.setOrderByClause(" id desc ");
         List<AmsProduct> list = amsProductMapper.selectByExample(example);
         return list;
     }

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.alex.ni.mapper.AmsKindMapper">
-  <resultMap id="BaseResultMap" type="com.alex.ni.model.AmsKind">
+<mapper namespace="com.alex.ni.mapper.AmsOrderItemMapper">
+  <resultMap id="BaseResultMap" type="com.alex.ni.model.AmsOrderItem">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="des" jdbcType="VARCHAR" property="des" />
-    <result column="status" jdbcType="INTEGER" property="status" />
-    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="product_id" jdbcType="INTEGER" property="productId" />
+    <result column="num" jdbcType="INTEGER" property="num" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -67,15 +66,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, name, des, status, sort
+    id, order_id, product_id, num
   </sql>
-  <select id="selectByExample" parameterType="com.alex.ni.model.AmsKindExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.alex.ni.model.AmsOrderItemExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from ams_kind
+    from ams_order_item
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -86,85 +85,76 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from ams_kind
+    from ams_order_item
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from ams_kind
+    delete from ams_order_item
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.alex.ni.model.AmsKindExample">
-    delete from ams_kind
+  <delete id="deleteByExample" parameterType="com.alex.ni.model.AmsOrderItemExample">
+    delete from ams_order_item
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.alex.ni.model.AmsKind">
+  <insert id="insert" parameterType="com.alex.ni.model.AmsOrderItem">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into ams_kind (name, des, status, 
-      sort)
-    values (#{name,jdbcType=VARCHAR}, #{des,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
-      #{sort,jdbcType=INTEGER})
+    insert into ams_order_item (order_id, product_id, num
+      )
+    values (#{orderId,jdbcType=INTEGER}, #{productId,jdbcType=INTEGER}, #{num,jdbcType=INTEGER}
+      )
   </insert>
-  <insert id="insertSelective" parameterType="com.alex.ni.model.AmsKind">
+  <insert id="insertSelective" parameterType="com.alex.ni.model.AmsOrderItem">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into ams_kind
+    insert into ams_order_item
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="name != null">
-        name,
+      <if test="orderId != null">
+        order_id,
       </if>
-      <if test="des != null">
-        des,
+      <if test="productId != null">
+        product_id,
       </if>
-      <if test="status != null">
-        status,
-      </if>
-      <if test="sort != null">
-        sort,
+      <if test="num != null">
+        num,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="name != null">
-        #{name,jdbcType=VARCHAR},
+      <if test="orderId != null">
+        #{orderId,jdbcType=INTEGER},
       </if>
-      <if test="des != null">
-        #{des,jdbcType=VARCHAR},
+      <if test="productId != null">
+        #{productId,jdbcType=INTEGER},
       </if>
-      <if test="status != null">
-        #{status,jdbcType=INTEGER},
-      </if>
-      <if test="sort != null">
-        #{sort,jdbcType=INTEGER},
+      <if test="num != null">
+        #{num,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.alex.ni.model.AmsKindExample" resultType="java.lang.Long">
-    select count(*) from ams_kind
+  <select id="countByExample" parameterType="com.alex.ni.model.AmsOrderItemExample" resultType="java.lang.Long">
+    select count(*) from ams_order_item
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update ams_kind
+    update ams_order_item
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.name != null">
-        name = #{record.name,jdbcType=VARCHAR},
+      <if test="record.orderId != null">
+        order_id = #{record.orderId,jdbcType=INTEGER},
       </if>
-      <if test="record.des != null">
-        des = #{record.des,jdbcType=VARCHAR},
+      <if test="record.productId != null">
+        product_id = #{record.productId,jdbcType=INTEGER},
       </if>
-      <if test="record.status != null">
-        status = #{record.status,jdbcType=INTEGER},
-      </if>
-      <if test="record.sort != null">
-        sort = #{record.sort,jdbcType=INTEGER},
+      <if test="record.num != null">
+        num = #{record.num,jdbcType=INTEGER},
       </if>
     </set>
     <if test="_parameter != null">
@@ -172,40 +162,35 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update ams_kind
+    update ams_order_item
     set id = #{record.id,jdbcType=INTEGER},
-      name = #{record.name,jdbcType=VARCHAR},
-      des = #{record.des,jdbcType=VARCHAR},
-      status = #{record.status,jdbcType=INTEGER},
-      sort = #{record.sort,jdbcType=INTEGER}
+      order_id = #{record.orderId,jdbcType=INTEGER},
+      product_id = #{record.productId,jdbcType=INTEGER},
+      num = #{record.num,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.alex.ni.model.AmsKind">
-    update ams_kind
+  <update id="updateByPrimaryKeySelective" parameterType="com.alex.ni.model.AmsOrderItem">
+    update ams_order_item
     <set>
-      <if test="name != null">
-        name = #{name,jdbcType=VARCHAR},
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=INTEGER},
       </if>
-      <if test="des != null">
-        des = #{des,jdbcType=VARCHAR},
+      <if test="productId != null">
+        product_id = #{productId,jdbcType=INTEGER},
       </if>
-      <if test="status != null">
-        status = #{status,jdbcType=INTEGER},
-      </if>
-      <if test="sort != null">
-        sort = #{sort,jdbcType=INTEGER},
+      <if test="num != null">
+        num = #{num,jdbcType=INTEGER},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.alex.ni.model.AmsKind">
-    update ams_kind
-    set name = #{name,jdbcType=VARCHAR},
-      des = #{des,jdbcType=VARCHAR},
-      status = #{status,jdbcType=INTEGER},
-      sort = #{sort,jdbcType=INTEGER}
+  <update id="updateByPrimaryKey" parameterType="com.alex.ni.model.AmsOrderItem">
+    update ams_order_item
+    set order_id = #{orderId,jdbcType=INTEGER},
+      product_id = #{productId,jdbcType=INTEGER},
+      num = #{num,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="mbg" />
         <module name="common" />
+        <module name="member" />
         <module name="admin" />
       </profile>
     </annotationProcessing>
@@ -18,6 +19,7 @@
       <module name="cmall" options="-parameters" />
       <module name="common" options="-parameters" />
       <module name="mbg" options="-parameters" />
+      <module name="member" options="-parameters" />
     </option>
   </component>
 </project>

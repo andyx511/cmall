@@ -77,7 +77,9 @@ public class UmsAdminController {
     @ApiOperation(value = "登录以后返回token")
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult login(@RequestBody UmsAdminLoginParam umsAdminLoginParam) {
+    public CommonResult login(@RequestBody UmsAdminLoginParam umsAdminLoginParam,HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        String random = (String) session.getAttribute(RandomValidateCodeUtil.RANDOMCODEKEY);
         String tcode = umsAdminLoginParam.getTCode();
         String token = adminService.login(umsAdminLoginParam.getUsername(), umsAdminLoginParam.getPassword());
         if (token == null) {

@@ -3,16 +3,16 @@ package com.alex.ni.model;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 
-public class AmsKind implements Serializable {
+public class AmsMemberLevel implements Serializable {
     private Integer id;
 
     private String name;
 
-    private String des;
+    @ApiModelProperty(value = "所需成长值")
+    private Integer grouth;
 
-    private Integer status;
-
-    private Integer sort;
+    @ApiModelProperty(value = "0-100")
+    private Integer discount;
 
     private static final long serialVersionUID = 1L;
 
@@ -32,28 +32,20 @@ public class AmsKind implements Serializable {
         this.name = name;
     }
 
-    public String getDes() {
-        return des;
+    public Integer getGrouth() {
+        return grouth;
     }
 
-    public void setDes(String des) {
-        this.des = des;
+    public void setGrouth(Integer grouth) {
+        this.grouth = grouth;
     }
 
-    public Integer getStatus() {
-        return status;
+    public Integer getDiscount() {
+        return discount;
     }
 
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
-    public Integer getSort() {
-        return sort;
-    }
-
-    public void setSort(Integer sort) {
-        this.sort = sort;
+    public void setDiscount(Integer discount) {
+        this.discount = discount;
     }
 
     @Override
@@ -64,9 +56,8 @@ public class AmsKind implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
         sb.append(", name=").append(name);
-        sb.append(", des=").append(des);
-        sb.append(", status=").append(status);
-        sb.append(", sort=").append(sort);
+        sb.append(", grouth=").append(grouth);
+        sb.append(", discount=").append(discount);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

@@ -7,16 +7,16 @@
     <result column="kind" jdbcType="VARCHAR" property="kind" />
     <result column="brand" jdbcType="VARCHAR" property="brand" />
     <result column="pic" jdbcType="VARCHAR" property="pic" />
-    <result column="is_new" jdbcType="VARCHAR" property="isNew" />
-    <result column="is_public" jdbcType="VARCHAR" property="isPublic" />
+    <result column="is_new" jdbcType="INTEGER" property="isNew" />
+    <result column="is_public" jdbcType="INTEGER" property="isPublic" />
     <result column="sort" jdbcType="INTEGER" property="sort" />
     <result column="price" jdbcType="DECIMAL" property="price" />
     <result column="unit" jdbcType="VARCHAR" property="unit" />
-    <result column="gift_growth" jdbcType="VARCHAR" property="giftGrowth" />
-    <result column="gift_point" jdbcType="VARCHAR" property="giftPoint" />
+    <result column="gift_growth" jdbcType="INTEGER" property="giftGrowth" />
+    <result column="gift_point" jdbcType="INTEGER" property="giftPoint" />
     <result column="detail_pic" jdbcType="VARCHAR" property="detailPic" />
-    <result column="status" jdbcType="VARCHAR" property="status" />
-    <result column="is_delete" jdbcType="VARCHAR" property="isDelete" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -120,10 +120,10 @@
       gift_growth, gift_point, detail_pic, 
       status, is_delete)
     values (#{name,jdbcType=VARCHAR}, #{kind,jdbcType=VARCHAR}, #{brand,jdbcType=VARCHAR}, 
-      #{pic,jdbcType=VARCHAR}, #{isNew,jdbcType=VARCHAR}, #{isPublic,jdbcType=VARCHAR}, 
+      #{pic,jdbcType=VARCHAR}, #{isNew,jdbcType=INTEGER}, #{isPublic,jdbcType=INTEGER}, 
       #{sort,jdbcType=INTEGER}, #{price,jdbcType=DECIMAL}, #{unit,jdbcType=VARCHAR}, 
-      #{giftGrowth,jdbcType=VARCHAR}, #{giftPoint,jdbcType=VARCHAR}, #{detailPic,jdbcType=VARCHAR}, 
-      #{status,jdbcType=VARCHAR}, #{isDelete,jdbcType=VARCHAR})
+      #{giftGrowth,jdbcType=INTEGER}, #{giftPoint,jdbcType=INTEGER}, #{detailPic,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER}, #{isDelete,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.alex.ni.model.AmsProduct">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
@@ -188,10 +188,10 @@
         #{pic,jdbcType=VARCHAR},
       </if>
       <if test="isNew != null">
-        #{isNew,jdbcType=VARCHAR},
+        #{isNew,jdbcType=INTEGER},
       </if>
       <if test="isPublic != null">
-        #{isPublic,jdbcType=VARCHAR},
+        #{isPublic,jdbcType=INTEGER},
       </if>
       <if test="sort != null">
         #{sort,jdbcType=INTEGER},
@@ -203,19 +203,19 @@
         #{unit,jdbcType=VARCHAR},
       </if>
       <if test="giftGrowth != null">
-        #{giftGrowth,jdbcType=VARCHAR},
+        #{giftGrowth,jdbcType=INTEGER},
       </if>
       <if test="giftPoint != null">
-        #{giftPoint,jdbcType=VARCHAR},
+        #{giftPoint,jdbcType=INTEGER},
       </if>
       <if test="detailPic != null">
         #{detailPic,jdbcType=VARCHAR},
       </if>
       <if test="status != null">
-        #{status,jdbcType=VARCHAR},
+        #{status,jdbcType=INTEGER},
       </if>
       <if test="isDelete != null">
-        #{isDelete,jdbcType=VARCHAR},
+        #{isDelete,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -244,10 +244,10 @@
         pic = #{record.pic,jdbcType=VARCHAR},
       </if>
       <if test="record.isNew != null">
-        is_new = #{record.isNew,jdbcType=VARCHAR},
+        is_new = #{record.isNew,jdbcType=INTEGER},
       </if>
       <if test="record.isPublic != null">
-        is_public = #{record.isPublic,jdbcType=VARCHAR},
+        is_public = #{record.isPublic,jdbcType=INTEGER},
       </if>
       <if test="record.sort != null">
         sort = #{record.sort,jdbcType=INTEGER},
@@ -259,19 +259,19 @@
         unit = #{record.unit,jdbcType=VARCHAR},
       </if>
       <if test="record.giftGrowth != null">
-        gift_growth = #{record.giftGrowth,jdbcType=VARCHAR},
+        gift_growth = #{record.giftGrowth,jdbcType=INTEGER},
       </if>
       <if test="record.giftPoint != null">
-        gift_point = #{record.giftPoint,jdbcType=VARCHAR},
+        gift_point = #{record.giftPoint,jdbcType=INTEGER},
       </if>
       <if test="record.detailPic != null">
         detail_pic = #{record.detailPic,jdbcType=VARCHAR},
       </if>
       <if test="record.status != null">
-        status = #{record.status,jdbcType=VARCHAR},
+        status = #{record.status,jdbcType=INTEGER},
       </if>
       <if test="record.isDelete != null">
-        is_delete = #{record.isDelete,jdbcType=VARCHAR},
+        is_delete = #{record.isDelete,jdbcType=INTEGER},
       </if>
     </set>
     <if test="_parameter != null">
@@ -285,16 +285,16 @@
       kind = #{record.kind,jdbcType=VARCHAR},
       brand = #{record.brand,jdbcType=VARCHAR},
       pic = #{record.pic,jdbcType=VARCHAR},
-      is_new = #{record.isNew,jdbcType=VARCHAR},
-      is_public = #{record.isPublic,jdbcType=VARCHAR},
+      is_new = #{record.isNew,jdbcType=INTEGER},
+      is_public = #{record.isPublic,jdbcType=INTEGER},
       sort = #{record.sort,jdbcType=INTEGER},
       price = #{record.price,jdbcType=DECIMAL},
       unit = #{record.unit,jdbcType=VARCHAR},
-      gift_growth = #{record.giftGrowth,jdbcType=VARCHAR},
-      gift_point = #{record.giftPoint,jdbcType=VARCHAR},
+      gift_growth = #{record.giftGrowth,jdbcType=INTEGER},
+      gift_point = #{record.giftPoint,jdbcType=INTEGER},
       detail_pic = #{record.detailPic,jdbcType=VARCHAR},
-      status = #{record.status,jdbcType=VARCHAR},
-      is_delete = #{record.isDelete,jdbcType=VARCHAR}
+      status = #{record.status,jdbcType=INTEGER},
+      is_delete = #{record.isDelete,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -315,10 +315,10 @@
         pic = #{pic,jdbcType=VARCHAR},
       </if>
       <if test="isNew != null">
-        is_new = #{isNew,jdbcType=VARCHAR},
+        is_new = #{isNew,jdbcType=INTEGER},
       </if>
       <if test="isPublic != null">
-        is_public = #{isPublic,jdbcType=VARCHAR},
+        is_public = #{isPublic,jdbcType=INTEGER},
       </if>
       <if test="sort != null">
         sort = #{sort,jdbcType=INTEGER},
@@ -330,19 +330,19 @@
         unit = #{unit,jdbcType=VARCHAR},
       </if>
       <if test="giftGrowth != null">
-        gift_growth = #{giftGrowth,jdbcType=VARCHAR},
+        gift_growth = #{giftGrowth,jdbcType=INTEGER},
       </if>
       <if test="giftPoint != null">
-        gift_point = #{giftPoint,jdbcType=VARCHAR},
+        gift_point = #{giftPoint,jdbcType=INTEGER},
       </if>
       <if test="detailPic != null">
         detail_pic = #{detailPic,jdbcType=VARCHAR},
       </if>
       <if test="status != null">
-        status = #{status,jdbcType=VARCHAR},
+        status = #{status,jdbcType=INTEGER},
       </if>
       <if test="isDelete != null">
-        is_delete = #{isDelete,jdbcType=VARCHAR},
+        is_delete = #{isDelete,jdbcType=INTEGER},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -353,16 +353,16 @@
       kind = #{kind,jdbcType=VARCHAR},
       brand = #{brand,jdbcType=VARCHAR},
       pic = #{pic,jdbcType=VARCHAR},
-      is_new = #{isNew,jdbcType=VARCHAR},
-      is_public = #{isPublic,jdbcType=VARCHAR},
+      is_new = #{isNew,jdbcType=INTEGER},
+      is_public = #{isPublic,jdbcType=INTEGER},
       sort = #{sort,jdbcType=INTEGER},
       price = #{price,jdbcType=DECIMAL},
       unit = #{unit,jdbcType=VARCHAR},
-      gift_growth = #{giftGrowth,jdbcType=VARCHAR},
-      gift_point = #{giftPoint,jdbcType=VARCHAR},
+      gift_growth = #{giftGrowth,jdbcType=INTEGER},
+      gift_point = #{giftPoint,jdbcType=INTEGER},
       detail_pic = #{detailPic,jdbcType=VARCHAR},
-      status = #{status,jdbcType=VARCHAR},
-      is_delete = #{isDelete,jdbcType=VARCHAR}
+      status = #{status,jdbcType=INTEGER},
+      is_delete = #{isDelete,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
