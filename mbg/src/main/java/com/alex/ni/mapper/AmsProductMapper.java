@@ -10,7 +10,7 @@ public interface AmsProductMapper {
 
     int deleteByExample(AmsProductExample example);
 
-    int deleteByPrimaryKey(@Param("id") Integer id, @Param("isPublic") String isPublic);
+    int deleteByPrimaryKey(Integer id);
 
     int insert(AmsProduct record);
 
@@ -18,7 +18,7 @@ public interface AmsProductMapper {
 
     List<AmsProduct> selectByExample(AmsProductExample example);
 
-    AmsProduct selectByPrimaryKey(@Param("id") Integer id, @Param("isPublic") String isPublic);
+    AmsProduct selectByPrimaryKey(Integer id);
 
     int updateByExampleSelective(@Param("record") AmsProduct record, @Param("example") AmsProductExample example);
 

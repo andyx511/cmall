@@ -165,76 +165,6 @@ public class AmsProductExample {
             return (Criteria) this;
         }
 
-        public Criteria andIsPublicIsNull() {
-            addCriterion("is_public is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsPublicIsNotNull() {
-            addCriterion("is_public is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsPublicEqualTo(String value) {
-            addCriterion("is_public =", value, "isPublic");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsPublicNotEqualTo(String value) {
-            addCriterion("is_public <>", value, "isPublic");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsPublicGreaterThan(String value) {
-            addCriterion("is_public >", value, "isPublic");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsPublicGreaterThanOrEqualTo(String value) {
-            addCriterion("is_public >=", value, "isPublic");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsPublicLessThan(String value) {
-            addCriterion("is_public <", value, "isPublic");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsPublicLessThanOrEqualTo(String value) {
-            addCriterion("is_public <=", value, "isPublic");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsPublicLike(String value) {
-            addCriterion("is_public like", value, "isPublic");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsPublicNotLike(String value) {
-            addCriterion("is_public not like", value, "isPublic");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsPublicIn(List<String> values) {
-            addCriterion("is_public in", values, "isPublic");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsPublicNotIn(List<String> values) {
-            addCriterion("is_public not in", values, "isPublic");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsPublicBetween(String value1, String value2) {
-            addCriterion("is_public between", value1, value2, "isPublic");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsPublicNotBetween(String value1, String value2) {
-            addCriterion("is_public not between", value1, value2, "isPublic");
-            return (Criteria) this;
-        }
-
         public Criteria andNameIsNull() {
             addCriterion("name is null");
             return (Criteria) this;
@@ -582,6 +512,76 @@ public class AmsProductExample {
 
         public Criteria andIsNewNotBetween(String value1, String value2) {
             addCriterion("is_new not between", value1, value2, "isNew");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsPublicIsNull() {
+            addCriterion("is_public is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsPublicIsNotNull() {
+            addCriterion("is_public is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsPublicEqualTo(String value) {
+            addCriterion("is_public =", value, "isPublic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsPublicNotEqualTo(String value) {
+            addCriterion("is_public <>", value, "isPublic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsPublicGreaterThan(String value) {
+            addCriterion("is_public >", value, "isPublic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsPublicGreaterThanOrEqualTo(String value) {
+            addCriterion("is_public >=", value, "isPublic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsPublicLessThan(String value) {
+            addCriterion("is_public <", value, "isPublic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsPublicLessThanOrEqualTo(String value) {
+            addCriterion("is_public <=", value, "isPublic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsPublicLike(String value) {
+            addCriterion("is_public like", value, "isPublic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsPublicNotLike(String value) {
+            addCriterion("is_public not like", value, "isPublic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsPublicIn(List<String> values) {
+            addCriterion("is_public in", values, "isPublic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsPublicNotIn(List<String> values) {
+            addCriterion("is_public not in", values, "isPublic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsPublicBetween(String value1, String value2) {
+            addCriterion("is_public between", value1, value2, "isPublic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsPublicNotBetween(String value1, String value2) {
+            addCriterion("is_public not between", value1, value2, "isPublic");
             return (Criteria) this;
         }
 
@@ -1052,6 +1052,76 @@ public class AmsProductExample {
 
         public Criteria andStatusNotBetween(String value1, String value2) {
             addCriterion("status not between", value1, value2, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDeleteIsNull() {
+            addCriterion("is_delete is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDeleteIsNotNull() {
+            addCriterion("is_delete is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDeleteEqualTo(String value) {
+            addCriterion("is_delete =", value, "isDelete");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDeleteNotEqualTo(String value) {
+            addCriterion("is_delete <>", value, "isDelete");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDeleteGreaterThan(String value) {
+            addCriterion("is_delete >", value, "isDelete");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDeleteGreaterThanOrEqualTo(String value) {
+            addCriterion("is_delete >=", value, "isDelete");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDeleteLessThan(String value) {
+            addCriterion("is_delete <", value, "isDelete");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDeleteLessThanOrEqualTo(String value) {
+            addCriterion("is_delete <=", value, "isDelete");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDeleteLike(String value) {
+            addCriterion("is_delete like", value, "isDelete");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDeleteNotLike(String value) {
+            addCriterion("is_delete not like", value, "isDelete");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDeleteIn(List<String> values) {
+            addCriterion("is_delete in", values, "isDelete");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDeleteNotIn(List<String> values) {
+            addCriterion("is_delete not in", values, "isDelete");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDeleteBetween(String value1, String value2) {
+            addCriterion("is_delete between", value1, value2, "isDelete");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDeleteNotBetween(String value1, String value2) {
+            addCriterion("is_delete not between", value1, value2, "isDelete");
             return (Criteria) this;
         }
     }

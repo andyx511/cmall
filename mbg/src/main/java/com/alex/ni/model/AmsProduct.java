@@ -8,9 +8,6 @@ public class AmsProduct implements Serializable {
     @ApiModelProperty(value = "赠送积分")
     private Integer id;
 
-    @ApiModelProperty(value = "0-yes;1-no，是否上架")
-    private String isPublic;
-
     private String name;
 
     @ApiModelProperty(value = "种类")
@@ -24,6 +21,9 @@ public class AmsProduct implements Serializable {
 
     @ApiModelProperty(value = "0-是；1-不是，是否是新品")
     private String isNew;
+
+    @ApiModelProperty(value = "0-yes;1-no，是否上架")
+    private String isPublic;
 
     @ApiModelProperty(value = "排序")
     private Integer sort;
@@ -45,6 +45,8 @@ public class AmsProduct implements Serializable {
 
     private String status;
 
+    private String isDelete;
+
     private static final long serialVersionUID = 1L;
 
     public Integer getId() {
@@ -53,14 +55,6 @@ public class AmsProduct implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getIsPublic() {
-        return isPublic;
-    }
-
-    public void setIsPublic(String isPublic) {
-        this.isPublic = isPublic;
     }
 
     public String getName() {
@@ -101,6 +95,14 @@ public class AmsProduct implements Serializable {
 
     public void setIsNew(String isNew) {
         this.isNew = isNew;
+    }
+
+    public String getIsPublic() {
+        return isPublic;
+    }
+
+    public void setIsPublic(String isPublic) {
+        this.isPublic = isPublic;
     }
 
     public Integer getSort() {
@@ -159,6 +161,14 @@ public class AmsProduct implements Serializable {
         this.status = status;
     }
 
+    public String getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(String isDelete) {
+        this.isDelete = isDelete;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -166,12 +176,12 @@ public class AmsProduct implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", isPublic=").append(isPublic);
         sb.append(", name=").append(name);
         sb.append(", kind=").append(kind);
         sb.append(", brand=").append(brand);
         sb.append(", pic=").append(pic);
         sb.append(", isNew=").append(isNew);
+        sb.append(", isPublic=").append(isPublic);
         sb.append(", sort=").append(sort);
         sb.append(", price=").append(price);
         sb.append(", unit=").append(unit);
@@ -179,6 +189,7 @@ public class AmsProduct implements Serializable {
         sb.append(", giftPoint=").append(giftPoint);
         sb.append(", detailPic=").append(detailPic);
         sb.append(", status=").append(status);
+        sb.append(", isDelete=").append(isDelete);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

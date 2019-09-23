@@ -59,5 +59,11 @@ public class AmsBrandController {
         return CommonResult.success(record);
     }
 
-
+    @ApiOperation("批量删除")
+    @RequestMapping(value = "/delete",method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult delete(@RequestBody List<Integer> ids){
+        Integer count = amsBrandService.delete(ids);
+        return CommonResult.success(count);
+    }
 }
