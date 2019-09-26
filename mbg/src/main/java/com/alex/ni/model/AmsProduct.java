@@ -5,7 +5,6 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 public class AmsProduct implements Serializable {
-    @ApiModelProperty(value = "赠送积分")
     private Integer id;
 
     private String name;

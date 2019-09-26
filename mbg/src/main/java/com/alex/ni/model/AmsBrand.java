@@ -10,11 +10,19 @@ public class AmsBrand implements Serializable {
 
     private String logo;
 
+    private String fLetter;
+
     private Integer sort;
 
     private Integer status;
 
     private Integer isDelete;
+
+    private Integer isShow;
+
+    private Integer productNum;
+
+    private Integer commentNum;
 
     private static final long serialVersionUID = 1L;
 
@@ -42,6 +50,14 @@ public class AmsBrand implements Serializable {
         this.logo = logo;
     }
 
+    public String getfLetter() {
+        return fLetter;
+    }
+
+    public void setfLetter(String fLetter) {
+        this.fLetter = fLetter;
+    }
+
     public Integer getSort() {
         return sort;
     }
@@ -66,6 +82,30 @@ public class AmsBrand implements Serializable {
         this.isDelete = isDelete;
     }
 
+    public Integer getIsShow() {
+        return isShow;
+    }
+
+    public void setIsShow(Integer isShow) {
+        this.isShow = isShow;
+    }
+
+    public Integer getProductNum() {
+        return productNum;
+    }
+
+    public void setProductNum(Integer productNum) {
+        this.productNum = productNum;
+    }
+
+    public Integer getCommentNum() {
+        return commentNum;
+    }
+
+    public void setCommentNum(Integer commentNum) {
+        this.commentNum = commentNum;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -75,9 +115,13 @@ public class AmsBrand implements Serializable {
         sb.append(", id=").append(id);
         sb.append(", name=").append(name);
         sb.append(", logo=").append(logo);
+        sb.append(", fLetter=").append(fLetter);
         sb.append(", sort=").append(sort);
         sb.append(", status=").append(status);
         sb.append(", isDelete=").append(isDelete);
+        sb.append(", isShow=").append(isShow);
+        sb.append(", productNum=").append(productNum);
+        sb.append(", commentNum=").append(commentNum);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

@@ -2,6 +2,7 @@ package com.alex.ni.model;
 
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class AmsMember implements Serializable {
@@ -10,6 +11,8 @@ public class AmsMember implements Serializable {
     private String nickname;
 
     private String phone;
+
+    private String password;
 
     private String mail;
 
@@ -27,6 +30,9 @@ public class AmsMember implements Serializable {
 
     @ApiModelProperty(value = "等级id")
     private Integer levelId;
+
+    @ApiModelProperty(value = "余额")
+    private BigDecimal money;
 
     private static final long serialVersionUID = 1L;
 
@@ -52,6 +58,14 @@ public class AmsMember implements Serializable {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getMail() {
@@ -110,6 +124,14 @@ public class AmsMember implements Serializable {
         this.levelId = levelId;
     }
 
+    public BigDecimal getMoney() {
+        return money;
+    }
+
+    public void setMoney(BigDecimal money) {
+        this.money = money;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -119,6 +141,7 @@ public class AmsMember implements Serializable {
         sb.append(", id=").append(id);
         sb.append(", nickname=").append(nickname);
         sb.append(", phone=").append(phone);
+        sb.append(", password=").append(password);
         sb.append(", mail=").append(mail);
         sb.append(", sex=").append(sex);
         sb.append(", status=").append(status);
@@ -126,6 +149,7 @@ public class AmsMember implements Serializable {
         sb.append(", growth=").append(growth);
         sb.append(", point=").append(point);
         sb.append(", levelId=").append(levelId);
+        sb.append(", money=").append(money);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

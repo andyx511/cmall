@@ -83,10 +83,10 @@ public class CosController {
             if (null != putObjectResult) {
                 rs.setHost("https://alex-1300169762.cos.ap-chengdu.myqcloud.com");
                 rs.setPath(newFileName);
-                str = "https://alex-1300169762.cos.ap-chengdu.myqcloud.com"+ newFileName;
+                //str = "https://alex-1300169762.cos.ap-chengdu.myqcloud.com"+ newFileName;
             }
 
-            return new CommonResult().success(str);
+            return new CommonResult().success(rs);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

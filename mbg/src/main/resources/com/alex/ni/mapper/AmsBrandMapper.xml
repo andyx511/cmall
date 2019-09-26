@@ -5,9 +5,13 @@
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="logo" jdbcType="VARCHAR" property="logo" />
+    <result column="f_letter" jdbcType="VARCHAR" property="fLetter" />
     <result column="sort" jdbcType="INTEGER" property="sort" />
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
+    <result column="is_show" jdbcType="INTEGER" property="isShow" />
+    <result column="product_num" jdbcType="INTEGER" property="productNum" />
+    <result column="comment_num" jdbcType="INTEGER" property="commentNum" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -68,7 +72,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, name, logo, sort, status, is_delete
+    id, name, logo, f_letter, sort, status, is_delete, is_show, product_num, comment_num
   </sql>
   <select id="selectByExample" parameterType="com.alex.ni.model.AmsBrandExample" resultMap="BaseResultMap">
     select
@@ -104,10 +108,14 @@
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into ams_brand (name, logo, sort, 
-      status, is_delete)
-    values (#{name,jdbcType=VARCHAR}, #{logo,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER}, 
-      #{status,jdbcType=INTEGER}, #{isDelete,jdbcType=INTEGER})
+    insert into ams_brand (name, logo, f_letter, 
+      sort, status, is_delete, 
+      is_show, product_num, comment_num
+      )
+    values (#{name,jdbcType=VARCHAR}, #{logo,jdbcType=VARCHAR}, #{fLetter,jdbcType=VARCHAR}, 
+      #{sort,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{isDelete,jdbcType=INTEGER}, 
+      #{isShow,jdbcType=INTEGER}, #{productNum,jdbcType=INTEGER}, #{commentNum,jdbcType=INTEGER}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.alex.ni.model.AmsBrand">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
@@ -121,6 +129,9 @@
       <if test="logo != null">
         logo,
       </if>
+      <if test="fLetter != null">
+        f_letter,
+      </if>
       <if test="sort != null">
         sort,
       </if>
@@ -130,6 +141,15 @@
       <if test="isDelete != null">
         is_delete,
       </if>
+      <if test="isShow != null">
+        is_show,
+      </if>
+      <if test="productNum != null">
+        product_num,
+      </if>
+      <if test="commentNum != null">
+        comment_num,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="name != null">
@@ -137,6 +157,9 @@
       </if>
       <if test="logo != null">
         #{logo,jdbcType=VARCHAR},
+      </if>
+      <if test="fLetter != null">
+        #{fLetter,jdbcType=VARCHAR},
       </if>
       <if test="sort != null">
         #{sort,jdbcType=INTEGER},
@@ -146,6 +169,15 @@
       </if>
       <if test="isDelete != null">
         #{isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="isShow != null">
+        #{isShow,jdbcType=INTEGER},
+      </if>
+      <if test="productNum != null">
+        #{productNum,jdbcType=INTEGER},
+      </if>
+      <if test="commentNum != null">
+        #{commentNum,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -167,6 +199,9 @@
       <if test="record.logo != null">
         logo = #{record.logo,jdbcType=VARCHAR},
       </if>
+      <if test="record.fLetter != null">
+        f_letter = #{record.fLetter,jdbcType=VARCHAR},
+      </if>
       <if test="record.sort != null">
         sort = #{record.sort,jdbcType=INTEGER},
       </if>
@@ -175,6 +210,15 @@
       </if>
       <if test="record.isDelete != null">
         is_delete = #{record.isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="record.isShow != null">
+        is_show = #{record.isShow,jdbcType=INTEGER},
+      </if>
+      <if test="record.productNum != null">
+        product_num = #{record.productNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.commentNum != null">
+        comment_num = #{record.commentNum,jdbcType=INTEGER},
       </if>
     </set>
     <if test="_parameter != null">
@@ -186,9 +230,13 @@
     set id = #{record.id,jdbcType=INTEGER},
       name = #{record.name,jdbcType=VARCHAR},
       logo = #{record.logo,jdbcType=VARCHAR},
+      f_letter = #{record.fLetter,jdbcType=VARCHAR},
       sort = #{record.sort,jdbcType=INTEGER},
       status = #{record.status,jdbcType=INTEGER},
-      is_delete = #{record.isDelete,jdbcType=INTEGER}
+      is_delete = #{record.isDelete,jdbcType=INTEGER},
+      is_show = #{record.isShow,jdbcType=INTEGER},
+      product_num = #{record.productNum,jdbcType=INTEGER},
+      comment_num = #{record.commentNum,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -202,6 +250,9 @@
       <if test="logo != null">
         logo = #{logo,jdbcType=VARCHAR},
       </if>
+      <if test="fLetter != null">
+        f_letter = #{fLetter,jdbcType=VARCHAR},
+      </if>
       <if test="sort != null">
         sort = #{sort,jdbcType=INTEGER},
       </if>
@@ -211,6 +262,15 @@
       <if test="isDelete != null">
         is_delete = #{isDelete,jdbcType=INTEGER},
       </if>
+      <if test="isShow != null">
+        is_show = #{isShow,jdbcType=INTEGER},
+      </if>
+      <if test="productNum != null">
+        product_num = #{productNum,jdbcType=INTEGER},
+      </if>
+      <if test="commentNum != null">
+        comment_num = #{commentNum,jdbcType=INTEGER},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -218,9 +278,13 @@
     update ams_brand
     set name = #{name,jdbcType=VARCHAR},
       logo = #{logo,jdbcType=VARCHAR},
+      f_letter = #{fLetter,jdbcType=VARCHAR},
       sort = #{sort,jdbcType=INTEGER},
       status = #{status,jdbcType=INTEGER},
-      is_delete = #{isDelete,jdbcType=INTEGER}
+      is_delete = #{isDelete,jdbcType=INTEGER},
+      is_show = #{isShow,jdbcType=INTEGER},
+      product_num = #{productNum,jdbcType=INTEGER},
+      comment_num = #{commentNum,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

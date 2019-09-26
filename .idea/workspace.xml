@@ -2,56 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c82b2aba-5ebe-44fa-aa61-d897d628550a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsKindController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dto/AmsKindQueryParam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsKindService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsKindServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/mapper/AmsCartMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/mapper/AmsMemberLevelMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/mapper/AmsMemberMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/mapper/AmsOrderItemMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/mapper/AmsOrderMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/mapper/AmsProductCommentMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsCart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsCartExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsMember.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsMemberExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsMemberLevel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsMemberLevelExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsOrderExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsOrderItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsOrderItemExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsProductComment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsProductCommentExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/resources/com/alex/ni/mapper/AmsCartMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/resources/com/alex/ni/mapper/AmsMemberLevelMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/resources/com/alex/ni/mapper/AmsMemberMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/resources/com/alex/ni/mapper/AmsOrderItemMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/resources/com/alex/ni/mapper/AmsOrderMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mbg/src/main/resources/com/alex/ni/mapper/AmsProductCommentMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/member/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/admin/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/UmsAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/UmsAdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dto/AmsProductQueryParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dto/AmsProductQueryParam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsBrandService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsBrandService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsBrandServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsBrandServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/target/classes/com/alex/ni/controller/UmsAdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/admin/target/classes/com/alex/ni/controller/UmsAdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/CosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/CosController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsBrand.java" beforeDir="false" afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsBrand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsBrandExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsBrandExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsKind.java" beforeDir="false" afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsKind.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsKindExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsKindExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsMemberExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsMemberExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsProductExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsProductExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mbg/src/main/resources/com/alex/ni/mapper/AmsBrandMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mbg/src/main/resources/com/alex/ni/mapper/AmsBrandMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mbg/src/main/resources/com/alex/ni/mapper/AmsKindMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mbg/src/main/resources/com/alex/ni/mapper/AmsKindMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mbg/src/main/resources/com/alex/ni/mapper/AmsProductMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mbg/src/main/resources/com/alex/ni/mapper/AmsProductMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mbg/src/main/resources/com/alex/ni/mapper/AmsMemberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mbg/src/main/resources/com/alex/ni/mapper/AmsMemberMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -74,43 +33,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsBrandController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsKindController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-86">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/UmsAdminController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-704">
-              <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+            <state relative-caret-position="330">
+              <caret line="102" column="45" selection-start-line="102" selection-start-column="45" selection-end-line="102" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/bo/AdminUserDetails.java">
+        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/OssController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            <state relative-caret-position="253">
+              <caret line="87" selection-start-line="87" selection-end-line="87" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,7 +61,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
+            <state relative-caret-position="38">
               <caret line="2" column="42" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
             </state>
           </provider>
@@ -132,17 +70,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="84" />
+            <state relative-caret-position="267">
+              <caret line="83" selection-start-line="83" selection-end-line="84" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/src/main/resources/application-dev.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" column="40" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+            <state relative-caret-position="209">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -150,8 +97,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/CosController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="81" column="26" selection-start-line="81" selection-start-column="26" selection-end-line="81" selection-end-column="26" />
+            <state relative-caret-position="273">
+              <caret line="85" column="18" selection-start-line="85" selection-start-column="18" selection-end-line="85" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsBrand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="12" column="26" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -162,7 +121,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dto/AmsKindQueryParam.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
+            <state relative-caret-position="190">
               <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -239,7 +198,6 @@
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsPerssionController.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/TestController.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/OssController.java" />
-        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/CosController.java" />
         <option value="$PROJECT_DIR$/common/pom.xml" />
         <option value="$PROJECT_DIR$/admin/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsBrandController.java" />
@@ -247,7 +205,6 @@
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsproductService.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsProductService.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsProductController.java" />
-        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/UmsAdminController.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsBrandServiceImpl.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dto/AmsProductQueryParam.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsProductServiceImpl.java" />
@@ -258,6 +215,8 @@
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsKindController.java" />
         <option value="$PROJECT_DIR$/admin/pom.xml" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/UmsAdminController.java" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/CosController.java" />
       </list>
     </option>
   </component>
@@ -278,10 +237,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="34" />
-    <option name="y" value="104" />
-    <option name="width" value="1438" />
-    <option name="height" value="747" />
+    <option name="x" value="-99" />
+    <option name="y" value="187" />
+    <option name="width" value="1900" />
+    <option name="height" value="905" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -292,7 +251,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -335,10 +293,74 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ni" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmall" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ni" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmall" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmall" type="462c0819:PsiDirectoryNode" />
+              <item name="mbg" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmall" type="462c0819:PsiDirectoryNode" />
+              <item name="mbg" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmall" type="462c0819:PsiDirectoryNode" />
+              <item name="mbg" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmall" type="462c0819:PsiDirectoryNode" />
+              <item name="mbg" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmall" type="462c0819:PsiDirectoryNode" />
+              <item name="mbg" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ni" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmall" type="462c0819:PsiDirectoryNode" />
+              <item name="mbg" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ni" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -349,7 +371,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils" />
+    <property name="last_opened_file_path" value="E:/mall" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -399,9 +421,9 @@
         </RuleState>
       </list>
     </option>
-    <option name="contentProportion" value="0.21049784" />
+    <option name="contentProportion" value="0.27800545" />
   </component>
-  <component name="RunManager" selected="Application.Generator">
+  <component name="RunManager" selected="Spring Boot.MallAdminApplication">
     <configuration name="Generator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.alex.ni.Generator" />
       <module name="mbg" />
@@ -463,11 +485,14 @@
       <workItem from="1568684870731" duration="5236000" />
       <workItem from="1568690533050" duration="6718000" />
       <workItem from="1569200833376" duration="12155000" />
+      <workItem from="1569333518735" duration="1029000" />
+      <workItem from="1569339006875" duration="598000" />
+      <workItem from="1569489896733" duration="7465000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92332000" />
+    <option name="totallyTimeSpent" value="101424000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -479,10 +504,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19296375" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19504021" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -493,8 +518,8 @@
       <window_info anchor="bottom" id="Problems" order="0" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.19305857" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.39779004" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.31444758" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.39660057" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32903227" />
@@ -506,7 +531,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="13" />
       <window_info anchor="bottom" id="Database Changes" order="14" />
       <window_info anchor="bottom" id="Version Control" order="15" weight="0.3286334" />
-      <window_info anchor="bottom" id="Run Dashboard" order="16" sideWeight="0.49946696" visible="true" weight="0.28958786" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="16" sideWeight="0.49946696" visible="true" weight="0.33144477" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -604,16 +629,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsBrand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-22">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/StringUtil.java" />
     <entry file="file://$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/IPUtils.java" />
     <entry file="file://$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/PayPWDCheck.java">
@@ -636,17 +651,7 @@
     <entry file="file://$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/JsonUtil.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/qcloud/cos_api/5.5.1/cos_api-5.5.1.jar!/com/qcloud/cos/region/Region.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-          <folding>
-            <element signature="e#471#472#0" expanded="true" />
-            <element signature="e#517#518#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/qcloud/cos_api/5.5.1/cos_api-5.5.1.jar!/com/qcloud/cos/region/Region.class" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/qcloud/cos_api/5.6.7/cos_api-5.6.7.jar!/com/qcloud/cos/COSClient.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -658,16 +663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
           <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/OssController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="95" selection-start-line="39" selection-start-column="2" selection-end-line="95" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -722,13 +717,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/admin.iml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/resources/application-dev.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="40" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="40" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/MallAdminApplication.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -877,30 +865,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/CosController.java">
+    <entry file="file://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-dependencies/2.1.3.RELEASE/spring-boot-dependencies-2.1.3.RELEASE.pom">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="81" column="26" selection-start-line="81" selection-start-column="26" selection-end-line="81" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="208">
+          <caret line="494" column="12" selection-start-line="494" selection-start-column="12" selection-end-line="494" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsBrandController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
+        <state relative-caret-position="418">
           <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dto/AmsKindQueryParam.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -909,7 +884,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsKindController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-86">
+        <state relative-caret-position="323">
           <caret line="31" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -917,16 +892,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/UmsAdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-704">
-          <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/bo/AdminUserDetails.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
+        <state relative-caret-position="152">
           <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
         </state>
       </provider>
@@ -936,29 +904,76 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
+        <state relative-caret-position="38">
           <caret line="2" column="42" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-dependencies/2.1.3.RELEASE/spring-boot-dependencies-2.1.3.RELEASE.pom">
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dto/AmsKindQueryParam.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="494" column="12" selection-start-line="494" selection-start-column="12" selection-end-line="494" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="84" />
+        <state relative-caret-position="190">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+        <state relative-caret-position="209">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/UmsAdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="102" column="45" selection-start-line="102" selection-start-column="45" selection-end-line="102" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/OssController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="87" selection-start-line="87" selection-end-line="87" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="83" selection-start-line="83" selection-end-line="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/resources/application-dev.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="40" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/CosController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="85" column="18" selection-start-line="85" selection-start-column="18" selection-end-line="85" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsBrand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

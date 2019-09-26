@@ -304,6 +304,76 @@ public class AmsBrandExample {
             return (Criteria) this;
         }
 
+        public Criteria andFLetterIsNull() {
+            addCriterion("f_letter is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFLetterIsNotNull() {
+            addCriterion("f_letter is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFLetterEqualTo(String value) {
+            addCriterion("f_letter =", value, "fLetter");
+            return (Criteria) this;
+        }
+
+        public Criteria andFLetterNotEqualTo(String value) {
+            addCriterion("f_letter <>", value, "fLetter");
+            return (Criteria) this;
+        }
+
+        public Criteria andFLetterGreaterThan(String value) {
+            addCriterion("f_letter >", value, "fLetter");
+            return (Criteria) this;
+        }
+
+        public Criteria andFLetterGreaterThanOrEqualTo(String value) {
+            addCriterion("f_letter >=", value, "fLetter");
+            return (Criteria) this;
+        }
+
+        public Criteria andFLetterLessThan(String value) {
+            addCriterion("f_letter <", value, "fLetter");
+            return (Criteria) this;
+        }
+
+        public Criteria andFLetterLessThanOrEqualTo(String value) {
+            addCriterion("f_letter <=", value, "fLetter");
+            return (Criteria) this;
+        }
+
+        public Criteria andFLetterLike(String value) {
+            addCriterion("f_letter like", value, "fLetter");
+            return (Criteria) this;
+        }
+
+        public Criteria andFLetterNotLike(String value) {
+            addCriterion("f_letter not like", value, "fLetter");
+            return (Criteria) this;
+        }
+
+        public Criteria andFLetterIn(List<String> values) {
+            addCriterion("f_letter in", values, "fLetter");
+            return (Criteria) this;
+        }
+
+        public Criteria andFLetterNotIn(List<String> values) {
+            addCriterion("f_letter not in", values, "fLetter");
+            return (Criteria) this;
+        }
+
+        public Criteria andFLetterBetween(String value1, String value2) {
+            addCriterion("f_letter between", value1, value2, "fLetter");
+            return (Criteria) this;
+        }
+
+        public Criteria andFLetterNotBetween(String value1, String value2) {
+            addCriterion("f_letter not between", value1, value2, "fLetter");
+            return (Criteria) this;
+        }
+
         public Criteria andSortIsNull() {
             addCriterion("sort is null");
             return (Criteria) this;
@@ -481,6 +551,186 @@ public class AmsBrandExample {
 
         public Criteria andIsDeleteNotBetween(Integer value1, Integer value2) {
             addCriterion("is_delete not between", value1, value2, "isDelete");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsShowIsNull() {
+            addCriterion("is_show is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsShowIsNotNull() {
+            addCriterion("is_show is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsShowEqualTo(Integer value) {
+            addCriterion("is_show =", value, "isShow");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsShowNotEqualTo(Integer value) {
+            addCriterion("is_show <>", value, "isShow");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsShowGreaterThan(Integer value) {
+            addCriterion("is_show >", value, "isShow");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsShowGreaterThanOrEqualTo(Integer value) {
+            addCriterion("is_show >=", value, "isShow");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsShowLessThan(Integer value) {
+            addCriterion("is_show <", value, "isShow");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsShowLessThanOrEqualTo(Integer value) {
+            addCriterion("is_show <=", value, "isShow");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsShowIn(List<Integer> values) {
+            addCriterion("is_show in", values, "isShow");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsShowNotIn(List<Integer> values) {
+            addCriterion("is_show not in", values, "isShow");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsShowBetween(Integer value1, Integer value2) {
+            addCriterion("is_show between", value1, value2, "isShow");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsShowNotBetween(Integer value1, Integer value2) {
+            addCriterion("is_show not between", value1, value2, "isShow");
+            return (Criteria) this;
+        }
+
+        public Criteria andProductNumIsNull() {
+            addCriterion("product_num is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andProductNumIsNotNull() {
+            addCriterion("product_num is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andProductNumEqualTo(Integer value) {
+            addCriterion("product_num =", value, "productNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andProductNumNotEqualTo(Integer value) {
+            addCriterion("product_num <>", value, "productNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andProductNumGreaterThan(Integer value) {
+            addCriterion("product_num >", value, "productNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andProductNumGreaterThanOrEqualTo(Integer value) {
+            addCriterion("product_num >=", value, "productNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andProductNumLessThan(Integer value) {
+            addCriterion("product_num <", value, "productNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andProductNumLessThanOrEqualTo(Integer value) {
+            addCriterion("product_num <=", value, "productNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andProductNumIn(List<Integer> values) {
+            addCriterion("product_num in", values, "productNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andProductNumNotIn(List<Integer> values) {
+            addCriterion("product_num not in", values, "productNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andProductNumBetween(Integer value1, Integer value2) {
+            addCriterion("product_num between", value1, value2, "productNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andProductNumNotBetween(Integer value1, Integer value2) {
+            addCriterion("product_num not between", value1, value2, "productNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentNumIsNull() {
+            addCriterion("comment_num is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentNumIsNotNull() {
+            addCriterion("comment_num is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentNumEqualTo(Integer value) {
+            addCriterion("comment_num =", value, "commentNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentNumNotEqualTo(Integer value) {
+            addCriterion("comment_num <>", value, "commentNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentNumGreaterThan(Integer value) {
+            addCriterion("comment_num >", value, "commentNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentNumGreaterThanOrEqualTo(Integer value) {
+            addCriterion("comment_num >=", value, "commentNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentNumLessThan(Integer value) {
+            addCriterion("comment_num <", value, "commentNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentNumLessThanOrEqualTo(Integer value) {
+            addCriterion("comment_num <=", value, "commentNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentNumIn(List<Integer> values) {
+            addCriterion("comment_num in", values, "commentNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentNumNotIn(List<Integer> values) {
+            addCriterion("comment_num not in", values, "commentNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentNumBetween(Integer value1, Integer value2) {
+            addCriterion("comment_num between", value1, value2, "commentNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentNumNotBetween(Integer value1, Integer value2) {
+            addCriterion("comment_num not between", value1, value2, "commentNum");
             return (Criteria) this;
         }
     }

@@ -5,6 +5,7 @@
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="nickname" jdbcType="VARCHAR" property="nickname" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="mail" jdbcType="VARCHAR" property="mail" />
     <result column="sex" jdbcType="VARCHAR" property="sex" />
     <result column="status" jdbcType="INTEGER" property="status" />
@@ -12,6 +13,7 @@
     <result column="growth" jdbcType="INTEGER" property="growth" />
     <result column="point" jdbcType="INTEGER" property="point" />
     <result column="level_id" jdbcType="INTEGER" property="levelId" />
+    <result column="money" jdbcType="DECIMAL" property="money" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -72,7 +74,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, nickname, phone, mail, sex, status, create_time, growth, point, level_id
+    id, nickname, phone, password, mail, sex, status, create_time, growth, point, level_id, 
+    money
   </sql>
   <select id="selectByExample" parameterType="com.alex.ni.model.AmsMemberExample" resultMap="BaseResultMap">
     select
@@ -108,14 +111,14 @@
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into ams_member (nickname, phone, mail, 
-      sex, status, create_time, 
-      growth, point, level_id
-      )
-    values (#{nickname,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{mail,jdbcType=VARCHAR}, 
-      #{sex,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{growth,jdbcType=INTEGER}, #{point,jdbcType=INTEGER}, #{levelId,jdbcType=INTEGER}
-      )
+    insert into ams_member (nickname, phone, password, 
+      mail, sex, status, 
+      create_time, growth, point, 
+      level_id, money)
+    values (#{nickname,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{mail,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{growth,jdbcType=INTEGER}, #{point,jdbcType=INTEGER}, 
+      #{levelId,jdbcType=INTEGER}, #{money,jdbcType=DECIMAL})
   </insert>
   <insert id="insertSelective" parameterType="com.alex.ni.model.AmsMember">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
@@ -128,6 +131,9 @@
       </if>
       <if test="phone != null">
         phone,
+      </if>
+      <if test="password != null">
+        password,
       </if>
       <if test="mail != null">
         mail,
@@ -150,6 +156,9 @@
       <if test="levelId != null">
         level_id,
       </if>
+      <if test="money != null">
+        money,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="nickname != null">
@@ -157,6 +166,9 @@
       </if>
       <if test="phone != null">
         #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
       </if>
       <if test="mail != null">
         #{mail,jdbcType=VARCHAR},
@@ -179,6 +191,9 @@
       <if test="levelId != null">
         #{levelId,jdbcType=INTEGER},
       </if>
+      <if test="money != null">
+        #{money,jdbcType=DECIMAL},
+      </if>
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.alex.ni.model.AmsMemberExample" resultType="java.lang.Long">
@@ -198,6 +213,9 @@
       </if>
       <if test="record.phone != null">
         phone = #{record.phone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.password != null">
+        password = #{record.password,jdbcType=VARCHAR},
       </if>
       <if test="record.mail != null">
         mail = #{record.mail,jdbcType=VARCHAR},
@@ -220,6 +238,9 @@
       <if test="record.levelId != null">
         level_id = #{record.levelId,jdbcType=INTEGER},
       </if>
+      <if test="record.money != null">
+        money = #{record.money,jdbcType=DECIMAL},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -230,13 +251,15 @@
     set id = #{record.id,jdbcType=INTEGER},
       nickname = #{record.nickname,jdbcType=VARCHAR},
       phone = #{record.phone,jdbcType=VARCHAR},
+      password = #{record.password,jdbcType=VARCHAR},
       mail = #{record.mail,jdbcType=VARCHAR},
       sex = #{record.sex,jdbcType=VARCHAR},
       status = #{record.status,jdbcType=INTEGER},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       growth = #{record.growth,jdbcType=INTEGER},
       point = #{record.point,jdbcType=INTEGER},
-      level_id = #{record.levelId,jdbcType=INTEGER}
+      level_id = #{record.levelId,jdbcType=INTEGER},
+      money = #{record.money,jdbcType=DECIMAL}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -249,6 +272,9 @@
       </if>
       <if test="phone != null">
         phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
       </if>
       <if test="mail != null">
         mail = #{mail,jdbcType=VARCHAR},
@@ -271,6 +297,9 @@
       <if test="levelId != null">
         level_id = #{levelId,jdbcType=INTEGER},
       </if>
+      <if test="money != null">
+        money = #{money,jdbcType=DECIMAL},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -278,13 +307,15 @@
     update ams_member
     set nickname = #{nickname,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
       mail = #{mail,jdbcType=VARCHAR},
       sex = #{sex,jdbcType=VARCHAR},
       status = #{status,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       growth = #{growth,jdbcType=INTEGER},
       point = #{point,jdbcType=INTEGER},
-      level_id = #{levelId,jdbcType=INTEGER}
+      level_id = #{levelId,jdbcType=INTEGER},
+      money = #{money,jdbcType=DECIMAL}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
