@@ -7,6 +7,8 @@
     <result column="des" jdbcType="VARCHAR" property="des" />
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="logo" jdbcType="VARCHAR" property="logo" />
+    <result column="unit" jdbcType="VARCHAR" property="unit" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -67,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, name, des, status, sort
+    id, name, des, status, sort, logo, unit
   </sql>
   <select id="selectByExample" parameterType="com.alex.ni.model.AmsKindExample" resultMap="BaseResultMap">
     select
@@ -104,9 +106,9 @@
       SELECT LAST_INSERT_ID()
     </selectKey>
     insert into ams_kind (name, des, status, 
-      sort)
+      sort, logo, unit)
     values (#{name,jdbcType=VARCHAR}, #{des,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
-      #{sort,jdbcType=INTEGER})
+      #{sort,jdbcType=INTEGER}, #{logo,jdbcType=VARCHAR}, #{unit,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.alex.ni.model.AmsKind">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
@@ -126,6 +128,12 @@
       <if test="sort != null">
         sort,
       </if>
+      <if test="logo != null">
+        logo,
+      </if>
+      <if test="unit != null">
+        unit,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="name != null">
@@ -139,6 +147,12 @@
       </if>
       <if test="sort != null">
         #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="logo != null">
+        #{logo,jdbcType=VARCHAR},
+      </if>
+      <if test="unit != null">
+        #{unit,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -166,6 +180,12 @@
       <if test="record.sort != null">
         sort = #{record.sort,jdbcType=INTEGER},
       </if>
+      <if test="record.logo != null">
+        logo = #{record.logo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.unit != null">
+        unit = #{record.unit,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -177,7 +197,9 @@
       name = #{record.name,jdbcType=VARCHAR},
       des = #{record.des,jdbcType=VARCHAR},
       status = #{record.status,jdbcType=INTEGER},
-      sort = #{record.sort,jdbcType=INTEGER}
+      sort = #{record.sort,jdbcType=INTEGER},
+      logo = #{record.logo,jdbcType=VARCHAR},
+      unit = #{record.unit,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -197,6 +219,12 @@
       <if test="sort != null">
         sort = #{sort,jdbcType=INTEGER},
       </if>
+      <if test="logo != null">
+        logo = #{logo,jdbcType=VARCHAR},
+      </if>
+      <if test="unit != null">
+        unit = #{unit,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -205,7 +233,9 @@
     set name = #{name,jdbcType=VARCHAR},
       des = #{des,jdbcType=VARCHAR},
       status = #{status,jdbcType=INTEGER},
-      sort = #{sort,jdbcType=INTEGER}
+      sort = #{sort,jdbcType=INTEGER},
+      logo = #{logo,jdbcType=VARCHAR},
+      unit = #{unit,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

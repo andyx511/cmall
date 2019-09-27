@@ -10,6 +10,7 @@ import com.alex.ni.service.AmsBrandService;
 import com.alex.ni.service.AmsKindService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -39,6 +40,7 @@ public class AmsKindController {
         List<AmsKind> list = amsKindService.list(amsBrandQueryParam,pageNum,pageSize);
         return CommonResult.success(CommonPage.restPage(list));
     }
+
     @ApiOperation("kind添加")
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     @ResponseBody
@@ -46,8 +48,9 @@ public class AmsKindController {
         Integer record = amsKindService.add(amsKind);
         return CommonResult.success(record);
     }
+
     @ApiOperation("详情")
-    @RequestMapping(value = "/detail/{id}", method = RequestMethod.POST)
+    @RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult detail(@PathVariable Integer id){
         AmsKind amsKind = amsKindService.detail(id);
@@ -59,6 +62,13 @@ public class AmsKindController {
     @ResponseBody
     public CommonResult update(@RequestBody AmsKind amsKind){
         Integer record = amsKindService.update(amsKind);
+        return CommonResult.success(record);
+    }
+    @ApiOperation("update")
+    @RequestMapping(value = "/delete",method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult delete(@Param("id") Integer id){
+        Integer record = amsKindService.delete(id);
         return CommonResult.success(record);
     }
 }

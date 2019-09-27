@@ -7,6 +7,7 @@ import com.alex.ni.model.AmsBrand;
 import com.alex.ni.service.AmsBrandService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -65,5 +66,16 @@ public class AmsBrandController {
     public CommonResult delete(@RequestBody List<Integer> ids){
         Integer count = amsBrandService.delete(ids);
         return CommonResult.success(count);
+    }
+
+    @ApiOperation("修改是否新品")
+    @RequestMapping(value = "/updateShow",method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult updateShow(@Param("id")Integer id,@Param("showStatus")Integer showStatus){
+        AmsBrand brand = new AmsBrand();
+        brand.setId(id);
+        brand.setShowStatus(showStatus);
+        Integer record = amsBrandService.update(brand);
+        return CommonResult.success(record);
     }
 }

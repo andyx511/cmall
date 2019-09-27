@@ -21,5 +21,6 @@ public interface AmsKindService {
     Integer add(AmsKind amsKind);
     AmsKind detail(Integer id);
     Integer update(AmsKind kind);
+    Integer delete(Integer id);
 
 }

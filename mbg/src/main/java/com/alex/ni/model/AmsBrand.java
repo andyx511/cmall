@@ -18,7 +18,7 @@ public class AmsBrand implements Serializable {
 
     private Integer isDelete;
 
-    private Integer isShow;
+    private Integer showStatus;
 
     private Integer productNum;
 
@@ -82,12 +82,12 @@ public class AmsBrand implements Serializable {
         this.isDelete = isDelete;
     }
 
-    public Integer getIsShow() {
-        return isShow;
+    public Integer getShowStatus() {
+        return showStatus;
     }
 
-    public void setIsShow(Integer isShow) {
-        this.isShow = isShow;
+    public void setShowStatus(Integer showStatus) {
+        this.showStatus = showStatus;
     }
 
     public Integer getProductNum() {
@@ -119,7 +119,7 @@ public class AmsBrand implements Serializable {
         sb.append(", sort=").append(sort);
         sb.append(", status=").append(status);
         sb.append(", isDelete=").append(isDelete);
-        sb.append(", isShow=").append(isShow);
+        sb.append(", showStatus=").append(showStatus);
         sb.append(", productNum=").append(productNum);
         sb.append(", commentNum=").append(commentNum);
         sb.append(", serialVersionUID=").append(serialVersionUID);

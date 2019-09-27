@@ -54,4 +54,10 @@ public class AmsKindServiceImpl implements AmsKindService {
         Integer record = kindMapper.updateByPrimaryKeySelective(kind);
         return record;
     }
+
+    @Override
+    public Integer delete(Integer id) {
+        Integer record = kindMapper.deleteByPrimaryKey(id);
+        return record;
+    }
 }

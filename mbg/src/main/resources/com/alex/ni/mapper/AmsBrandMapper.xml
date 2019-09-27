@@ -9,7 +9,7 @@
     <result column="sort" jdbcType="INTEGER" property="sort" />
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
-    <result column="is_show" jdbcType="INTEGER" property="isShow" />
+    <result column="show_status" jdbcType="INTEGER" property="showStatus" />
     <result column="product_num" jdbcType="INTEGER" property="productNum" />
     <result column="comment_num" jdbcType="INTEGER" property="commentNum" />
   </resultMap>
@@ -72,7 +72,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, name, logo, f_letter, sort, status, is_delete, is_show, product_num, comment_num
+    id, name, logo, f_letter, sort, status, is_delete, show_status, product_num, comment_num
   </sql>
   <select id="selectByExample" parameterType="com.alex.ni.model.AmsBrandExample" resultMap="BaseResultMap">
     select
@@ -110,11 +110,11 @@
     </selectKey>
     insert into ams_brand (name, logo, f_letter, 
       sort, status, is_delete, 
-      is_show, product_num, comment_num
+      show_status, product_num, comment_num
       )
     values (#{name,jdbcType=VARCHAR}, #{logo,jdbcType=VARCHAR}, #{fLetter,jdbcType=VARCHAR}, 
       #{sort,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{isDelete,jdbcType=INTEGER}, 
-      #{isShow,jdbcType=INTEGER}, #{productNum,jdbcType=INTEGER}, #{commentNum,jdbcType=INTEGER}
+      #{showStatus,jdbcType=INTEGER}, #{productNum,jdbcType=INTEGER}, #{commentNum,jdbcType=INTEGER}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.alex.ni.model.AmsBrand">
@@ -141,8 +141,8 @@
       <if test="isDelete != null">
         is_delete,
       </if>
-      <if test="isShow != null">
-        is_show,
+      <if test="showStatus != null">
+        show_status,
       </if>
       <if test="productNum != null">
         product_num,
@@ -170,8 +170,8 @@
       <if test="isDelete != null">
         #{isDelete,jdbcType=INTEGER},
       </if>
-      <if test="isShow != null">
-        #{isShow,jdbcType=INTEGER},
+      <if test="showStatus != null">
+        #{showStatus,jdbcType=INTEGER},
       </if>
       <if test="productNum != null">
         #{productNum,jdbcType=INTEGER},
@@ -211,8 +211,8 @@
       <if test="record.isDelete != null">
         is_delete = #{record.isDelete,jdbcType=INTEGER},
       </if>
-      <if test="record.isShow != null">
-        is_show = #{record.isShow,jdbcType=INTEGER},
+      <if test="record.showStatus != null">
+        show_status = #{record.showStatus,jdbcType=INTEGER},
       </if>
       <if test="record.productNum != null">
         product_num = #{record.productNum,jdbcType=INTEGER},
@@ -234,7 +234,7 @@
       sort = #{record.sort,jdbcType=INTEGER},
       status = #{record.status,jdbcType=INTEGER},
       is_delete = #{record.isDelete,jdbcType=INTEGER},
-      is_show = #{record.isShow,jdbcType=INTEGER},
+      show_status = #{record.showStatus,jdbcType=INTEGER},
       product_num = #{record.productNum,jdbcType=INTEGER},
       comment_num = #{record.commentNum,jdbcType=INTEGER}
     <if test="_parameter != null">
@@ -262,8 +262,8 @@
       <if test="isDelete != null">
         is_delete = #{isDelete,jdbcType=INTEGER},
       </if>
-      <if test="isShow != null">
-        is_show = #{isShow,jdbcType=INTEGER},
+      <if test="showStatus != null">
+        show_status = #{showStatus,jdbcType=INTEGER},
       </if>
       <if test="productNum != null">
         product_num = #{productNum,jdbcType=INTEGER},
@@ -282,7 +282,7 @@
       sort = #{sort,jdbcType=INTEGER},
       status = #{status,jdbcType=INTEGER},
       is_delete = #{isDelete,jdbcType=INTEGER},
-      is_show = #{isShow,jdbcType=INTEGER},
+      show_status = #{showStatus,jdbcType=INTEGER},
       product_num = #{productNum,jdbcType=INTEGER},
       comment_num = #{commentNum,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}

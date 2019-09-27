@@ -14,6 +14,10 @@ public class AmsKind implements Serializable {
 
     private Integer sort;
 
+    private String logo;
+
+    private String unit;
+
     private static final long serialVersionUID = 1L;
 
     public Integer getId() {
@@ -56,6 +60,22 @@ public class AmsKind implements Serializable {
         this.sort = sort;
     }
 
+    public String getLogo() {
+        return logo;
+    }
+
+    public void setLogo(String logo) {
+        this.logo = logo;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -67,6 +87,8 @@ public class AmsKind implements Serializable {
         sb.append(", des=").append(des);
         sb.append(", status=").append(status);
         sb.append(", sort=").append(sort);
+        sb.append(", logo=").append(logo);
+        sb.append(", unit=").append(unit);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();
