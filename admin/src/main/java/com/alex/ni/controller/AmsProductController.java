@@ -43,4 +43,12 @@ public class AmsProductController {
         Integer record = amsProductService.add(amsProduct);
         return CommonResult.success(record);
     }
+
+    @ApiOperation("商品detail")
+    @RequestMapping(value = "/detail/{id}",method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult detail(@PathVariable("id") Integer id ){
+        AmsProduct record = amsProductService.detail(id);
+        return CommonResult.success(record);
+    }
 }

@@ -46,6 +46,21 @@ public class AmsProduct implements Serializable {
 
     private Integer isDelete;
 
+    @ApiModelProperty(value = "销量")
+    private Integer salesVolume;
+
+    @ApiModelProperty(value = "评价数")
+    private Integer commentNum;
+
+    @ApiModelProperty(value = "库存")
+    private Integer stock;
+
+    @ApiModelProperty(value = "是否打折0否1是")
+    private Integer isDiscount;
+
+    @ApiModelProperty(value = "打折后的价格")
+    private BigDecimal discountPrice;
+
     private static final long serialVersionUID = 1L;
 
     public Integer getId() {
@@ -168,6 +183,46 @@ public class AmsProduct implements Serializable {
         this.isDelete = isDelete;
     }
 
+    public Integer getSalesVolume() {
+        return salesVolume;
+    }
+
+    public void setSalesVolume(Integer salesVolume) {
+        this.salesVolume = salesVolume;
+    }
+
+    public Integer getCommentNum() {
+        return commentNum;
+    }
+
+    public void setCommentNum(Integer commentNum) {
+        this.commentNum = commentNum;
+    }
+
+    public Integer getStock() {
+        return stock;
+    }
+
+    public void setStock(Integer stock) {
+        this.stock = stock;
+    }
+
+    public Integer getIsDiscount() {
+        return isDiscount;
+    }
+
+    public void setIsDiscount(Integer isDiscount) {
+        this.isDiscount = isDiscount;
+    }
+
+    public BigDecimal getDiscountPrice() {
+        return discountPrice;
+    }
+
+    public void setDiscountPrice(BigDecimal discountPrice) {
+        this.discountPrice = discountPrice;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -189,6 +244,11 @@ public class AmsProduct implements Serializable {
         sb.append(", detailPic=").append(detailPic);
         sb.append(", status=").append(status);
         sb.append(", isDelete=").append(isDelete);
+        sb.append(", salesVolume=").append(salesVolume);
+        sb.append(", commentNum=").append(commentNum);
+        sb.append(", stock=").append(stock);
+        sb.append(", isDiscount=").append(isDiscount);
+        sb.append(", discountPrice=").append(discountPrice);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

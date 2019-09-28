@@ -24,7 +24,7 @@ public class AmsProductServiceImpl implements AmsProductService {
 
     @Override
     public Integer add(AmsProduct amsProduct) {
-        Integer record = amsProductMapper.insert(amsProduct);
+        Integer record = amsProductMapper.insertSelective(amsProduct);
         return record;
     }
 
@@ -56,5 +56,11 @@ public class AmsProductServiceImpl implements AmsProductService {
         example.setOrderByClause(" id desc ");
         List<AmsProduct> list = amsProductMapper.selectByExample(example);
         return list;
+    }
+
+    @Override
+    public AmsProduct detail(Integer id) {
+        AmsProduct amsProduct = amsProductMapper.selectByPrimaryKey(id);
+        return amsProduct;
     }
 }

@@ -20,4 +20,9 @@ public interface AmsProductService {
    * 列表
    */
    List<AmsProduct> list(AmsProductQueryParam param,Integer pageNum,Integer pageSize);
+   /*
+    *查看详情
+    */
+   AmsProduct detail (Integer id);
+
 }

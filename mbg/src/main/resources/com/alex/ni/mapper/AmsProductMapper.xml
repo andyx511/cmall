@@ -17,6 +17,11 @@
     <result column="detail_pic" jdbcType="VARCHAR" property="detailPic" />
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
+    <result column="sales_volume" jdbcType="INTEGER" property="salesVolume" />
+    <result column="comment_num" jdbcType="INTEGER" property="commentNum" />
+    <result column="stock" jdbcType="INTEGER" property="stock" />
+    <result column="is_discount" jdbcType="INTEGER" property="isDiscount" />
+    <result column="discount_price" jdbcType="DECIMAL" property="discountPrice" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -78,7 +83,7 @@
   </sql>
   <sql id="Base_Column_List">
     id, name, kind, brand, pic, is_new, is_public, sort, price, unit, gift_growth, gift_point, 
-    detail_pic, status, is_delete
+    detail_pic, status, is_delete, sales_volume, comment_num, stock, is_discount, discount_price
   </sql>
   <select id="selectByExample" parameterType="com.alex.ni.model.AmsProductExample" resultMap="BaseResultMap">
     select
@@ -118,12 +123,16 @@
       pic, is_new, is_public, 
       sort, price, unit, 
       gift_growth, gift_point, detail_pic, 
-      status, is_delete)
+      status, is_delete, sales_volume, 
+      comment_num, stock, is_discount, 
+      discount_price)
     values (#{name,jdbcType=VARCHAR}, #{kind,jdbcType=VARCHAR}, #{brand,jdbcType=VARCHAR}, 
       #{pic,jdbcType=VARCHAR}, #{isNew,jdbcType=INTEGER}, #{isPublic,jdbcType=INTEGER}, 
       #{sort,jdbcType=INTEGER}, #{price,jdbcType=DECIMAL}, #{unit,jdbcType=VARCHAR}, 
       #{giftGrowth,jdbcType=INTEGER}, #{giftPoint,jdbcType=INTEGER}, #{detailPic,jdbcType=VARCHAR}, 
-      #{status,jdbcType=INTEGER}, #{isDelete,jdbcType=INTEGER})
+      #{status,jdbcType=INTEGER}, #{isDelete,jdbcType=INTEGER}, #{salesVolume,jdbcType=INTEGER}, 
+      #{commentNum,jdbcType=INTEGER}, #{stock,jdbcType=INTEGER}, #{isDiscount,jdbcType=INTEGER}, 
+      #{discountPrice,jdbcType=DECIMAL})
   </insert>
   <insert id="insertSelective" parameterType="com.alex.ni.model.AmsProduct">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
@@ -173,6 +182,21 @@
       <if test="isDelete != null">
         is_delete,
       </if>
+      <if test="salesVolume != null">
+        sales_volume,
+      </if>
+      <if test="commentNum != null">
+        comment_num,
+      </if>
+      <if test="stock != null">
+        stock,
+      </if>
+      <if test="isDiscount != null">
+        is_discount,
+      </if>
+      <if test="discountPrice != null">
+        discount_price,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="name != null">
@@ -216,6 +240,21 @@
       </if>
       <if test="isDelete != null">
         #{isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="salesVolume != null">
+        #{salesVolume,jdbcType=INTEGER},
+      </if>
+      <if test="commentNum != null">
+        #{commentNum,jdbcType=INTEGER},
+      </if>
+      <if test="stock != null">
+        #{stock,jdbcType=INTEGER},
+      </if>
+      <if test="isDiscount != null">
+        #{isDiscount,jdbcType=INTEGER},
+      </if>
+      <if test="discountPrice != null">
+        #{discountPrice,jdbcType=DECIMAL},
       </if>
     </trim>
   </insert>
@@ -273,6 +312,21 @@
       <if test="record.isDelete != null">
         is_delete = #{record.isDelete,jdbcType=INTEGER},
       </if>
+      <if test="record.salesVolume != null">
+        sales_volume = #{record.salesVolume,jdbcType=INTEGER},
+      </if>
+      <if test="record.commentNum != null">
+        comment_num = #{record.commentNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.stock != null">
+        stock = #{record.stock,jdbcType=INTEGER},
+      </if>
+      <if test="record.isDiscount != null">
+        is_discount = #{record.isDiscount,jdbcType=INTEGER},
+      </if>
+      <if test="record.discountPrice != null">
+        discount_price = #{record.discountPrice,jdbcType=DECIMAL},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -294,7 +348,12 @@
       gift_point = #{record.giftPoint,jdbcType=INTEGER},
       detail_pic = #{record.detailPic,jdbcType=VARCHAR},
       status = #{record.status,jdbcType=INTEGER},
-      is_delete = #{record.isDelete,jdbcType=INTEGER}
+      is_delete = #{record.isDelete,jdbcType=INTEGER},
+      sales_volume = #{record.salesVolume,jdbcType=INTEGER},
+      comment_num = #{record.commentNum,jdbcType=INTEGER},
+      stock = #{record.stock,jdbcType=INTEGER},
+      is_discount = #{record.isDiscount,jdbcType=INTEGER},
+      discount_price = #{record.discountPrice,jdbcType=DECIMAL}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -344,6 +403,21 @@
       <if test="isDelete != null">
         is_delete = #{isDelete,jdbcType=INTEGER},
       </if>
+      <if test="salesVolume != null">
+        sales_volume = #{salesVolume,jdbcType=INTEGER},
+      </if>
+      <if test="commentNum != null">
+        comment_num = #{commentNum,jdbcType=INTEGER},
+      </if>
+      <if test="stock != null">
+        stock = #{stock,jdbcType=INTEGER},
+      </if>
+      <if test="isDiscount != null">
+        is_discount = #{isDiscount,jdbcType=INTEGER},
+      </if>
+      <if test="discountPrice != null">
+        discount_price = #{discountPrice,jdbcType=DECIMAL},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -362,7 +436,12 @@
       gift_point = #{giftPoint,jdbcType=INTEGER},
       detail_pic = #{detailPic,jdbcType=VARCHAR},
       status = #{status,jdbcType=INTEGER},
-      is_delete = #{isDelete,jdbcType=INTEGER}
+      is_delete = #{isDelete,jdbcType=INTEGER},
+      sales_volume = #{salesVolume,jdbcType=INTEGER},
+      comment_num = #{commentNum,jdbcType=INTEGER},
+      stock = #{stock,jdbcType=INTEGER},
+      is_discount = #{isDiscount,jdbcType=INTEGER},
+      discount_price = #{discountPrice,jdbcType=DECIMAL}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
