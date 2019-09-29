@@ -7,12 +7,15 @@ import com.alex.ni.model.AmsBrand;
 import com.alex.ni.model.AmsProduct;
 import com.alex.ni.service.AmsProductService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.concurrent.CompletionService;
 
 /**
  * @author NiDingbo
@@ -49,6 +52,52 @@ public class AmsProductController {
     @ResponseBody
     public CommonResult detail(@PathVariable("id") Integer id ){
         AmsProduct record = amsProductService.detail(id);
+        return CommonResult.success(record);
+    }
+
+    @ApiOperation("批量删除")
+    @RequestMapping(value = "/delete",method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult delete(@RequestBody List<Integer> ids){
+        Integer count = amsProductService.delete(ids);
+        return CommonResult.success(count);
+    }
+
+    @ApiOperation("修改是否新品")
+    @RequestMapping(value = "/updateIsNew",method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult updateIsNew(@RequestParam("id")Integer id, @RequestParam("isNew")Integer isNew){
+        AmsProduct amsProduct = new AmsProduct();
+        amsProduct.setId(id);
+        amsProduct.setIsNew(isNew);
+        Integer record = amsProductService.update(amsProduct);
+        return CommonResult.success(record);
+    }
+    @ApiOperation("修改是否新品")
+    @RequestMapping(value = "/updateIsPublic",method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult updateIsPublic(@RequestParam("id")Integer id, @RequestParam("isPublic")Integer isPublic){
+        AmsProduct amsProduct = new AmsProduct();
+        amsProduct.setId(id);
+        amsProduct.setIsPublic(isPublic);
+        Integer record = amsProductService.update(amsProduct);
+        return CommonResult.success(record);
+    }
+    @ApiOperation("更新库存")
+    @RequestMapping(value = "/updateStock",method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult updateStock(@RequestParam("id")Integer id, @RequestParam("num")Integer num){
+        Integer record = amsProductService.updateStock(id,num);
+        return CommonResult.success(record);
+    }
+    @ApiOperation("更新审核状态")
+    @RequestMapping(value = "/updateStatus",method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult updateStatus(@RequestParam("id")Integer id, @RequestParam("status")Integer status){
+        AmsProduct amsProduct = new AmsProduct();
+        amsProduct.setId(id);
+        amsProduct.setStatus(status);
+        Integer record = amsProductService.update(amsProduct);
         return CommonResult.success(record);
     }
 }

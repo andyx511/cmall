@@ -24,5 +24,17 @@ public interface AmsProductService {
     *查看详情
     */
    AmsProduct detail (Integer id);
+   /**
+   * 批量删除
+   */
+   Integer delete(List<Integer> ids);
 
+   /**
+   * 更新
+   */
+   Integer update(AmsProduct amsProduct);
+   /**
+   * 更新库存
+   */
+   Integer updateStock(Integer id,Integer num);
 }

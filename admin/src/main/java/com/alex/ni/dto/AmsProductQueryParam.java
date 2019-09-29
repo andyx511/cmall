@@ -26,4 +26,6 @@ public class AmsProductQueryParam {
     private BigDecimal minPrice;
     @ApiModelProperty("最高价格")
     private BigDecimal maxPrice;
+    @ApiModelProperty("审核状态")
+    private Integer status;
 }
