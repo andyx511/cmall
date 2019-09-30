@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c82b2aba-5ebe-44fa-aa61-d897d628550a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dao/AmsProductDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/dao/AmsProductDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dto/AmsProductQueryParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dto/AmsProductQueryParam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsProductServiceImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -57,8 +51,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsProductController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="93" column="42" selection-start-line="93" selection-start-column="30" selection-end-line="93" selection-end-column="42" />
+            <state relative-caret-position="227">
+              <caret line="108" selection-start-line="108" selection-end-line="108" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -117,8 +111,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsProductService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+            <state relative-caret-position="272">
+              <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -246,10 +240,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-185" />
-    <option name="y" value="228" />
-    <option name="width" value="1900" />
-    <option name="height" value="905" />
+    <option name="x" value="-8" />
+    <option name="y" value="1" />
+    <option name="width" value="1712" />
+    <option name="height" value="1014" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -553,7 +547,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128216000" />
+    <option name="totallyTimeSpent" value="132194000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -565,10 +559,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-185" y="228" width="1900" height="905" extended-state="0" />
+    <frame x="-8" y="1" width="1712" height="1014" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19836956" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22094432" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -588,11 +582,11 @@
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32903227" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" weight="0.24295011" />
-      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49968535" weight="0.318872" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49968535" weight="0.3181818" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" />
       <window_info anchor="bottom" id="Database Changes" order="14" />
       <window_info anchor="bottom" id="Version Control" order="15" weight="0.3286334" />
-      <window_info active="true" anchor="bottom" id="Run Dashboard" order="16" sideWeight="0.49946696" visible="true" weight="0.41245136" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="16" sideWeight="0.49946696" visible="true" weight="0.35681817" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1075,16 +1069,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsProductService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsProductServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -1095,10 +1079,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsProductService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsProductController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="93" column="42" selection-start-line="93" selection-start-column="30" selection-end-line="93" selection-end-column="42" />
+        <state relative-caret-position="227">
+          <caret line="108" selection-start-line="108" selection-end-line="108" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

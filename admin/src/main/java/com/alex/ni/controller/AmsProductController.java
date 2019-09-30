@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.concurrent.CompletionService;
 
@@ -48,7 +49,7 @@ public class AmsProductController {
     }
 
     @ApiOperation("商品detail")
-    @RequestMapping(value = "/detail/{id}",method = RequestMethod.POST)
+    @RequestMapping(value = "/detail/{id}",method = RequestMethod.GET)
     @ResponseBody
     public CommonResult detail(@PathVariable("id") Integer id ){
         AmsProduct record = amsProductService.detail(id);
@@ -97,6 +98,17 @@ public class AmsProductController {
         AmsProduct amsProduct = new AmsProduct();
         amsProduct.setId(id);
         amsProduct.setStatus(status);
+        Integer record = amsProductService.update(amsProduct);
+        return CommonResult.success(record);
+    }
+
+    @ApiOperation("更新商品信息状态")
+    @RequestMapping(value = "/update",method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult updateProduct(@RequestBody AmsProduct amsProduct){
+        if (amsProduct.getIsDiscount()==0){
+            amsProduct.setDiscountPrice(BigDecimal.ZERO);
+        }
         Integer record = amsProductService.update(amsProduct);
         return CommonResult.success(record);
     }
