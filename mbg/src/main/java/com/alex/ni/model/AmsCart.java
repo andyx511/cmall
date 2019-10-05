@@ -23,6 +23,9 @@ public class AmsCart implements Serializable {
 
     private Integer isDelete;
 
+    @ApiModelProperty(value = "0未选择，1选中")
+    private Integer checked;
+
     private static final long serialVersionUID = 1L;
 
     public Integer getId() {
@@ -97,6 +100,14 @@ public class AmsCart implements Serializable {
         this.isDelete = isDelete;
     }
 
+    public Integer getChecked() {
+        return checked;
+    }
+
+    public void setChecked(Integer checked) {
+        this.checked = checked;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -112,6 +123,7 @@ public class AmsCart implements Serializable {
         sb.append(", productBrand=").append(productBrand);
         sb.append(", createTime=").append(createTime);
         sb.append(", isDelete=").append(isDelete);
+        sb.append(", checked=").append(checked);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

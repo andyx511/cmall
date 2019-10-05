@@ -64,7 +64,7 @@ public class AmsKindController {
         Integer record = amsKindService.update(amsKind);
         return CommonResult.success(record);
     }
-    @ApiOperation("update")
+    @ApiOperation("delete")
     @RequestMapping(value = "/delete",method = RequestMethod.GET)
     @ResponseBody
     public CommonResult delete(@Param("id") Integer id){

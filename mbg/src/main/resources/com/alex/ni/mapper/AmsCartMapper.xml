@@ -11,6 +11,7 @@
     <result column="product_brand" jdbcType="VARCHAR" property="productBrand" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
+    <result column="checked" jdbcType="INTEGER" property="checked" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -72,7 +73,7 @@
   </sql>
   <sql id="Base_Column_List">
     id, product_id, member_id, num, member_name, product_kind, product_brand, create_time, 
-    is_delete
+    is_delete, checked
   </sql>
   <select id="selectByExample" parameterType="com.alex.ni.model.AmsCartExample" resultMap="BaseResultMap">
     select
@@ -110,10 +111,12 @@
     </selectKey>
     insert into ams_cart (product_id, member_id, num, 
       member_name, product_kind, product_brand, 
-      create_time, is_delete)
+      create_time, is_delete, checked
+      )
     values (#{productId,jdbcType=INTEGER}, #{memberId,jdbcType=INTEGER}, #{num,jdbcType=INTEGER}, 
       #{memberName,jdbcType=VARCHAR}, #{productKind,jdbcType=VARCHAR}, #{productBrand,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{isDelete,jdbcType=INTEGER})
+      #{createTime,jdbcType=TIMESTAMP}, #{isDelete,jdbcType=INTEGER}, #{checked,jdbcType=INTEGER}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.alex.ni.model.AmsCart">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
@@ -145,6 +148,9 @@
       <if test="isDelete != null">
         is_delete,
       </if>
+      <if test="checked != null">
+        checked,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="productId != null">
@@ -170,6 +176,9 @@
       </if>
       <if test="isDelete != null">
         #{isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="checked != null">
+        #{checked,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -209,6 +218,9 @@
       <if test="record.isDelete != null">
         is_delete = #{record.isDelete,jdbcType=INTEGER},
       </if>
+      <if test="record.checked != null">
+        checked = #{record.checked,jdbcType=INTEGER},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -224,7 +236,8 @@
       product_kind = #{record.productKind,jdbcType=VARCHAR},
       product_brand = #{record.productBrand,jdbcType=VARCHAR},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
-      is_delete = #{record.isDelete,jdbcType=INTEGER}
+      is_delete = #{record.isDelete,jdbcType=INTEGER},
+      checked = #{record.checked,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -256,6 +269,9 @@
       <if test="isDelete != null">
         is_delete = #{isDelete,jdbcType=INTEGER},
       </if>
+      <if test="checked != null">
+        checked = #{checked,jdbcType=INTEGER},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -268,7 +284,8 @@
       product_kind = #{productKind,jdbcType=VARCHAR},
       product_brand = #{productBrand,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
-      is_delete = #{isDelete,jdbcType=INTEGER}
+      is_delete = #{isDelete,jdbcType=INTEGER},
+      checked = #{checked,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

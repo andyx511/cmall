@@ -21,6 +21,10 @@ public class AmsUser implements Serializable {
     @ApiModelProperty(value = "是否删除0=>未删除，1=>已删除")
     private Integer isDelete;
 
+    private String phone;
+
+    private Integer roleId;
+
     private static final long serialVersionUID = 1L;
 
     public Integer getId() {
@@ -79,6 +83,22 @@ public class AmsUser implements Serializable {
         this.isDelete = isDelete;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public Integer getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -92,6 +112,8 @@ public class AmsUser implements Serializable {
         sb.append(", status=").append(status);
         sb.append(", note=").append(note);
         sb.append(", isDelete=").append(isDelete);
+        sb.append(", phone=").append(phone);
+        sb.append(", roleId=").append(roleId);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

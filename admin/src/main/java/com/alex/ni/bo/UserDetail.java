@@ -1,5 +1,6 @@
 package com.alex.ni.bo;
 
+import com.alex.ni.model.AmsUser;
 import com.alex.ni.model.UmsAdmin;
 import com.alex.ni.model.UmsPermission;
 import org.springframework.security.core.GrantedAuthority;
@@ -9,17 +10,17 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
-/*
-*
- * SpringSecurity需要的用户详情
 
+/**
+ * @author NiDingbo
+ * @date 2019/10/5 11:05
  */
 
-public class AdminUserDetails implements UserDetails {
-    private UmsAdmin umsAdmin;
+public class UserDetail implements UserDetails {
+    private AmsUser amsUser;
     private List<UmsPermission> permissionList;
-    public AdminUserDetails(UmsAdmin umsAdmin,List<UmsPermission> permissionList) {
-        this.umsAdmin = umsAdmin;
+    public UserDetail(AmsUser amsUser,List<UmsPermission> permissionList) {
+        this.amsUser = amsUser;
         this.permissionList = permissionList;
     }
 
@@ -34,12 +35,12 @@ public class AdminUserDetails implements UserDetails {
 
     @Override
     public String getPassword() {
-        return umsAdmin.getPassword();
+        return amsUser.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return umsAdmin.getUsername();
+        return amsUser.getName();
     }
 
     @Override
@@ -59,10 +60,10 @@ public class AdminUserDetails implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return umsAdmin.getStatus().equals(1);
+        return amsUser.getIsDelete().equals(0);
     }
 
-    public UmsAdmin getUmsAdmin(){
-        return umsAdmin;
-    }
+    public AmsUser getAmsUser(){return amsUser;}
+
+    public String getPhone() {return  amsUser.getPhone();}
 }

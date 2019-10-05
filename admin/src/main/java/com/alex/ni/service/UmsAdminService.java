@@ -1,6 +1,8 @@
 package com.alex.ni.service;
 
 
+import com.alex.ni.bo.AdminUserDetails;
+import com.alex.ni.dto.UmsAdminParam;
 import com.alex.ni.model.UmsAdmin;
 import com.alex.ni.model.UmsPermission;
 
@@ -8,7 +10,7 @@ import java.util.List;
 
 /**
  * 后台管理员Service
- * Created by macro on 2018/4/26.
+
  */
 public interface UmsAdminService {
     /**
@@ -28,4 +30,19 @@ public interface UmsAdminService {
      */
     List<UmsPermission> getPermissionList(Long adminId);
 
+    /**
+     * 获取当前用户
+     */
+    AdminUserDetails getCurrentUser();
+
+    /**
+     * 注册
+     */
+    UmsAdmin register(UmsAdminParam umsAdminParam);
+
+    /**
+     *
+     *获取当前用户的角色
+     */
+    List<String> getUserRoles(Long userId);
 }

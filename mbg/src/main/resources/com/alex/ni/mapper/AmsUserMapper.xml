@@ -9,6 +9,8 @@
     <result column="status" jdbcType="VARCHAR" property="status" />
     <result column="note" jdbcType="VARCHAR" property="note" />
     <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="role_id" jdbcType="INTEGER" property="roleId" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -69,7 +71,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, name, password, iocn, status, note, is_delete
+    id, name, password, iocn, status, note, is_delete, phone, role_id
   </sql>
   <select id="selectByExample" parameterType="com.alex.ni.model.AmsUserExample" resultMap="BaseResultMap">
     select
@@ -106,11 +108,11 @@
       SELECT LAST_INSERT_ID()
     </selectKey>
     insert into ams_user (name, password, iocn, 
-      status, note, is_delete
-      )
+      status, note, is_delete, 
+      phone, role_id)
     values (#{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{iocn,jdbcType=VARCHAR}, 
-      #{status,jdbcType=VARCHAR}, #{note,jdbcType=VARCHAR}, #{isDelete,jdbcType=INTEGER}
-      )
+      #{status,jdbcType=VARCHAR}, #{note,jdbcType=VARCHAR}, #{isDelete,jdbcType=INTEGER}, 
+      #{phone,jdbcType=VARCHAR}, #{roleId,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.alex.ni.model.AmsUser">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
@@ -136,6 +138,12 @@
       <if test="isDelete != null">
         is_delete,
       </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="roleId != null">
+        role_id,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="name != null">
@@ -155,6 +163,12 @@
       </if>
       <if test="isDelete != null">
         #{isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="roleId != null">
+        #{roleId,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -188,6 +202,12 @@
       <if test="record.isDelete != null">
         is_delete = #{record.isDelete,jdbcType=INTEGER},
       </if>
+      <if test="record.phone != null">
+        phone = #{record.phone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.roleId != null">
+        role_id = #{record.roleId,jdbcType=INTEGER},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -201,7 +221,9 @@
       iocn = #{record.iocn,jdbcType=VARCHAR},
       status = #{record.status,jdbcType=VARCHAR},
       note = #{record.note,jdbcType=VARCHAR},
-      is_delete = #{record.isDelete,jdbcType=INTEGER}
+      is_delete = #{record.isDelete,jdbcType=INTEGER},
+      phone = #{record.phone,jdbcType=VARCHAR},
+      role_id = #{record.roleId,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -227,6 +249,12 @@
       <if test="isDelete != null">
         is_delete = #{isDelete,jdbcType=INTEGER},
       </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="roleId != null">
+        role_id = #{roleId,jdbcType=INTEGER},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -237,7 +265,9 @@
       iocn = #{iocn,jdbcType=VARCHAR},
       status = #{status,jdbcType=VARCHAR},
       note = #{note,jdbcType=VARCHAR},
-      is_delete = #{isDelete,jdbcType=INTEGER}
+      is_delete = #{isDelete,jdbcType=INTEGER},
+      phone = #{phone,jdbcType=VARCHAR},
+      role_id = #{roleId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

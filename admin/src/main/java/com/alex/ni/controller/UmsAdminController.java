@@ -1,20 +1,26 @@
 package com.alex.ni.controller;
 
 import com.alex.ni.api.CommonResult;
+
 import com.alex.ni.dto.UmsAdminLoginParam;
+import com.alex.ni.dto.UmsAdminParam;
 import com.alex.ni.model.UmsAdmin;
 import com.alex.ni.service.UmsAdminService;
 import com.alex.ni.util.RandomValidateCodeUtil;
 import com.alex.ni.util.VerificationCodeUtils;
+import com.alex.ni.utils.StringUtil;
 import com.aliyuncs.exceptions.ClientException;
+
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import net.sf.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -23,6 +29,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.security.Principal;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -64,14 +71,40 @@ public class UmsAdminController {
         }
     }
 
-    @ApiOperation("获取验证码")
-    @RequestMapping(value = "/getVCode", method = RequestMethod.GET)
+    @ApiOperation(
+            value = "发送短信验证码",
+            notes =
+                    "{\n" + "    \"phone\":\"15224563576\",\n" + "    \"type\":\"register or reset\"\n" + "}")
+    @RequestMapping(value = "/getVCode", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult getVCode() throws ClientException {
-        boolean flag = verificationCodeUtils.sendrVerificationCode("18257198894");
-        String str = verificationCodeUtils.getVerificationCodeByType("18257198894");
+    public CommonResult getVCode(@RequestBody JSONObject jsonObject) throws ClientException {
+//        boolean flag = verificationCodeUtils.sendrVerificationCode("18257198894");
+//        String str = verificationCodeUtils.getVerificationCodeByType("18257198894");
         //从session中获取验证码
-        return CommonResult.success(flag);
+        if (!jsonObject.containsKey("phone")|| StringUtil.isEmpty(jsonObject.getString("phone"))){
+            return CommonResult.failed("缺失手机号");
+        }
+        String phone = jsonObject.getString("phone");
+        String type = jsonObject.getString("type");
+        // 校验手机号是否符合格式
+        boolean checkResult = StringUtil.checkPhoneNumber(phone.trim());
+        if (!checkResult) {
+            return CommonResult.failed("手机号格式错误");
+        }
+        UmsAdmin umsAdmin = adminService.getAdminByUsername(phone);
+
+        if ("register".equalsIgnoreCase(jsonObject.getString("type"))){
+            if(umsAdmin != null){
+                return CommonResult.failed("该手机号已被注册");
+            }
+            boolean flag = verificationCodeUtils.sendrVerificationCode("18257198894");
+        }else if("reset".equalsIgnoreCase(jsonObject.getString("type"))){
+            if(umsAdmin == null){
+                return CommonResult.failed("该手机号未被注册");
+            }
+            boolean flag = verificationCodeUtils.sendrVerificationCode("18257198894");
+        }
+        return CommonResult.success();
     }
 
     @ApiOperation(value = "登录以后返回token")
@@ -79,8 +112,8 @@ public class UmsAdminController {
     @ResponseBody
     public CommonResult login(@RequestBody UmsAdminLoginParam umsAdminLoginParam,HttpServletRequest request) {
         HttpSession session = request.getSession();
-        String random = (String) session.getAttribute(RandomValidateCodeUtil.RANDOMCODEKEY);
-        String tcode = umsAdminLoginParam.getTCode();
+//        String random = (String) session.getAttribute(RandomValidateCodeUtil.RANDOMCODEKEY);
+//        String tcode = umsAdminLoginParam.getTCode();
         String token = adminService.login(umsAdminLoginParam.getUsername(), umsAdminLoginParam.getPassword());
         if (token == null) {
             return CommonResult.validateFailed("用户名或密码错误");
@@ -100,7 +133,8 @@ public class UmsAdminController {
         UmsAdmin umsAdmin = adminService.getAdminByUsername(username);
         Map<String, Object> data = new HashMap<>();
         data.put("username", umsAdmin.getUsername());
-        data.put("roles", new String[]{"admin"});
+        List<String> list = adminService.getUserRoles(umsAdmin.getId());
+        data.put("roles",list);
         data.put("avatar", umsAdmin.getIcon());
         return CommonResult.success(data);
     }
@@ -110,6 +144,23 @@ public class UmsAdminController {
     @ResponseBody
     public CommonResult logout() {
         return CommonResult.success(null);
+    }
+
+    @ApiOperation(value = "用户注册")
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult<UmsAdmin> register(@RequestBody UmsAdminParam umsAdminParam) {
+
+        //验证码校验
+        String resCode = verificationCodeUtils.getVerificationCodeByType(umsAdminParam.getUsername());
+        if (resCode != umsAdminParam.getVCode()){
+            return CommonResult.failed("验证码错误");
+        }
+        UmsAdmin umsAdmin = adminService.register(umsAdminParam);
+        if (umsAdmin == null) {
+            return CommonResult.failed();
+        }
+        return CommonResult.success(umsAdmin);
     }
 
 }
