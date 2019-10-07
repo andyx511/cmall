@@ -14,6 +14,7 @@
     <result column="unit" jdbcType="VARCHAR" property="unit" />
     <result column="gift_growth" jdbcType="INTEGER" property="giftGrowth" />
     <result column="gift_point" jdbcType="INTEGER" property="giftPoint" />
+    <result column="detail_pic" jdbcType="VARCHAR" property="detailPic" />
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
     <result column="sales_volume" jdbcType="INTEGER" property="salesVolume" />
@@ -21,9 +22,6 @@
     <result column="stock" jdbcType="INTEGER" property="stock" />
     <result column="is_discount" jdbcType="INTEGER" property="isDiscount" />
     <result column="discount_price" jdbcType="DECIMAL" property="discountPrice" />
-  </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.alex.ni.model.AmsProduct">
-    <result column="detail_pic" jdbcType="LONGVARCHAR" property="detailPic" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -85,27 +83,8 @@
   </sql>
   <sql id="Base_Column_List">
     id, name, kind, brand, pic, is_new, is_public, sort, price, unit, gift_growth, gift_point, 
-    status, is_delete, sales_volume, comment_num, stock, is_discount, discount_price
+    detail_pic, status, is_delete, sales_volume, comment_num, stock, is_discount, discount_price
   </sql>
-  <sql id="Blob_Column_List">
-    detail_pic
-  </sql>
-  <select id="selectByExampleWithBLOBs" parameterType="com.alex.ni.model.AmsProductExample" resultMap="ResultMapWithBLOBs">
-    select
-    <if test="distinct">
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
-    from ams_product
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null">
-      order by ${orderByClause}
-    </if>
-  </select>
   <select id="selectByExample" parameterType="com.alex.ni.model.AmsProductExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
@@ -120,11 +99,9 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
     from ams_product
     where id = #{id,jdbcType=INTEGER}
   </select>
@@ -145,17 +122,17 @@
     insert into ams_product (name, kind, brand, 
       pic, is_new, is_public, 
       sort, price, unit, 
-      gift_growth, gift_point, status, 
-      is_delete, sales_volume, comment_num, 
-      stock, is_discount, discount_price, 
-      detail_pic)
+      gift_growth, gift_point, detail_pic, 
+      status, is_delete, sales_volume, 
+      comment_num, stock, is_discount, 
+      discount_price)
     values (#{name,jdbcType=VARCHAR}, #{kind,jdbcType=VARCHAR}, #{brand,jdbcType=VARCHAR}, 
       #{pic,jdbcType=VARCHAR}, #{isNew,jdbcType=INTEGER}, #{isPublic,jdbcType=INTEGER}, 
       #{sort,jdbcType=INTEGER}, #{price,jdbcType=DECIMAL}, #{unit,jdbcType=VARCHAR}, 
-      #{giftGrowth,jdbcType=INTEGER}, #{giftPoint,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, 
-      #{isDelete,jdbcType=INTEGER}, #{salesVolume,jdbcType=INTEGER}, #{commentNum,jdbcType=INTEGER}, 
-      #{stock,jdbcType=INTEGER}, #{isDiscount,jdbcType=INTEGER}, #{discountPrice,jdbcType=DECIMAL}, 
-      #{detailPic,jdbcType=LONGVARCHAR})
+      #{giftGrowth,jdbcType=INTEGER}, #{giftPoint,jdbcType=INTEGER}, #{detailPic,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER}, #{isDelete,jdbcType=INTEGER}, #{salesVolume,jdbcType=INTEGER}, 
+      #{commentNum,jdbcType=INTEGER}, #{stock,jdbcType=INTEGER}, #{isDiscount,jdbcType=INTEGER}, 
+      #{discountPrice,jdbcType=DECIMAL})
   </insert>
   <insert id="insertSelective" parameterType="com.alex.ni.model.AmsProduct">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
@@ -196,6 +173,9 @@
       <if test="giftPoint != null">
         gift_point,
       </if>
+      <if test="detailPic != null">
+        detail_pic,
+      </if>
       <if test="status != null">
         status,
       </if>
@@ -216,9 +196,6 @@
       </if>
       <if test="discountPrice != null">
         discount_price,
-      </if>
-      <if test="detailPic != null">
-        detail_pic,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -255,6 +232,9 @@
       <if test="giftPoint != null">
         #{giftPoint,jdbcType=INTEGER},
       </if>
+      <if test="detailPic != null">
+        #{detailPic,jdbcType=VARCHAR},
+      </if>
       <if test="status != null">
         #{status,jdbcType=INTEGER},
       </if>
@@ -275,9 +255,6 @@
       </if>
       <if test="discountPrice != null">
         #{discountPrice,jdbcType=DECIMAL},
-      </if>
-      <if test="detailPic != null">
-        #{detailPic,jdbcType=LONGVARCHAR},
       </if>
     </trim>
   </insert>
@@ -326,6 +303,9 @@
       <if test="record.giftPoint != null">
         gift_point = #{record.giftPoint,jdbcType=INTEGER},
       </if>
+      <if test="record.detailPic != null">
+        detail_pic = #{record.detailPic,jdbcType=VARCHAR},
+      </if>
       <if test="record.status != null">
         status = #{record.status,jdbcType=INTEGER},
       </if>
@@ -347,36 +327,7 @@
       <if test="record.discountPrice != null">
         discount_price = #{record.discountPrice,jdbcType=DECIMAL},
       </if>
-      <if test="record.detailPic != null">
-        detail_pic = #{record.detailPic,jdbcType=LONGVARCHAR},
-      </if>
     </set>
-    <if test="_parameter != null">
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByExampleWithBLOBs" parameterType="map">
-    update ams_product
-    set id = #{record.id,jdbcType=INTEGER},
-      name = #{record.name,jdbcType=VARCHAR},
-      kind = #{record.kind,jdbcType=VARCHAR},
-      brand = #{record.brand,jdbcType=VARCHAR},
-      pic = #{record.pic,jdbcType=VARCHAR},
-      is_new = #{record.isNew,jdbcType=INTEGER},
-      is_public = #{record.isPublic,jdbcType=INTEGER},
-      sort = #{record.sort,jdbcType=INTEGER},
-      price = #{record.price,jdbcType=DECIMAL},
-      unit = #{record.unit,jdbcType=VARCHAR},
-      gift_growth = #{record.giftGrowth,jdbcType=INTEGER},
-      gift_point = #{record.giftPoint,jdbcType=INTEGER},
-      status = #{record.status,jdbcType=INTEGER},
-      is_delete = #{record.isDelete,jdbcType=INTEGER},
-      sales_volume = #{record.salesVolume,jdbcType=INTEGER},
-      comment_num = #{record.commentNum,jdbcType=INTEGER},
-      stock = #{record.stock,jdbcType=INTEGER},
-      is_discount = #{record.isDiscount,jdbcType=INTEGER},
-      discount_price = #{record.discountPrice,jdbcType=DECIMAL},
-      detail_pic = #{record.detailPic,jdbcType=LONGVARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -395,6 +346,7 @@
       unit = #{record.unit,jdbcType=VARCHAR},
       gift_growth = #{record.giftGrowth,jdbcType=INTEGER},
       gift_point = #{record.giftPoint,jdbcType=INTEGER},
+      detail_pic = #{record.detailPic,jdbcType=VARCHAR},
       status = #{record.status,jdbcType=INTEGER},
       is_delete = #{record.isDelete,jdbcType=INTEGER},
       sales_volume = #{record.salesVolume,jdbcType=INTEGER},
@@ -442,6 +394,9 @@
       <if test="giftPoint != null">
         gift_point = #{giftPoint,jdbcType=INTEGER},
       </if>
+      <if test="detailPic != null">
+        detail_pic = #{detailPic,jdbcType=VARCHAR},
+      </if>
       <if test="status != null">
         status = #{status,jdbcType=INTEGER},
       </if>
@@ -463,33 +418,7 @@
       <if test="discountPrice != null">
         discount_price = #{discountPrice,jdbcType=DECIMAL},
       </if>
-      <if test="detailPic != null">
-        detail_pic = #{detailPic,jdbcType=LONGVARCHAR},
-      </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.alex.ni.model.AmsProduct">
-    update ams_product
-    set name = #{name,jdbcType=VARCHAR},
-      kind = #{kind,jdbcType=VARCHAR},
-      brand = #{brand,jdbcType=VARCHAR},
-      pic = #{pic,jdbcType=VARCHAR},
-      is_new = #{isNew,jdbcType=INTEGER},
-      is_public = #{isPublic,jdbcType=INTEGER},
-      sort = #{sort,jdbcType=INTEGER},
-      price = #{price,jdbcType=DECIMAL},
-      unit = #{unit,jdbcType=VARCHAR},
-      gift_growth = #{giftGrowth,jdbcType=INTEGER},
-      gift_point = #{giftPoint,jdbcType=INTEGER},
-      status = #{status,jdbcType=INTEGER},
-      is_delete = #{isDelete,jdbcType=INTEGER},
-      sales_volume = #{salesVolume,jdbcType=INTEGER},
-      comment_num = #{commentNum,jdbcType=INTEGER},
-      stock = #{stock,jdbcType=INTEGER},
-      is_discount = #{isDiscount,jdbcType=INTEGER},
-      discount_price = #{discountPrice,jdbcType=DECIMAL},
-      detail_pic = #{detailPic,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.alex.ni.model.AmsProduct">
@@ -505,6 +434,7 @@
       unit = #{unit,jdbcType=VARCHAR},
       gift_growth = #{giftGrowth,jdbcType=INTEGER},
       gift_point = #{giftPoint,jdbcType=INTEGER},
+      detail_pic = #{detailPic,jdbcType=VARCHAR},
       status = #{status,jdbcType=INTEGER},
       is_delete = #{isDelete,jdbcType=INTEGER},
       sales_volume = #{salesVolume,jdbcType=INTEGER},
