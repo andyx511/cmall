@@ -13,10 +13,6 @@ public class AmsMember implements Serializable {
 
     private String nickname;
 
-    private String phone;
-
-    private String password;
-
     private String mail;
 
     private String sex;
@@ -61,22 +57,6 @@ public class AmsMember implements Serializable {
 
     public void setNickname(String nickname) {
         this.nickname = nickname;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getMail() {
@@ -152,8 +132,6 @@ public class AmsMember implements Serializable {
         sb.append(", id=").append(id);
         sb.append(", userId=").append(userId);
         sb.append(", nickname=").append(nickname);
-        sb.append(", phone=").append(phone);
-        sb.append(", password=").append(password);
         sb.append(", mail=").append(mail);
         sb.append(", sex=").append(sex);
         sb.append(", status=").append(status);

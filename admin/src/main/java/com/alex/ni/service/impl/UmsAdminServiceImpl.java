@@ -4,12 +4,10 @@ import com.alex.ni.bo.AdminUserDetails;
 import com.alex.ni.dao.UmsAdminRoleRelationDao;
 import com.alex.ni.dao.UserRoleDao;
 import com.alex.ni.dto.UmsAdminParam;
+import com.alex.ni.mapper.AmsMemberMapper;
 import com.alex.ni.mapper.AmsUserRoleRelationMapper;
 import com.alex.ni.mapper.UmsAdminMapper;
-import com.alex.ni.model.AmsUserRoleRelation;
-import com.alex.ni.model.UmsAdmin;
-import com.alex.ni.model.UmsAdminExample;
-import com.alex.ni.model.UmsPermission;
+import com.alex.ni.model.*;
 import com.alex.ni.service.UmsAdminService;
 import com.alex.ni.util.JwtTokenUtil;
 import io.swagger.annotations.ApiModelProperty;
@@ -27,6 +25,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -58,6 +57,8 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     private UserRoleDao userRoleDao;
     @Autowired
     private AmsUserRoleRelationMapper userRoleRelationMapper;
+    @Autowired
+    private AmsMemberMapper memberMapper;
 
     @Override
     public UmsAdmin getAdminByUsername(String username) {
@@ -104,6 +105,7 @@ public class UmsAdminServiceImpl implements UmsAdminService {
         return userDetail;
     }
 
+    @Transactional
     @Override
     public UmsAdmin register(UmsAdminParam umsAdminParam) {
         UmsAdmin umsAdmin = new UmsAdmin();
@@ -121,14 +123,19 @@ public class UmsAdminServiceImpl implements UmsAdminService {
         //将密码进行加密操作
         String encodePassword = passwordEncoder.encode(umsAdmin.getPassword());
         umsAdmin.setPassword(encodePassword);
-        adminMapper.insert(umsAdmin);
+        umsAdmin.setNickName(umsAdminParam.getNickname());
+        adminMapper.insertSelective(umsAdmin);
         // 创建用户与角色的关系
         AmsUserRoleRelation amsUserRoleRelation = new AmsUserRoleRelation();
         amsUserRoleRelation.setRoleId(3);
         amsUserRoleRelation.setUserId(umsAdmin.getId().intValue());
-        userRoleRelationMapper.insert(amsUserRoleRelation);
+        userRoleRelationMapper.insertSelective(amsUserRoleRelation);
         //创建用户与会员详细
-
+        AmsMember amsMember = new AmsMember();
+        amsMember.setCreateTime(new Date());
+        amsMember.setUserId(umsAdmin.getId().intValue());
+        amsMember.setNickname(umsAdmin.getNickName());
+        memberMapper.insertSelective(amsMember);
         return umsAdmin;
     }
 
@@ -136,6 +143,18 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     public List<String> getUserRoles(Long userId) {
         List<String> list = userRoleDao.getUserRoles(userId);
         return list;
+    }
+
+    @Override
+    public Integer reset(UmsAdminParam umsAdminParam) {
+        UmsAdmin admin = new UmsAdmin();
+        admin.setUsername(umsAdminParam.getUsername());
+        String encodePassword = passwordEncoder.encode(umsAdminParam.getPassword());
+        admin.setPassword(encodePassword);
+        UmsAdminExample example = new UmsAdminExample();
+        example.createCriteria().andUsernameEqualTo(umsAdminParam.getUsername());
+        Integer record = adminMapper.updateByExampleSelective(admin,example);
+        return record;
     }
     /**
      * 添加登录记录

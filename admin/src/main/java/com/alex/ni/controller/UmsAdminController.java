@@ -132,7 +132,7 @@ public class UmsAdminController {
         String username = principal.getName();
         UmsAdmin umsAdmin = adminService.getAdminByUsername(username);
         Map<String, Object> data = new HashMap<>();
-        data.put("username", umsAdmin.getUsername());
+        data.put("name", umsAdmin.getNickName());
         List<String> list = adminService.getUserRoles(umsAdmin.getId());
         data.put("roles",list);
         data.put("avatar", umsAdmin.getIcon());
@@ -151,9 +151,12 @@ public class UmsAdminController {
     @ResponseBody
     public CommonResult<UmsAdmin> register(@RequestBody UmsAdminParam umsAdminParam) {
 
+        if (!umsAdminParam.getPassword().equalsIgnoreCase(umsAdminParam.getRepassword())){
+            return CommonResult.failed("密码不一致");
+        }
         //验证码校验
         String resCode = verificationCodeUtils.getVerificationCodeByType(umsAdminParam.getUsername());
-        if (resCode != umsAdminParam.getVCode()){
+        if (!resCode.equalsIgnoreCase(umsAdminParam.getVcode()) ){
             return CommonResult.failed("验证码错误");
         }
         UmsAdmin umsAdmin = adminService.register(umsAdminParam);
@@ -163,4 +166,19 @@ public class UmsAdminController {
         return CommonResult.success(umsAdmin);
     }
 
+    @ApiOperation("密码重置")
+    @RequestMapping(value = "reset",method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult reset(@RequestBody UmsAdminParam umsAdminParam) {
+        if (!umsAdminParam.getPassword().equalsIgnoreCase(umsAdminParam.getRepassword())){
+            return CommonResult.failed("密码不一致");
+        }
+        //验证码校验
+        String resCode = verificationCodeUtils.getVerificationCodeByType(umsAdminParam.getUsername());
+        if (!resCode.equalsIgnoreCase(umsAdminParam.getVcode()) ){
+            return CommonResult.failed("验证码错误");
+        }
+        Integer record = adminService.reset(umsAdminParam);
+        return CommonResult.success(record);
+    }
 }

@@ -20,7 +20,11 @@ public class UmsAdminParam {
     private String password;
     @ApiModelProperty(value = "短信验证码",required = true)
     @NotEmpty(message = "密码不能为空")
-    private String vCode;
+    private String vcode;
+    @ApiModelProperty(value = "昵称",required = true)
+    private String nickname;
+    @ApiModelProperty(value = "确认密码",required = true)
+    private String repassword;
  /*   @ApiModelProperty(value = "用户头像")
     private String icon;*/
 /*    @ApiModelProperty(value = "邮箱")

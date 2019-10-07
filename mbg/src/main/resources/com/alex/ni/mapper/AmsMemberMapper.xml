@@ -5,8 +5,6 @@
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="user_id" jdbcType="INTEGER" property="userId" />
     <result column="nickname" jdbcType="VARCHAR" property="nickname" />
-    <result column="phone" jdbcType="VARCHAR" property="phone" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="mail" jdbcType="VARCHAR" property="mail" />
     <result column="sex" jdbcType="VARCHAR" property="sex" />
     <result column="status" jdbcType="INTEGER" property="status" />
@@ -75,8 +73,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, user_id, nickname, phone, password, mail, sex, status, create_time, growth, point, 
-    level_id, money
+    id, user_id, nickname, mail, sex, status, create_time, growth, point, level_id, money
   </sql>
   <select id="selectByExample" parameterType="com.alex.ni.model.AmsMemberExample" resultMap="BaseResultMap">
     select
@@ -112,16 +109,14 @@
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into ams_member (user_id, nickname, phone, 
-      password, mail, sex, 
-      status, create_time, growth, 
-      point, level_id, money
-      )
-    values (#{userId,jdbcType=INTEGER}, #{nickname,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
-      #{password,jdbcType=VARCHAR}, #{mail,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, 
-      #{status,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{growth,jdbcType=INTEGER}, 
-      #{point,jdbcType=INTEGER}, #{levelId,jdbcType=INTEGER}, #{money,jdbcType=DECIMAL}
-      )
+    insert into ams_member (user_id, nickname, mail, 
+      sex, status, create_time, 
+      growth, point, level_id, 
+      money)
+    values (#{userId,jdbcType=INTEGER}, #{nickname,jdbcType=VARCHAR}, #{mail,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{growth,jdbcType=INTEGER}, #{point,jdbcType=INTEGER}, #{levelId,jdbcType=INTEGER}, 
+      #{money,jdbcType=DECIMAL})
   </insert>
   <insert id="insertSelective" parameterType="com.alex.ni.model.AmsMember">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
@@ -134,12 +129,6 @@
       </if>
       <if test="nickname != null">
         nickname,
-      </if>
-      <if test="phone != null">
-        phone,
-      </if>
-      <if test="password != null">
-        password,
       </if>
       <if test="mail != null">
         mail,
@@ -172,12 +161,6 @@
       </if>
       <if test="nickname != null">
         #{nickname,jdbcType=VARCHAR},
-      </if>
-      <if test="phone != null">
-        #{phone,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null">
-        #{password,jdbcType=VARCHAR},
       </if>
       <if test="mail != null">
         #{mail,jdbcType=VARCHAR},
@@ -223,12 +206,6 @@
       <if test="record.nickname != null">
         nickname = #{record.nickname,jdbcType=VARCHAR},
       </if>
-      <if test="record.phone != null">
-        phone = #{record.phone,jdbcType=VARCHAR},
-      </if>
-      <if test="record.password != null">
-        password = #{record.password,jdbcType=VARCHAR},
-      </if>
       <if test="record.mail != null">
         mail = #{record.mail,jdbcType=VARCHAR},
       </if>
@@ -263,8 +240,6 @@
     set id = #{record.id,jdbcType=INTEGER},
       user_id = #{record.userId,jdbcType=INTEGER},
       nickname = #{record.nickname,jdbcType=VARCHAR},
-      phone = #{record.phone,jdbcType=VARCHAR},
-      password = #{record.password,jdbcType=VARCHAR},
       mail = #{record.mail,jdbcType=VARCHAR},
       sex = #{record.sex,jdbcType=VARCHAR},
       status = #{record.status,jdbcType=INTEGER},
@@ -285,12 +260,6 @@
       </if>
       <if test="nickname != null">
         nickname = #{nickname,jdbcType=VARCHAR},
-      </if>
-      <if test="phone != null">
-        phone = #{phone,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null">
-        password = #{password,jdbcType=VARCHAR},
       </if>
       <if test="mail != null">
         mail = #{mail,jdbcType=VARCHAR},
@@ -323,8 +292,6 @@
     update ams_member
     set user_id = #{userId,jdbcType=INTEGER},
       nickname = #{nickname,jdbcType=VARCHAR},
-      phone = #{phone,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
       mail = #{mail,jdbcType=VARCHAR},
       sex = #{sex,jdbcType=VARCHAR},
       status = #{status,jdbcType=INTEGER},

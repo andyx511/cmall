@@ -45,4 +45,11 @@ public interface UmsAdminService {
      *获取当前用户的角色
      */
     List<String> getUserRoles(Long userId);
+
+    /**
+     * fetch data by rule id
+     *重置密码
+     */
+    Integer reset(UmsAdminParam umsAdminParam);
+
 }
