@@ -2,6 +2,7 @@ package com.alex.ni.model;
 
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class AmsCart implements Serializable {
@@ -10,6 +11,10 @@ public class AmsCart implements Serializable {
     private Integer productId;
 
     private Integer memberId;
+
+    private BigDecimal price;
+
+    private BigDecimal totalPrice;
 
     private Integer num;
 
@@ -25,6 +30,10 @@ public class AmsCart implements Serializable {
 
     @ApiModelProperty(value = "0未选择，1选中")
     private Integer checked;
+
+    private String pic;
+
+    private String name;
 
     private static final long serialVersionUID = 1L;
 
@@ -50,6 +59,22 @@ public class AmsCart implements Serializable {
 
     public void setMemberId(Integer memberId) {
         this.memberId = memberId;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public BigDecimal getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(BigDecimal totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
     public Integer getNum() {
@@ -108,6 +133,22 @@ public class AmsCart implements Serializable {
         this.checked = checked;
     }
 
+    public String getPic() {
+        return pic;
+    }
+
+    public void setPic(String pic) {
+        this.pic = pic;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,6 +158,8 @@ public class AmsCart implements Serializable {
         sb.append(", id=").append(id);
         sb.append(", productId=").append(productId);
         sb.append(", memberId=").append(memberId);
+        sb.append(", price=").append(price);
+        sb.append(", totalPrice=").append(totalPrice);
         sb.append(", num=").append(num);
         sb.append(", memberName=").append(memberName);
         sb.append(", productKind=").append(productKind);
@@ -124,6 +167,8 @@ public class AmsCart implements Serializable {
         sb.append(", createTime=").append(createTime);
         sb.append(", isDelete=").append(isDelete);
         sb.append(", checked=").append(checked);
+        sb.append(", pic=").append(pic);
+        sb.append(", name=").append(name);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

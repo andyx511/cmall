@@ -875,6 +875,76 @@ public class AmsProductExample {
             return (Criteria) this;
         }
 
+        public Criteria andDetailPicIsNull() {
+            addCriterion("detail_pic is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailPicIsNotNull() {
+            addCriterion("detail_pic is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailPicEqualTo(String value) {
+            addCriterion("detail_pic =", value, "detailPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailPicNotEqualTo(String value) {
+            addCriterion("detail_pic <>", value, "detailPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailPicGreaterThan(String value) {
+            addCriterion("detail_pic >", value, "detailPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailPicGreaterThanOrEqualTo(String value) {
+            addCriterion("detail_pic >=", value, "detailPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailPicLessThan(String value) {
+            addCriterion("detail_pic <", value, "detailPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailPicLessThanOrEqualTo(String value) {
+            addCriterion("detail_pic <=", value, "detailPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailPicLike(String value) {
+            addCriterion("detail_pic like", value, "detailPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailPicNotLike(String value) {
+            addCriterion("detail_pic not like", value, "detailPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailPicIn(List<String> values) {
+            addCriterion("detail_pic in", values, "detailPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailPicNotIn(List<String> values) {
+            addCriterion("detail_pic not in", values, "detailPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailPicBetween(String value1, String value2) {
+            addCriterion("detail_pic between", value1, value2, "detailPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailPicNotBetween(String value1, String value2) {
+            addCriterion("detail_pic not between", value1, value2, "detailPic");
+            return (Criteria) this;
+        }
+
         public Criteria andStatusIsNull() {
             addCriterion("status is null");
             return (Criteria) this;
@@ -1292,6 +1362,76 @@ public class AmsProductExample {
 
         public Criteria andDiscountPriceNotBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("discount_price not between", value1, value2, "discountPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andDesIsNull() {
+            addCriterion("des is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDesIsNotNull() {
+            addCriterion("des is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDesEqualTo(String value) {
+            addCriterion("des =", value, "des");
+            return (Criteria) this;
+        }
+
+        public Criteria andDesNotEqualTo(String value) {
+            addCriterion("des <>", value, "des");
+            return (Criteria) this;
+        }
+
+        public Criteria andDesGreaterThan(String value) {
+            addCriterion("des >", value, "des");
+            return (Criteria) this;
+        }
+
+        public Criteria andDesGreaterThanOrEqualTo(String value) {
+            addCriterion("des >=", value, "des");
+            return (Criteria) this;
+        }
+
+        public Criteria andDesLessThan(String value) {
+            addCriterion("des <", value, "des");
+            return (Criteria) this;
+        }
+
+        public Criteria andDesLessThanOrEqualTo(String value) {
+            addCriterion("des <=", value, "des");
+            return (Criteria) this;
+        }
+
+        public Criteria andDesLike(String value) {
+            addCriterion("des like", value, "des");
+            return (Criteria) this;
+        }
+
+        public Criteria andDesNotLike(String value) {
+            addCriterion("des not like", value, "des");
+            return (Criteria) this;
+        }
+
+        public Criteria andDesIn(List<String> values) {
+            addCriterion("des in", values, "des");
+            return (Criteria) this;
+        }
+
+        public Criteria andDesNotIn(List<String> values) {
+            addCriterion("des not in", values, "des");
+            return (Criteria) this;
+        }
+
+        public Criteria andDesBetween(String value1, String value2) {
+            addCriterion("des between", value1, value2, "des");
+            return (Criteria) this;
+        }
+
+        public Criteria andDesNotBetween(String value1, String value2) {
+            addCriterion("des not between", value1, value2, "des");
             return (Criteria) this;
         }
     }

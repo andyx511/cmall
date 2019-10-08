@@ -22,6 +22,7 @@
     <result column="stock" jdbcType="INTEGER" property="stock" />
     <result column="is_discount" jdbcType="INTEGER" property="isDiscount" />
     <result column="discount_price" jdbcType="DECIMAL" property="discountPrice" />
+    <result column="des" jdbcType="VARCHAR" property="des" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -83,7 +84,8 @@
   </sql>
   <sql id="Base_Column_List">
     id, name, kind, brand, pic, is_new, is_public, sort, price, unit, gift_growth, gift_point, 
-    detail_pic, status, is_delete, sales_volume, comment_num, stock, is_discount, discount_price
+    detail_pic, status, is_delete, sales_volume, comment_num, stock, is_discount, discount_price, 
+    des
   </sql>
   <select id="selectByExample" parameterType="com.alex.ni.model.AmsProductExample" resultMap="BaseResultMap">
     select
@@ -125,14 +127,14 @@
       gift_growth, gift_point, detail_pic, 
       status, is_delete, sales_volume, 
       comment_num, stock, is_discount, 
-      discount_price)
+      discount_price, des)
     values (#{name,jdbcType=VARCHAR}, #{kind,jdbcType=VARCHAR}, #{brand,jdbcType=VARCHAR}, 
       #{pic,jdbcType=VARCHAR}, #{isNew,jdbcType=INTEGER}, #{isPublic,jdbcType=INTEGER}, 
       #{sort,jdbcType=INTEGER}, #{price,jdbcType=DECIMAL}, #{unit,jdbcType=VARCHAR}, 
       #{giftGrowth,jdbcType=INTEGER}, #{giftPoint,jdbcType=INTEGER}, #{detailPic,jdbcType=VARCHAR}, 
       #{status,jdbcType=INTEGER}, #{isDelete,jdbcType=INTEGER}, #{salesVolume,jdbcType=INTEGER}, 
       #{commentNum,jdbcType=INTEGER}, #{stock,jdbcType=INTEGER}, #{isDiscount,jdbcType=INTEGER}, 
-      #{discountPrice,jdbcType=DECIMAL})
+      #{discountPrice,jdbcType=DECIMAL}, #{des,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.alex.ni.model.AmsProduct">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
@@ -197,6 +199,9 @@
       <if test="discountPrice != null">
         discount_price,
       </if>
+      <if test="des != null">
+        des,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="name != null">
@@ -255,6 +260,9 @@
       </if>
       <if test="discountPrice != null">
         #{discountPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="des != null">
+        #{des,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -327,6 +335,9 @@
       <if test="record.discountPrice != null">
         discount_price = #{record.discountPrice,jdbcType=DECIMAL},
       </if>
+      <if test="record.des != null">
+        des = #{record.des,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -353,7 +364,8 @@
       comment_num = #{record.commentNum,jdbcType=INTEGER},
       stock = #{record.stock,jdbcType=INTEGER},
       is_discount = #{record.isDiscount,jdbcType=INTEGER},
-      discount_price = #{record.discountPrice,jdbcType=DECIMAL}
+      discount_price = #{record.discountPrice,jdbcType=DECIMAL},
+      des = #{record.des,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -418,6 +430,9 @@
       <if test="discountPrice != null">
         discount_price = #{discountPrice,jdbcType=DECIMAL},
       </if>
+      <if test="des != null">
+        des = #{des,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -441,7 +456,8 @@
       comment_num = #{commentNum,jdbcType=INTEGER},
       stock = #{stock,jdbcType=INTEGER},
       is_discount = #{isDiscount,jdbcType=INTEGER},
-      discount_price = #{discountPrice,jdbcType=DECIMAL}
+      discount_price = #{discountPrice,jdbcType=DECIMAL},
+      des = #{des,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

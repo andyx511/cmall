@@ -112,4 +112,5 @@ public class AmsProductController {
         Integer record = amsProductService.update(amsProduct);
         return CommonResult.success(record);
     }
+
 }

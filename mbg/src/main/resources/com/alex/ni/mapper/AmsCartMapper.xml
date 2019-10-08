@@ -5,6 +5,8 @@
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="product_id" jdbcType="INTEGER" property="productId" />
     <result column="member_id" jdbcType="INTEGER" property="memberId" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="total_price" jdbcType="DECIMAL" property="totalPrice" />
     <result column="num" jdbcType="INTEGER" property="num" />
     <result column="member_name" jdbcType="VARCHAR" property="memberName" />
     <result column="product_kind" jdbcType="VARCHAR" property="productKind" />
@@ -12,6 +14,8 @@
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
     <result column="checked" jdbcType="INTEGER" property="checked" />
+    <result column="pic" jdbcType="VARCHAR" property="pic" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -72,8 +76,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, product_id, member_id, num, member_name, product_kind, product_brand, create_time, 
-    is_delete, checked
+    id, product_id, member_id, price, total_price, num, member_name, product_kind, product_brand, 
+    create_time, is_delete, checked, pic, name
   </sql>
   <select id="selectByExample" parameterType="com.alex.ni.model.AmsCartExample" resultMap="BaseResultMap">
     select
@@ -109,14 +113,16 @@
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into ams_cart (product_id, member_id, num, 
-      member_name, product_kind, product_brand, 
-      create_time, is_delete, checked
-      )
-    values (#{productId,jdbcType=INTEGER}, #{memberId,jdbcType=INTEGER}, #{num,jdbcType=INTEGER}, 
-      #{memberName,jdbcType=VARCHAR}, #{productKind,jdbcType=VARCHAR}, #{productBrand,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{isDelete,jdbcType=INTEGER}, #{checked,jdbcType=INTEGER}
-      )
+    insert into ams_cart (product_id, member_id, price, 
+      total_price, num, member_name, 
+      product_kind, product_brand, create_time, 
+      is_delete, checked, pic, 
+      name)
+    values (#{productId,jdbcType=INTEGER}, #{memberId,jdbcType=INTEGER}, #{price,jdbcType=DECIMAL}, 
+      #{totalPrice,jdbcType=DECIMAL}, #{num,jdbcType=INTEGER}, #{memberName,jdbcType=VARCHAR}, 
+      #{productKind,jdbcType=VARCHAR}, #{productBrand,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{isDelete,jdbcType=INTEGER}, #{checked,jdbcType=INTEGER}, #{pic,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.alex.ni.model.AmsCart">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
@@ -129,6 +135,12 @@
       </if>
       <if test="memberId != null">
         member_id,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="totalPrice != null">
+        total_price,
       </if>
       <if test="num != null">
         num,
@@ -151,6 +163,12 @@
       <if test="checked != null">
         checked,
       </if>
+      <if test="pic != null">
+        pic,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="productId != null">
@@ -158,6 +176,12 @@
       </if>
       <if test="memberId != null">
         #{memberId,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="totalPrice != null">
+        #{totalPrice,jdbcType=DECIMAL},
       </if>
       <if test="num != null">
         #{num,jdbcType=INTEGER},
@@ -180,6 +204,12 @@
       <if test="checked != null">
         #{checked,jdbcType=INTEGER},
       </if>
+      <if test="pic != null">
+        #{pic,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.alex.ni.model.AmsCartExample" resultType="java.lang.Long">
@@ -199,6 +229,12 @@
       </if>
       <if test="record.memberId != null">
         member_id = #{record.memberId,jdbcType=INTEGER},
+      </if>
+      <if test="record.price != null">
+        price = #{record.price,jdbcType=DECIMAL},
+      </if>
+      <if test="record.totalPrice != null">
+        total_price = #{record.totalPrice,jdbcType=DECIMAL},
       </if>
       <if test="record.num != null">
         num = #{record.num,jdbcType=INTEGER},
@@ -221,6 +257,12 @@
       <if test="record.checked != null">
         checked = #{record.checked,jdbcType=INTEGER},
       </if>
+      <if test="record.pic != null">
+        pic = #{record.pic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -231,13 +273,17 @@
     set id = #{record.id,jdbcType=INTEGER},
       product_id = #{record.productId,jdbcType=INTEGER},
       member_id = #{record.memberId,jdbcType=INTEGER},
+      price = #{record.price,jdbcType=DECIMAL},
+      total_price = #{record.totalPrice,jdbcType=DECIMAL},
       num = #{record.num,jdbcType=INTEGER},
       member_name = #{record.memberName,jdbcType=VARCHAR},
       product_kind = #{record.productKind,jdbcType=VARCHAR},
       product_brand = #{record.productBrand,jdbcType=VARCHAR},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       is_delete = #{record.isDelete,jdbcType=INTEGER},
-      checked = #{record.checked,jdbcType=INTEGER}
+      checked = #{record.checked,jdbcType=INTEGER},
+      pic = #{record.pic,jdbcType=VARCHAR},
+      name = #{record.name,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -250,6 +296,12 @@
       </if>
       <if test="memberId != null">
         member_id = #{memberId,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="totalPrice != null">
+        total_price = #{totalPrice,jdbcType=DECIMAL},
       </if>
       <if test="num != null">
         num = #{num,jdbcType=INTEGER},
@@ -272,6 +324,12 @@
       <if test="checked != null">
         checked = #{checked,jdbcType=INTEGER},
       </if>
+      <if test="pic != null">
+        pic = #{pic,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -279,13 +337,17 @@
     update ams_cart
     set product_id = #{productId,jdbcType=INTEGER},
       member_id = #{memberId,jdbcType=INTEGER},
+      price = #{price,jdbcType=DECIMAL},
+      total_price = #{totalPrice,jdbcType=DECIMAL},
       num = #{num,jdbcType=INTEGER},
       member_name = #{memberName,jdbcType=VARCHAR},
       product_kind = #{productKind,jdbcType=VARCHAR},
       product_brand = #{productBrand,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       is_delete = #{isDelete,jdbcType=INTEGER},
-      checked = #{checked,jdbcType=INTEGER}
+      checked = #{checked,jdbcType=INTEGER},
+      pic = #{pic,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

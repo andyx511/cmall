@@ -7,7 +7,7 @@
         FROM
             ums_admin ad
             LEFT JOIN ams_user_role_relation re on ad.id=re.user_id
-            LEFT JOIN ams_role ro on re.id = ro.id
+	        LEFT JOIN ams_role ro ON re.role_id = ro.id
             WHERE ad.id=#{id}
     </select>
 </mapper>
