@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.alex.ni.dao.AmsMemberDao">
+
+    <resultMap id="MemberInfo" type="com.alex.ni.dto.MemberInfo"
+               extends="com.alex.ni.mapper.AmsMemberMapper.BaseResultMap" autoMapping="true">
+        <result column="username" property="username" />
+        <result column="icon" property="icon" />
+    </resultMap>
+    <select id="getInfo" resultMap="MemberInfo">
+        SELECT
+            ad.username,
+            ad.icon,
+            me.*
+        FROM
+            `ums_admin` ad
+            LEFT JOIN ams_member me ON ad.id = me.user_id
+        WHERE
+            ad.id =#{userId}
+    </select>
+</mapper>

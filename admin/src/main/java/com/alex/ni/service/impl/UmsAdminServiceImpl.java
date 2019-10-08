@@ -156,6 +156,12 @@ public class UmsAdminServiceImpl implements UmsAdminService {
         Integer record = adminMapper.updateByExampleSelective(admin,example);
         return record;
     }
+
+    @Override
+    public Integer edit(UmsAdmin admin) {
+        Integer record  = adminMapper.updateByPrimaryKeySelective(admin);
+        return record;
+    }
     /**
      * 添加登录记录
      * @param username 用户名

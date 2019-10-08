@@ -52,4 +52,7 @@ public interface UmsAdminService {
      */
     Integer reset(UmsAdminParam umsAdminParam);
 
+    Integer edit(UmsAdmin admin);
+
+
 }

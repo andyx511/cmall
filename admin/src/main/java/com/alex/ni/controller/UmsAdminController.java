@@ -2,6 +2,7 @@ package com.alex.ni.controller;
 
 import com.alex.ni.api.CommonResult;
 
+import com.alex.ni.bo.AdminUserDetails;
 import com.alex.ni.dto.UmsAdminLoginParam;
 import com.alex.ni.dto.UmsAdminParam;
 import com.alex.ni.model.UmsAdmin;
@@ -181,4 +182,6 @@ public class UmsAdminController {
         Integer record = adminService.reset(umsAdminParam);
         return CommonResult.success(record);
     }
+
+
 }
