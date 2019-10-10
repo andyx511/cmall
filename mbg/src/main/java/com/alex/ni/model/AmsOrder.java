@@ -8,7 +8,7 @@ import java.util.Date;
 public class AmsOrder implements Serializable {
     private Integer id;
 
-    private Integer memberId;
+    private Integer userId;
 
     private Date createTime;
 
@@ -51,12 +51,12 @@ public class AmsOrder implements Serializable {
         this.id = id;
     }
 
-    public Integer getMemberId() {
-        return memberId;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setMemberId(Integer memberId) {
-        this.memberId = memberId;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public Date getCreateTime() {
@@ -186,7 +186,7 @@ public class AmsOrder implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", memberId=").append(memberId);
+        sb.append(", userId=").append(userId);
         sb.append(", createTime=").append(createTime);
         sb.append(", totalPrice=").append(totalPrice);
         sb.append(", payType=").append(payType);

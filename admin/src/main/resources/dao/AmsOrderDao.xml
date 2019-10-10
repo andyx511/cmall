@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.alex.ni.dao.AmsOrderDao">
+
+    <resultMap id="orderInfo" type="com.alex.ni.dto.OrderInfo"
+        extends="com.alex.ni.mapper.AmsOrderMapper.BaseResultMap" autoMapping="true">
+        <collection property="items" resultMap="com.alex.ni.mapper.AmsOrderItemMapper.BaseResultMap" columnPrefix="it_">
+        </collection>
+    </resultMap>
+
+    <select id="list" resultMap="orderInfo">
+        SELECT
+            ord.id,
+            ord.create_time,
+            ord.total_price,
+            ord.`status`,
+            it.product_id it_product_id,
+            it.num it_num,
+            pr.pic it_pic,
+            pr.price it_price,
+            pr.`name` it_name
+        FROM
+            ums_admin ad
+            LEFT JOIN ams_order ord ON ad.id = ord.user_id
+            LEFT JOIN ams_order_item it ON it.order_id = ord.id
+            LEFT JOIN ams_product pr ON it.product_id = pr.id
+        WHERE
+            ad.id = #{userId}
+    </select>
+</mapper>

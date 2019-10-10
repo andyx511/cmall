@@ -66,14 +66,11 @@ public class AmsCartController {
         Integer record = cartService.editCart(cart.getId(),cart.getNum());
         return CommonResult.success(record);
     }
-    @ApiOperation("修改购物车的数量")
+    @ApiOperation("删除购物车")
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult delete(@RequestBody List<Integer> ids) {
         Integer record = cartService.deleteCart(ids);
         return CommonResult.success(record);
     }
-
-
-
 }

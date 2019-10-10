@@ -3,7 +3,7 @@
 <mapper namespace="com.alex.ni.mapper.AmsOrderMapper">
   <resultMap id="BaseResultMap" type="com.alex.ni.model.AmsOrder">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="member_id" jdbcType="INTEGER" property="memberId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="total_price" jdbcType="DECIMAL" property="totalPrice" />
     <result column="pay_type" jdbcType="VARCHAR" property="payType" />
@@ -79,7 +79,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, member_id, create_time, total_price, pay_type, status, point, growth, receiver_name, 
+    id, user_id, create_time, total_price, pay_type, status, point, growth, receiver_name, 
     receiver_phone, receiver_province, receiver_city, receiver_region, receiver_detail_address, 
     delivery_time, receiver_time, delivery_company
   </sql>
@@ -117,13 +117,13 @@
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into ams_order (member_id, create_time, total_price, 
+    insert into ams_order (user_id, create_time, total_price, 
       pay_type, status, point, 
       growth, receiver_name, receiver_phone, 
       receiver_province, receiver_city, receiver_region, 
       receiver_detail_address, delivery_time, 
       receiver_time, delivery_company)
-    values (#{memberId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{totalPrice,jdbcType=DECIMAL}, 
+    values (#{userId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{totalPrice,jdbcType=DECIMAL}, 
       #{payType,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{point,jdbcType=INTEGER}, 
       #{growth,jdbcType=INTEGER}, #{receiverName,jdbcType=VARCHAR}, #{receiverPhone,jdbcType=VARCHAR}, 
       #{receiverProvince,jdbcType=VARCHAR}, #{receiverCity,jdbcType=VARCHAR}, #{receiverRegion,jdbcType=VARCHAR}, 
@@ -136,8 +136,8 @@
     </selectKey>
     insert into ams_order
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="memberId != null">
-        member_id,
+      <if test="userId != null">
+        user_id,
       </if>
       <if test="createTime != null">
         create_time,
@@ -186,8 +186,8 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="memberId != null">
-        #{memberId,jdbcType=INTEGER},
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
       </if>
       <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
@@ -248,8 +248,8 @@
       <if test="record.id != null">
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.memberId != null">
-        member_id = #{record.memberId,jdbcType=INTEGER},
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=INTEGER},
       </if>
       <if test="record.createTime != null">
         create_time = #{record.createTime,jdbcType=TIMESTAMP},
@@ -304,7 +304,7 @@
   <update id="updateByExample" parameterType="map">
     update ams_order
     set id = #{record.id,jdbcType=INTEGER},
-      member_id = #{record.memberId,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=INTEGER},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       total_price = #{record.totalPrice,jdbcType=DECIMAL},
       pay_type = #{record.payType,jdbcType=VARCHAR},
@@ -327,8 +327,8 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.alex.ni.model.AmsOrder">
     update ams_order
     <set>
-      <if test="memberId != null">
-        member_id = #{memberId,jdbcType=INTEGER},
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
       </if>
       <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -380,7 +380,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.alex.ni.model.AmsOrder">
     update ams_order
-    set member_id = #{memberId,jdbcType=INTEGER},
+    set user_id = #{userId,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       total_price = #{totalPrice,jdbcType=DECIMAL},
       pay_type = #{payType,jdbcType=VARCHAR},
