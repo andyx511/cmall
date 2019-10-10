@@ -4,12 +4,16 @@ import com.alex.ni.bo.AdminUserDetails;
 import com.alex.ni.bo.UserDetail;
 import com.alex.ni.dao.AmsOrderDao;
 import com.alex.ni.dao.AmsProductDao;
+import com.alex.ni.dto.AmsOrderParam;
 import com.alex.ni.dto.OrderInfo;
 import com.alex.ni.mapper.*;
 import com.alex.ni.model.*;
 import com.alex.ni.service.AmsOrderService;
 import com.alex.ni.service.UmsAdminService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -61,7 +65,7 @@ public class AmsOrderServiceImpl implements AmsOrderService {
             int num = cart.getNum();
             AmsProduct product = productMapper.selectByPrimaryKey(pid);
             if (product.getStock()<num){
-                return 2;
+                return -1;
             }
             totalGrowth  += num * product.getGiftGrowth();
             totalPoint += num * product.getGiftPoint();
@@ -123,15 +127,25 @@ public class AmsOrderServiceImpl implements AmsOrderService {
 
     @Override
     public List<OrderInfo> list(Integer userId) {
-        AmsOrderExample example = new AmsOrderExample();
-        example.createCriteria().andUserIdEqualTo( userId);
         List<OrderInfo> list = orderDao.list(userId);
         return list;
     }
 
     @Override
-    public AmsOrder detail(Integer id) {
-        AmsOrder order = orderMapper.selectByPrimaryKey(id);
+    public PageInfo<OrderInfo> list(AmsOrderParam param,Integer pageNum,Integer pageSize) {
+        PageInfo<OrderInfo> pageInfo = new PageInfo<>();
+        List<OrderInfo> list = orderDao.listForAdmin(param,(pageNum-1)*pageSize,pageSize);
+        Integer total = orderDao.countSum(param);
+        pageInfo.setPageSize(pageSize);
+        pageInfo.setPageNum(pageNum);
+        pageInfo.setTotal(total);
+        pageInfo.setList(list);
+        return pageInfo;
+    }
+
+    @Override
+    public OrderInfo detail(Integer id) {
+        OrderInfo order = orderDao.detail(id);
         return order;
     }
 

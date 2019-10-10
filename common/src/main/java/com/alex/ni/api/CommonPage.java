@@ -42,7 +42,14 @@ public class CommonPage<T> {
         result.setList(pageInfo.getContent());
         return result;
     }
-
+    public static <T> CommonPage<T> restPage(PageInfo<T> pageInfo) {
+        CommonPage<T> result = new CommonPage<T>();
+        result.setPageNum(pageInfo.getPageNum());
+        result.setPageSize(pageInfo.getPageSize());
+        result.setTotal(pageInfo.getTotal());
+        result.setList(pageInfo.getList());
+        return result;
+    }
     public Integer getPageNum() {
         return pageNum;
     }

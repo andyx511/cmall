@@ -1,8 +1,10 @@
 package com.alex.ni.service;
 
+import com.alex.ni.dto.AmsOrderParam;
 import com.alex.ni.dto.OrderInfo;
 import com.alex.ni.model.AmsAddress;
 import com.alex.ni.model.AmsOrder;
+import com.github.pagehelper.PageInfo;
 
 import java.util.List;
 
@@ -32,9 +34,13 @@ public interface AmsOrderService {
     */
     List<OrderInfo> list(Integer userId);
     /**
+    * 订单列表管理
+    */
+    PageInfo<OrderInfo> list(AmsOrderParam param, Integer pageNum, Integer pageSize);
+    /**
     * 订单详情
     */
-    AmsOrder detail (Integer id );
+    OrderInfo detail (Integer id );
     /**
     * 对指定订单进行支付
     */

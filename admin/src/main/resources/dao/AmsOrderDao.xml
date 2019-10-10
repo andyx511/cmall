@@ -14,6 +14,7 @@
             ord.create_time,
             ord.total_price,
             ord.`status`,
+            ord.pay_type,
             it.product_id it_product_id,
             it.num it_num,
             pr.pic it_pic,
@@ -26,5 +27,87 @@
             LEFT JOIN ams_product pr ON it.product_id = pr.id
         WHERE
             ad.id = #{userId}
+    </select>
+    <select id="listForAdmin" resultMap="orderInfo">
+        SELECT
+        ord.id,
+        ord.create_time,
+        ord.total_price,
+        ord.user_id,
+        ord.`status`,
+        it.product_id it_product_id,
+        it.num it_num,
+        pr.pic it_pic,
+        pr.price it_price,
+        pr.`name` it_name
+        FROM
+        (
+            SELECT * FROM ams_order LIMIT #{pageNum},#{pageSize}
+        )
+         ord
+        LEFT JOIN ams_order_item it ON it.order_id = ord.id
+        LEFT JOIN ams_product pr ON it.product_id = pr.id
+        WHERE
+            1=1
+        <if test="param.userId != null and param.userId != ''">
+            and
+            ord.user_id = #{param.userId}
+        </if>
+        <if test="param.payType != null and param.payType != ''">
+            and
+            ord.pay_type = #{param.payType}
+        </if>
+        <if test="param.status != null and param.status != ''">
+            and
+            ord.status = #{param.status}
+        </if>
+        <if test="param.id != null and param.id != ''">
+            and
+            ord.id = #{param.id}
+        </if>
+    </select>
+    <select id="countSum" resultType="java.lang.Integer">
+        SELECT
+        COUNT(1)
+        FROM
+        ams_order ord
+        WHERE
+        1=1
+        <if test="param.userId != null and param.userId != ''">
+            and
+            ord.user_id = #{param.userId}
+        </if>
+        <if test="param.payType != null and param.payType != ''">
+            and
+            ord.pay_type = #{param.payType}
+        </if>
+        <if test="param.status != null and param.status != ''">
+            and
+            ord.status = #{param.status}
+        </if>
+        <if test="param.id != null and param.id != ''">
+            and
+            ord.id = #{param.id}
+        </if>
+    </select>
+    <select id="detail" resultMap="orderInfo">
+        SELECT
+            ord.id,
+            ord.create_time,
+            ord.total_price,
+            ord.`status`,
+            ord.pay_type,
+            it.product_id it_product_id,
+            it.num it_num,
+            pr.pic it_pic,
+            pr.price it_price,
+            pr.`name` it_name
+        FROM
+            ums_admin ad
+            LEFT JOIN ams_order ord ON ad.id = ord.user_id
+            LEFT JOIN ams_order_item it ON it.order_id = ord.id
+            LEFT JOIN ams_product pr ON it.product_id = pr.id
+        WHERE
+            ord.id = #{id}
     </select>
 </mapper>
