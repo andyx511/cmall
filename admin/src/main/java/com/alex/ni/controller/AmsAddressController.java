@@ -35,6 +35,9 @@ public class AmsAddressController {
     @RequestMapping(value = "/add",method = RequestMethod.POST)
     @ResponseBody
     public CommonResult add(@RequestBody AmsAddress address ){
+        AdminUserDetails details = adminService.getCurrentUser();
+        UmsAdmin admin = details.getUmsAdmin();
+        address.setUserId(admin.getId().intValue());
         Integer record = addressService.add(address);
         return CommonResult.success(record);
     }

@@ -24,6 +24,7 @@ public class AmsAddressServiceImpl implements AmsAddressService {
     public List<AmsAddress> list(Integer userId) {
         AmsAddressExample example = new AmsAddressExample();
         example.createCriteria().andUserIdEqualTo( userId);
+        example.setOrderByClause("is_default DESC");
         List<AmsAddress> list = addressMapper.selectByExample(example);
         return list;
     }

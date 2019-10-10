@@ -24,6 +24,9 @@ public class AmsAddress implements Serializable {
 
     private String receiverPhone;
 
+    @ApiModelProperty(value = "1Y;0N")
+    private String isDefault;
+
     private static final long serialVersionUID = 1L;
 
     public Integer getId() {
@@ -90,6 +93,14 @@ public class AmsAddress implements Serializable {
         this.receiverPhone = receiverPhone;
     }
 
+    public String getIsDefault() {
+        return isDefault;
+    }
+
+    public void setIsDefault(String isDefault) {
+        this.isDefault = isDefault;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -104,6 +115,7 @@ public class AmsAddress implements Serializable {
         sb.append(", detailAddress=").append(detailAddress);
         sb.append(", receiverName=").append(receiverName);
         sb.append(", receiverPhone=").append(receiverPhone);
+        sb.append(", isDefault=").append(isDefault);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();
