@@ -27,4 +27,8 @@ public interface AmsAddressService {
     * 修改地址
     */
     Integer edit(AmsAddress address);
+    /**
+     * 地址详情
+     */
+    AmsAddress detail(Integer id);
 }

@@ -31,6 +31,14 @@ public class AmsAddressServiceImpl implements AmsAddressService {
 
     @Override
     public Integer add(AmsAddress address) {
+        // 判断address 是否为默认地址
+        if(address.getIsDefault().equalsIgnoreCase("true")){
+            AmsAddress amsAddress = new AmsAddress();
+            amsAddress.setIsDefault("false");
+            AmsAddressExample example = new AmsAddressExample();
+            example.createCriteria().andUserIdEqualTo(address.getUserId());
+            Integer r = addressMapper.updateByExampleSelective(amsAddress, example);
+        }
         Integer record = addressMapper.insertSelective(address);
         return record;
     }
@@ -45,5 +53,11 @@ public class AmsAddressServiceImpl implements AmsAddressService {
     public Integer edit(AmsAddress address) {
         Integer record = addressMapper.updateByPrimaryKeySelective(address);
         return record;
+    }
+
+    @Override
+    public AmsAddress detail(Integer id) {
+        AmsAddress amsAddress = addressMapper.selectByPrimaryKey(id);
+        return amsAddress;
     }
 }

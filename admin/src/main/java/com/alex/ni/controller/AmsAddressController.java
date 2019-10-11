@@ -68,4 +68,11 @@ public class AmsAddressController {
         return CommonResult.success(record);
     }
 
+    @ApiOperation("地址详情")
+    @RequestMapping(value = "/detail/{id}",method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult detail(@PathVariable Integer id){
+        AmsAddress record = addressService.detail(id);
+        return CommonResult.success(record);
+    }
 }

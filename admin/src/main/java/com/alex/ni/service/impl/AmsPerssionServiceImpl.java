@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,6 +31,7 @@ public class AmsPerssionServiceImpl implements AmsPerssionService {
         List<AmsPerssion> list = amsPerssionMapper.selectByExample(new AmsPerssionExample());
         List<AmsPermissionList> result = list.stream()
                 .filter(permission -> permission.getPid().equals(0))
+                .sorted(Comparator.comparing(AmsPerssion::getSort))
                 .map(permission -> covert(permission,list)).collect(Collectors.toList());
         return result;
     }
@@ -50,6 +52,7 @@ public class AmsPerssionServiceImpl implements AmsPerssionService {
         BeanUtils.copyProperties(permission,node);
         List<AmsPermissionList> children = permissionList.stream()
                 .filter(subPermission -> subPermission.getPid().equals(permission.getId()))
+                .sorted(Comparator.comparing(AmsPerssion::getSort))
                 .map(subPermission -> covert(subPermission,permissionList)).collect(Collectors.toList());
         node.setChildren(children);
         return node;
