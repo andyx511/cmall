@@ -51,6 +51,13 @@ public class AmsAddressServiceImpl implements AmsAddressService {
 
     @Override
     public Integer edit(AmsAddress address) {
+        if(address.getIsDefault().equalsIgnoreCase("true")){
+            AmsAddress amsAddress = new AmsAddress();
+            amsAddress.setIsDefault("false");
+            AmsAddressExample example = new AmsAddressExample();
+            example.createCriteria().andUserIdEqualTo(address.getUserId());
+            Integer r = addressMapper.updateByExampleSelective(amsAddress, example);
+        }
         Integer record = addressMapper.updateByPrimaryKeySelective(address);
         return record;
     }

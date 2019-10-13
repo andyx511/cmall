@@ -23,7 +23,7 @@ public interface AmsOrderService {
     /**
     * 添加订单的收货地址
     */
-    Integer orderAddress(AmsAddress address ,Integer orderId);
+    Integer orderAddress(Integer addressId ,Integer orderId);
 
     /**
     * 订单状态更改

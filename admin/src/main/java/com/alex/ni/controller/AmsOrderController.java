@@ -47,10 +47,10 @@ public class AmsOrderController  {
     }
 
     @ApiOperation("选择地址")
-    @RequestMapping(value = "/chooseAddress/{id}", method = RequestMethod.POST)
+    @RequestMapping(value = "/chooseAddress/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public CommonResult chooseAddress(@RequestBody AmsAddress address, @PathVariable Integer id) {
-        Integer record = orderService.orderAddress(address,id);
+    public CommonResult chooseAddress(@RequestParam Integer addressId, @PathVariable Integer id) {
+        Integer record = orderService.orderAddress(addressId,id);
         return CommonResult.success(record);
     }
 
@@ -78,10 +78,14 @@ public class AmsOrderController  {
     @ApiOperation("用户自身订单列表")
     @RequestMapping(value = "/memberOrderList", method = RequestMethod.GET)
     @ResponseBody
-    public CommonResult memberOrderList() {
+    public CommonResult memberOrderList(@RequestParam(value = "pageNum" ,defaultValue = "1") Integer pageNum,
+                                        @RequestParam(value = "pageSize",defaultValue = "5") Integer pageSize) {
         AdminUserDetails details = adminService.getCurrentUser();
         UmsAdmin admin = details.getUmsAdmin();
-        List<OrderInfo>list = orderService.list(admin.getId().intValue());
+
+        AmsOrderParam param = new AmsOrderParam();
+        param.setUserId(admin.getId().intValue());
+        PageInfo<OrderInfo> list = orderService.list(param,pageNum,pageSize);
         return CommonResult.success(list);
     }
 

@@ -56,6 +56,9 @@ public class AmsAddressController {
     @RequestMapping(value = "/edit",method = RequestMethod.POST)
     @ResponseBody
     public CommonResult edit(@RequestBody AmsAddress address){
+        AdminUserDetails details = adminService.getCurrentUser();
+        UmsAdmin admin = details.getUmsAdmin();
+        address.setUserId(admin.getId().intValue());
         Integer record = addressService.edit(address);
         return CommonResult.success(record);
     }

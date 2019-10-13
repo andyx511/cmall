@@ -46,6 +46,8 @@ public class AmsOrderServiceImpl implements AmsOrderService {
     private AmsOrderDao orderDao;
     @Autowired
     private AmsProductDao productDao;
+    @Autowired
+    private AmsAddressMapper addressMapper;
 
     @Override
     @Transactional
@@ -102,7 +104,8 @@ public class AmsOrderServiceImpl implements AmsOrderService {
     }
 
     @Override
-    public Integer orderAddress(AmsAddress address, Integer orderId) {
+    public Integer orderAddress(Integer addressid, Integer orderId) {
+        AmsAddress address = addressMapper.selectByPrimaryKey(addressid);
         AmsOrderExample example = new AmsOrderExample();
         example.createCriteria().andIdEqualTo(orderId);
         AmsOrder order = new AmsOrder();
@@ -111,6 +114,7 @@ public class AmsOrderServiceImpl implements AmsOrderService {
         order.setReceiverRegion(address.getRegion());
         order.setReceiverName(address.getReceiverName());
         order.setReceiverPhone(address.getReceiverPhone());
+        order.setReceiverDetailAddress(address.getDetailAddress());
         Integer record = orderMapper.updateByExampleSelective(order, example);
         return record;
     }
