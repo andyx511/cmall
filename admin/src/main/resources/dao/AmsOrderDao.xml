@@ -42,7 +42,7 @@
         pr.`name` it_name
         FROM
         (
-            SELECT * FROM ams_order LIMIT #{pageNum},#{pageSize}
+            SELECT * FROM ams_order order by id DESC LIMIT #{pageNum},#{pageSize}
         )
          ord
         LEFT JOIN ams_order_item it ON it.order_id = ord.id
@@ -65,6 +65,7 @@
             and
             ord.id = #{param.id}
         </if>
+        order by ord.id DESC
     </select>
     <select id="countSum" resultType="java.lang.Integer">
         SELECT
