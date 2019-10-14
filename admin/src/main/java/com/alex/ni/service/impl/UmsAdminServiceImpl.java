@@ -1,10 +1,12 @@
 package com.alex.ni.service.impl;
 
+import cn.hutool.core.date.DateTime;
 import com.alex.ni.bo.AdminUserDetails;
 import com.alex.ni.dao.UmsAdminRoleRelationDao;
 import com.alex.ni.dao.UserRoleDao;
 import com.alex.ni.dto.UmsAdminParam;
 import com.alex.ni.mapper.AmsMemberMapper;
+import com.alex.ni.mapper.AmsUserLogMapper;
 import com.alex.ni.mapper.AmsUserRoleRelationMapper;
 import com.alex.ni.mapper.UmsAdminMapper;
 import com.alex.ni.model.*;
@@ -59,6 +61,8 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     private AmsUserRoleRelationMapper userRoleRelationMapper;
     @Autowired
     private AmsMemberMapper memberMapper;
+    @Autowired
+    private AmsUserLogMapper logMapper;
 
     @Override
     public UmsAdmin getAdminByUsername(String username) {
@@ -84,8 +88,8 @@ public class UmsAdminServiceImpl implements UmsAdminService {
                     new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
             SecurityContextHolder.getContext().setAuthentication(authentication);
             token = jwtTokenUtil.generateToken(userDetails);
-//            updateLoginTimeByUsername(username);
-            //insertLoginLog(username);
+            //updateLoginTimeByUsername(username);
+            insertLoginLog(username);
         } catch (AuthenticationException e) {
             LOGGER.warn("登录异常:{}", e.getMessage());
         }
@@ -166,14 +170,15 @@ public class UmsAdminServiceImpl implements UmsAdminService {
      * 添加登录记录
      * @param username 用户名
      */
-    /*private void insertLoginLog(String username) {
-        UmsAdmin admin = getAdminByUsername(username);
-        UmsAdminLoginLog loginLog = new UmsAdminLoginLog();
-        loginLog.setAdminId(admin.getId());
-        loginLog.setCreateTime(new Date());
+    private void insertLoginLog(String username) {
+        AdminUserDetails details = this.getCurrentUser();
+        UmsAdmin admin = details.getUmsAdmin();
+        AmsUserLog log = new AmsUserLog();
+        log.setUserId(admin.getId().intValue());
+        log.setLogTime(new Date());
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
-        loginLog.setIp(request.getRemoteAddr());
-        loginLogMapper.insert(loginLog);
-    }*/
+        log.setIp(request.getRemoteAddr());
+        logMapper.insertSelective(log);
+    }
 }

@@ -11,8 +11,10 @@ import java.util.List;
  */
 public interface AmsCartService {
     /**
-    * 加入购物车
-    */
+     * 加入购物车
+     * @param cart
+     * @return Integer
+     */
     Integer addCart(AmsCart cart);
     /**
     * 修改购物车商品数量
