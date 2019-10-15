@@ -1,9 +1,11 @@
 package com.alex.ni.service;
 
 import com.alex.ni.dto.AmsOrderParam;
+import com.alex.ni.dto.AmsOrderReturnParam;
 import com.alex.ni.dto.OrderInfo;
 import com.alex.ni.model.AmsAddress;
 import com.alex.ni.model.AmsOrder;
+import com.alex.ni.model.AmsOrderReturn;
 import com.github.pagehelper.PageInfo;
 
 import java.util.List;
@@ -29,6 +31,12 @@ public interface AmsOrderService {
     * 订单状态更改
     */
     Integer orderStatus(Integer status,Integer orderId);
+
+    /**
+     * 订单发货
+     * @return
+     */
+    Integer orderDelivery(Integer orderId);
     /**
     * 订单列表（用户）
     */
@@ -46,5 +54,18 @@ public interface AmsOrderService {
     */
     Integer payForOrder(Integer id);
 
+    /**
+     * @param orderReturn
+     * @return
+     */
+    Integer applyReturn( AmsOrderReturn orderReturn);
+
+    /**
+     * @param param
+     * @param pageNum
+     * @param pageSize
+     * @return
+     */
+    List<AmsOrderReturn> returnList(AmsOrderReturnParam param,Integer pageNum,Integer pageSize);
 
 }

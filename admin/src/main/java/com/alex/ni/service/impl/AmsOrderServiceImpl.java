@@ -5,13 +5,16 @@ import com.alex.ni.bo.UserDetail;
 import com.alex.ni.dao.AmsOrderDao;
 import com.alex.ni.dao.AmsProductDao;
 import com.alex.ni.dto.AmsOrderParam;
+import com.alex.ni.dto.AmsOrderReturnParam;
 import com.alex.ni.dto.OrderInfo;
 import com.alex.ni.mapper.*;
 import com.alex.ni.model.*;
 import com.alex.ni.service.AmsOrderService;
 import com.alex.ni.service.UmsAdminService;
+import com.alex.ni.utils.StringUtil;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Service;
@@ -48,6 +51,8 @@ public class AmsOrderServiceImpl implements AmsOrderService {
     private AmsProductDao productDao;
     @Autowired
     private AmsAddressMapper addressMapper;
+    @Autowired
+    private AmsOrderReturnMapper returnMapper;
 
     @Override
     @Transactional
@@ -130,6 +135,18 @@ public class AmsOrderServiceImpl implements AmsOrderService {
     }
 
     @Override
+    public Integer orderDelivery(Integer orderId) {
+        AmsOrderExample example = new AmsOrderExample();
+        example.createCriteria().andIdEqualTo(orderId);
+        AmsOrder order = new AmsOrder();
+        order.setStatus(2);
+        order.setDeliveryCompany("天天开心快递公司");
+        order.setDeliveryTime(new Date());
+        Integer record = orderMapper.updateByExampleSelective(order, example);
+        return record;
+    }
+
+    @Override
     public List<OrderInfo> list(Integer userId) {
         List<OrderInfo> list = orderDao.list(userId);
         return list;
@@ -176,8 +193,31 @@ public class AmsOrderServiceImpl implements AmsOrderService {
         order.setStatus(1);
         order.setPayType("网页支付");
         Integer re = orderMapper.updateByPrimaryKeySelective(order);
-
         return 1;
+    }
+
+    @Override
+    public Integer applyReturn( AmsOrderReturn orderReturn) {
+        Integer record = returnMapper.insertSelective(orderReturn);
+        return record;
+    }
+
+    @Override
+    public List<AmsOrderReturn> returnList(AmsOrderReturnParam param, Integer pageNum, Integer pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        AmsOrderReturnExample example = new AmsOrderReturnExample();
+        AmsOrderReturnExample.Criteria criteria = example.createCriteria();
+        if (!StringUtils.isEmpty(param.getHandleMan())){
+            criteria.andHandleManLike("%" + param.getHandleMan() + "%");
+        }
+        if (!StringUtils.isEmpty(param.getStatus())){
+            criteria.andApplyStatusEqualTo(param.getStatus());
+        }
+        if (param.getId() != null){
+            criteria.andIdEqualTo(param.getId());
+        }
+        List<AmsOrderReturn> list = returnMapper.selectByExample(example);
+        return list;
     }
 
 }

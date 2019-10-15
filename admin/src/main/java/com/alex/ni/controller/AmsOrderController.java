@@ -1,12 +1,15 @@
 package com.alex.ni.controller;
 
+import cn.hutool.core.date.DateTime;
 import com.alex.ni.api.CommonPage;
 import com.alex.ni.api.CommonResult;
 import com.alex.ni.bo.AdminUserDetails;
 import com.alex.ni.dto.AmsOrderParam;
+import com.alex.ni.dto.AmsOrderReturnParam;
 import com.alex.ni.dto.AmsPermissionList;
 import com.alex.ni.dto.OrderInfo;
 import com.alex.ni.model.AmsAddress;
+import com.alex.ni.model.AmsOrderReturn;
 import com.alex.ni.model.UmsAdmin;
 import com.alex.ni.service.AmsOrderService;
 import com.alex.ni.service.UmsAdminService;
@@ -17,6 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -121,10 +125,30 @@ public class AmsOrderController  {
     @RequestMapping(value = "/delivery/{id}", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult delivery(@PathVariable Integer id) {
-        Integer record= orderService.orderStatus(2, id);
+        Integer record= orderService.orderDelivery(id);
         return CommonResult.success(record);
     }
 
+    @ApiOperation("订单申请退款")
+    @RequestMapping(value = "/applyReturn", method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult applyReturn(@RequestBody AmsOrderReturn amsOrderReturn ) {
+        AdminUserDetails details = adminService.getCurrentUser();
+        UmsAdmin admin = details.getUmsAdmin();
+        amsOrderReturn.setUserName(admin.getNickName());
+        amsOrderReturn.setApplyStatus("1");
+        amsOrderReturn.setApplyTime(new Date());
+        Integer record= orderService.applyReturn(amsOrderReturn);
+        return CommonResult.success(record);
+    }
 
-
+    @ApiOperation("订单申请退款列表")
+    @RequestMapping(value = "/applyReturnList", method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult applyReturnList(AmsOrderReturnParam param,
+                                        @RequestParam(value = "pageNum" ,defaultValue = "1") Integer pageNum,
+                                        @RequestParam(value = "pageSize",defaultValue = "10") Integer pageSize) {
+        List<AmsOrderReturn> record = orderService.returnList(param, pageNum,pageSize);
+        return CommonResult.success(record);
+    }
 }
