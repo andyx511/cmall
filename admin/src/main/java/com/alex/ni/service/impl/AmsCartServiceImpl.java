@@ -64,4 +64,13 @@ public class AmsCartServiceImpl implements AmsCartService {
         List<AmsCart> list = cartMapper.selectByExample(example);
         return list;
     }
+
+    @Override
+    public Integer count(Integer userId) {
+        AmsCartExample example = new AmsCartExample();
+        example.createCriteria().andMemberIdEqualTo(userId);
+        Long count = cartMapper.countByExample(example);
+        Integer a= count.intValue();
+        return a;
+    }
 }

@@ -29,4 +29,6 @@ public interface AmsCartService {
     */
     List<AmsCart> cartList(Integer userId);
 
+    Integer count(Integer userId);
+
 }

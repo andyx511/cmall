@@ -135,6 +135,7 @@ public class AmsOrderController  {
     public CommonResult applyReturn(@RequestBody AmsOrderReturn amsOrderReturn ) {
         AdminUserDetails details = adminService.getCurrentUser();
         UmsAdmin admin = details.getUmsAdmin();
+        orderService.orderStatus(8,amsOrderReturn.getOrderId());
         amsOrderReturn.setUserName(admin.getNickName());
         amsOrderReturn.setApplyStatus("1");
         amsOrderReturn.setApplyTime(new Date());

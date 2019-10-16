@@ -44,6 +44,15 @@ public class AmsCartController {
         List<AmsCart> list = cartService.cartList(user.getId().intValue());
         return CommonResult.success(list);
     }
+    @ApiOperation("获取购物车数量")
+    @RequestMapping(value = "/getCount", method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult getCount() {
+        AdminUserDetails details = adminService.getCurrentUser();
+        UmsAdmin user = details.getUmsAdmin();
+        Integer record = cartService.count(user.getId().intValue());
+        return CommonResult.success(record);
+    }
     @ApiOperation("添加入购物车")
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     @ResponseBody
