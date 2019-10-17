@@ -1,5 +1,6 @@
 package com.alex.ni.controller;
 
+import com.alex.ni.api.CommonPage;
 import com.alex.ni.api.CommonResult;
 import com.alex.ni.bo.AdminUserDetails;
 import com.alex.ni.dto.AmsPermissionList;
@@ -56,12 +57,19 @@ public class AmsMemberController {
     @ApiOperation("会员信息列表")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
-    public CommonResult edit(@RequestParam Integer memberId
-                             @RequestParam
-    ) {
-
-        memberService.editInfo(member);
-        return CommonResult.success();
+    public CommonResult list(@RequestParam(required = false) Integer memberId,
+                             @RequestParam(required = false) String memberName,
+                             @RequestParam Integer pageNum,
+                             @RequestParam Integer pageSize
+                             ) {
+        List<AmsMember> list =  memberService.list(memberId,memberName,pageNum,pageSize);
+        return CommonResult.success(CommonPage.restPage(list));
     }
-
+    @ApiOperation("冻结会员")
+    @RequestMapping(value = "/dong", method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult dong(@RequestParam Integer memberId) {
+        Integer record =  memberService.dong(memberId);
+        return CommonResult.success(record);
+    }
 }
