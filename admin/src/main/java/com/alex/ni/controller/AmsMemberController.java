@@ -13,10 +13,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -53,6 +50,16 @@ public class AmsMemberController {
         adminService.edit(admin);
         AmsMember member = new AmsMember();
         BeanUtils.copyProperties(info,member);
+        memberService.editInfo(member);
+        return CommonResult.success();
+    }
+    @ApiOperation("会员信息列表")
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult edit(@RequestParam Integer memberId
+                             @RequestParam
+    ) {
+
         memberService.editInfo(member);
         return CommonResult.success();
     }

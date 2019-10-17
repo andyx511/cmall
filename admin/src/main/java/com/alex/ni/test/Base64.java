@@ -1,4 +1,4 @@
-package com.alex.ni.controller;
+package com.alex.ni.test;
 
 import java.io.IOException;
 

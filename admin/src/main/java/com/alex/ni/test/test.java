@@ -1,8 +1,9 @@
-package com.alex.ni.controller;
+package com.alex.ni.test;
 
 import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONNull;
 import cn.hutool.json.JSONObject;
+import com.alex.ni.controller.BeanHelper;
 import com.alex.ni.model.AmsProduct;
 import org.apache.commons.lang.StringUtils;
 
