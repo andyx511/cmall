@@ -12,7 +12,9 @@ import com.alex.ni.mapper.UmsAdminMapper;
 import com.alex.ni.model.*;
 import com.alex.ni.service.UmsAdminService;
 import com.alex.ni.util.JwtTokenUtil;
+import com.github.pagehelper.PageHelper;
 import io.swagger.annotations.ApiModelProperty;
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -166,6 +168,39 @@ public class UmsAdminServiceImpl implements UmsAdminService {
         Integer record  = adminMapper.updateByPrimaryKeySelective(admin);
         return record;
     }
+
+    @Override
+    public List<UmsAdmin> list(Integer id, String name, String nickname, Integer pageNum, Integer pageSize) {
+        PageHelper.startPage(pageNum,pageSize);
+        UmsAdminExample example = new UmsAdminExample();
+        UmsAdminExample.Criteria criteria= example.createCriteria();
+        if (id!=null){
+            criteria.andIdEqualTo(id.longValue());
+        }
+        if (!StringUtils.isEmpty(name)){
+            criteria.andUsernameLike("%" + name + "%");
+        }
+        if (!StringUtils.isEmpty(nickname)){
+            criteria.andNickNameLike("%" + nickname + "%");
+        }
+        List<UmsAdmin> list = adminMapper.selectByExample(example);
+        return list;
+    }
+
+    @Override
+    public Integer jin(Integer id) {
+        UmsAdmin admin = new UmsAdmin();
+        admin.setId(id.longValue());
+        admin.setStatus(0);
+        Integer record = adminMapper.updateByPrimaryKeySelective(admin);
+        return record;
+    }
+
+    @Override
+    public Integer qi(Integer id) {
+        return null;
+    }
+
     /**
      * 添加登录记录
      * @param username 用户名

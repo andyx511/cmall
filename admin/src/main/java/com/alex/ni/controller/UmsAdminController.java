@@ -182,6 +182,33 @@ public class UmsAdminController {
         Integer record = adminService.reset(umsAdminParam);
         return CommonResult.success(record);
     }
-
-
+    @ApiOperation("用户列表")
+    @RequestMapping(value = "list",method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult list(
+            @RequestParam(required = false) Integer id,
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) String nickname,
+            @RequestParam(required = false) Integer pageNum,
+            @RequestParam(required = false) Integer pageSize
+    ) {
+        List<UmsAdmin> list = adminService.list(id, name, nickname, pageNum, pageSize);
+        return CommonResult.success(list);
+    }
+    @ApiOperation("用户禁用")
+    @RequestMapping(value = "jin",method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult jin(
+            @RequestParam Integer id
+    ) {
+        Integer record = adminService.jin(id);
+        return CommonResult.success(record);
+    }
+    @ApiOperation("用户禁用")
+    @RequestMapping(value = "qi",method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult qi(@RequestParam Integer id) {
+        Integer record = adminService.qi(id);
+        return CommonResult.success(record);
+    }
 }

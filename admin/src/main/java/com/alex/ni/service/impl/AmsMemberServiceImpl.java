@@ -57,12 +57,22 @@ public class AmsMemberServiceImpl implements AmsMemberService {
 
     @Override
     public Integer dong(Integer memberId) {
+        AmsMemberExample example = new AmsMemberExample();
+        example.createCriteria().andUserIdEqualTo(memberId);
         AmsMember amsMember = new AmsMember();
         amsMember.setStatus(1);
-        amsMember.setId(memberId);
-        Integer record = memberMapper.updateByPrimaryKeySelective(amsMember);
+        Integer record = memberMapper.updateByExampleSelective(amsMember, example);
         return record;
     }
 
+    @Override
+    public Integer jie(Integer memberId) {
+        AmsMemberExample example = new AmsMemberExample();
+        example.createCriteria().andUserIdEqualTo(memberId);
+        AmsMember amsMember = new AmsMember();
+        amsMember.setStatus(0);
+        Integer record = memberMapper.updateByExampleSelective(amsMember, example);
+        return record;
+    }
 
 }

@@ -72,4 +72,11 @@ public class AmsMemberController {
         Integer record =  memberService.dong(memberId);
         return CommonResult.success(record);
     }
+    @ApiOperation("冻结会员")
+    @RequestMapping(value = "/jie", method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult jie(@RequestParam Integer memberId) {
+        Integer record =  memberService.jie(memberId);
+        return CommonResult.success(record);
+    }
 }

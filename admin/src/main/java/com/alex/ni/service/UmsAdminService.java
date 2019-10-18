@@ -54,5 +54,23 @@ public interface UmsAdminService {
 
     Integer edit(UmsAdmin admin);
 
+    /**
+     * @param id
+     * @param name
+     * @param nickname
+     * @param pageNum
+     * @param pageSize
+     * @return
+     */
+    List<UmsAdmin> list (Integer id,String name,String nickname,Integer pageNum,Integer pageSize);
+
+    /**
+     * 用户禁用
+     * @param id
+     * @return
+     */
+    Integer jin(Integer id);
+
+    Integer qi(Integer id);
 
 }
