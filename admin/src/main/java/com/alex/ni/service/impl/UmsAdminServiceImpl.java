@@ -183,6 +183,7 @@ public class UmsAdminServiceImpl implements UmsAdminService {
         if (!StringUtils.isEmpty(nickname)){
             criteria.andNickNameLike("%" + nickname + "%");
         }
+        criteria.andRoleIdEqualTo(2);
         List<UmsAdmin> list = adminMapper.selectByExample(example);
         return list;
     }
@@ -198,7 +199,30 @@ public class UmsAdminServiceImpl implements UmsAdminService {
 
     @Override
     public Integer qi(Integer id) {
-        return null;
+        UmsAdmin admin = new UmsAdmin();
+        admin.setId(id.longValue());
+        admin.setStatus(1);
+        Integer record = adminMapper.updateByPrimaryKeySelective(admin);
+        return record;
+    }
+
+    @Override
+    public Integer add(UmsAdmin admin) {
+        admin.setCreateTime(new Date());
+        String encodePassword = passwordEncoder.encode("123");
+        admin.setPassword(encodePassword);
+        admin.setIcon("http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/timg.jpg");
+        admin.setRoleId(2);
+        Integer record = adminMapper.insertSelective(admin);
+        return record;
+    }
+
+    @Override
+    public Integer count(String username) {
+        UmsAdminExample example = new UmsAdminExample();
+        example.createCriteria().andUsernameEqualTo(username);
+        Long record =  adminMapper.countByExample(example);
+        return record.intValue();
     }
 
     /**

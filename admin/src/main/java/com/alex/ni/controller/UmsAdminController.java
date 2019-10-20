@@ -1,5 +1,6 @@
 package com.alex.ni.controller;
 
+import com.alex.ni.api.CommonPage;
 import com.alex.ni.api.CommonResult;
 
 import com.alex.ni.bo.AdminUserDetails;
@@ -15,6 +16,7 @@ import com.aliyuncs.exceptions.ClientException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import net.sf.json.JSONObject;
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -193,7 +195,7 @@ public class UmsAdminController {
             @RequestParam(required = false) Integer pageSize
     ) {
         List<UmsAdmin> list = adminService.list(id, name, nickname, pageNum, pageSize);
-        return CommonResult.success(list);
+        return CommonResult.success(CommonPage.restPage(list));
     }
     @ApiOperation("用户禁用")
     @RequestMapping(value = "jin",method = RequestMethod.GET)
@@ -209,6 +211,17 @@ public class UmsAdminController {
     @ResponseBody
     public CommonResult qi(@RequestParam Integer id) {
         Integer record = adminService.qi(id);
+        return CommonResult.success(record);
+    }
+    @ApiOperation("添加用户")
+    @RequestMapping(value = "add",method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult add(@RequestBody UmsAdmin admin) {
+        Integer a = adminService.count(admin.getUsername());
+        if(a!=0){
+            return CommonResult.failed("账号已存在");
+        }
+        Integer record = adminService.add(admin);
         return CommonResult.success(record);
     }
 }

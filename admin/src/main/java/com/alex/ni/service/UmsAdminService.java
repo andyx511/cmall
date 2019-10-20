@@ -73,4 +73,6 @@ public interface UmsAdminService {
 
     Integer qi(Integer id);
 
+    Integer add(UmsAdmin admin);
+    Integer count(String username);
 }
