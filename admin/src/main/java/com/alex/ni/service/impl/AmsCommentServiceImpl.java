@@ -28,7 +28,7 @@ public class AmsCommentServiceImpl implements AmsCommentService {
     public Integer addComment(AmsProductComment comment) {
         AdminUserDetails details = adminService.getCurrentUser();
         UmsAdmin admin = details.getUmsAdmin();
-        comment.setMemberId(admin.getId().intValue());
+        comment.setUserId(admin.getId().intValue());
         comment.setCreateTime(new Date());
         Integer record = commentMapper.insertSelective(comment);
         return record;

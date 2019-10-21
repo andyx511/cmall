@@ -13,7 +13,6 @@
         <module>admin</module>
         <module>mbg</module>
         <module>common</module>
-        <module>member</module>
     </modules>
 
     <parent>

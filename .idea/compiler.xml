@@ -8,10 +8,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="mbg" />
         <module name="common" />
-        <module name="member" />
         <module name="admin" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="member" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

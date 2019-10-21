@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.alex.ni.mapper.AmsProductCommentMapper">
-  <resultMap id="BaseResultMap" type="com.alex.ni.model.AmsProductComment">
+<mapper namespace="com.alex.ni.mapper.AmsNewRecommendMapper">
+  <resultMap id="BaseResultMap" type="com.alex.ni.model.AmsNewRecommend">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="product_id" jdbcType="INTEGER" property="productId" />
-    <result column="user_id" jdbcType="INTEGER" property="userId" />
-    <result column="product_name" jdbcType="VARCHAR" property="productName" />
-    <result column="user_name" jdbcType="VARCHAR" property="userName" />
-    <result column="content" jdbcType="VARCHAR" property="content" />
-    <result column="star" jdbcType="INTEGER" property="star" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="is_recommend" jdbcType="INTEGER" property="isRecommend" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -70,15 +66,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, product_id, user_id, product_name, user_name, content, star, create_time
+    id, product_id, is_recommend, sort
   </sql>
-  <select id="selectByExample" parameterType="com.alex.ni.model.AmsProductCommentExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.alex.ni.model.AmsNewRecommendExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from ams_product_comment
+    from ams_new_recommend
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -89,90 +85,64 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from ams_product_comment
+    from ams_new_recommend
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from ams_product_comment
+    delete from ams_new_recommend
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.alex.ni.model.AmsProductCommentExample">
-    delete from ams_product_comment
+  <delete id="deleteByExample" parameterType="com.alex.ni.model.AmsNewRecommendExample">
+    delete from ams_new_recommend
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.alex.ni.model.AmsProductComment">
+  <insert id="insert" parameterType="com.alex.ni.model.AmsNewRecommend">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into ams_product_comment (product_id, user_id, product_name, 
-      user_name, content, star, 
-      create_time)
-    values (#{productId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{productName,jdbcType=VARCHAR}, 
-      #{userName,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, #{star,jdbcType=INTEGER}, 
-      #{createTime,jdbcType=TIMESTAMP})
+    insert into ams_new_recommend (product_id, is_recommend, sort
+      )
+    values (#{productId,jdbcType=INTEGER}, #{isRecommend,jdbcType=INTEGER}, #{sort,jdbcType=INTEGER}
+      )
   </insert>
-  <insert id="insertSelective" parameterType="com.alex.ni.model.AmsProductComment">
+  <insert id="insertSelective" parameterType="com.alex.ni.model.AmsNewRecommend">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into ams_product_comment
+    insert into ams_new_recommend
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="productId != null">
         product_id,
       </if>
-      <if test="userId != null">
-        user_id,
+      <if test="isRecommend != null">
+        is_recommend,
       </if>
-      <if test="productName != null">
-        product_name,
-      </if>
-      <if test="userName != null">
-        user_name,
-      </if>
-      <if test="content != null">
-        content,
-      </if>
-      <if test="star != null">
-        star,
-      </if>
-      <if test="createTime != null">
-        create_time,
+      <if test="sort != null">
+        sort,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="productId != null">
         #{productId,jdbcType=INTEGER},
       </if>
-      <if test="userId != null">
-        #{userId,jdbcType=INTEGER},
+      <if test="isRecommend != null">
+        #{isRecommend,jdbcType=INTEGER},
       </if>
-      <if test="productName != null">
-        #{productName,jdbcType=VARCHAR},
-      </if>
-      <if test="userName != null">
-        #{userName,jdbcType=VARCHAR},
-      </if>
-      <if test="content != null">
-        #{content,jdbcType=VARCHAR},
-      </if>
-      <if test="star != null">
-        #{star,jdbcType=INTEGER},
-      </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
+      <if test="sort != null">
+        #{sort,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.alex.ni.model.AmsProductCommentExample" resultType="java.lang.Long">
-    select count(*) from ams_product_comment
+  <select id="countByExample" parameterType="com.alex.ni.model.AmsNewRecommendExample" resultType="java.lang.Long">
+    select count(*) from ams_new_recommend
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update ams_product_comment
+    update ams_new_recommend
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=INTEGER},
@@ -180,23 +150,11 @@
       <if test="record.productId != null">
         product_id = #{record.productId,jdbcType=INTEGER},
       </if>
-      <if test="record.userId != null">
-        user_id = #{record.userId,jdbcType=INTEGER},
+      <if test="record.isRecommend != null">
+        is_recommend = #{record.isRecommend,jdbcType=INTEGER},
       </if>
-      <if test="record.productName != null">
-        product_name = #{record.productName,jdbcType=VARCHAR},
-      </if>
-      <if test="record.userName != null">
-        user_name = #{record.userName,jdbcType=VARCHAR},
-      </if>
-      <if test="record.content != null">
-        content = #{record.content,jdbcType=VARCHAR},
-      </if>
-      <if test="record.star != null">
-        star = #{record.star,jdbcType=INTEGER},
-      </if>
-      <if test="record.createTime != null">
-        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      <if test="record.sort != null">
+        sort = #{record.sort,jdbcType=INTEGER},
       </if>
     </set>
     <if test="_parameter != null">
@@ -204,55 +162,35 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update ams_product_comment
+    update ams_new_recommend
     set id = #{record.id,jdbcType=INTEGER},
       product_id = #{record.productId,jdbcType=INTEGER},
-      user_id = #{record.userId,jdbcType=INTEGER},
-      product_name = #{record.productName,jdbcType=VARCHAR},
-      user_name = #{record.userName,jdbcType=VARCHAR},
-      content = #{record.content,jdbcType=VARCHAR},
-      star = #{record.star,jdbcType=INTEGER},
-      create_time = #{record.createTime,jdbcType=TIMESTAMP}
+      is_recommend = #{record.isRecommend,jdbcType=INTEGER},
+      sort = #{record.sort,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.alex.ni.model.AmsProductComment">
-    update ams_product_comment
+  <update id="updateByPrimaryKeySelective" parameterType="com.alex.ni.model.AmsNewRecommend">
+    update ams_new_recommend
     <set>
       <if test="productId != null">
         product_id = #{productId,jdbcType=INTEGER},
       </if>
-      <if test="userId != null">
-        user_id = #{userId,jdbcType=INTEGER},
+      <if test="isRecommend != null">
+        is_recommend = #{isRecommend,jdbcType=INTEGER},
       </if>
-      <if test="productName != null">
-        product_name = #{productName,jdbcType=VARCHAR},
-      </if>
-      <if test="userName != null">
-        user_name = #{userName,jdbcType=VARCHAR},
-      </if>
-      <if test="content != null">
-        content = #{content,jdbcType=VARCHAR},
-      </if>
-      <if test="star != null">
-        star = #{star,jdbcType=INTEGER},
-      </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
+      <if test="sort != null">
+        sort = #{sort,jdbcType=INTEGER},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.alex.ni.model.AmsProductComment">
-    update ams_product_comment
+  <update id="updateByPrimaryKey" parameterType="com.alex.ni.model.AmsNewRecommend">
+    update ams_new_recommend
     set product_id = #{productId,jdbcType=INTEGER},
-      user_id = #{userId,jdbcType=INTEGER},
-      product_name = #{productName,jdbcType=VARCHAR},
-      user_name = #{userName,jdbcType=VARCHAR},
-      content = #{content,jdbcType=VARCHAR},
-      star = #{star,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=TIMESTAMP}
+      is_recommend = #{isRecommend,jdbcType=INTEGER},
+      sort = #{sort,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

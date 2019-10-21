@@ -135,6 +135,7 @@ public class UmsAdminController {
         String username = principal.getName();
         UmsAdmin umsAdmin = adminService.getAdminByUsername(username);
         Map<String, Object> data = new HashMap<>();
+        data.put("username", umsAdmin.getUsername());
         data.put("name", umsAdmin.getNickName());
         List<String> list = adminService.getUserRoles(umsAdmin.getId());
         data.put("roles",list);

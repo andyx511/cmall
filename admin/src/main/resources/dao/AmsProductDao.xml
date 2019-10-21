@@ -4,7 +4,13 @@
     <update id="updateStock">
         UPDATE ams_product
         SET stock = stock + #{num}
+        SET sales_volume = sales_volume + #{num}
         WHERE
             id = #{id}
+    </update>
+    <update id="updateNum">
+        UPDATE ams_product
+        set sales_volume = sales_volume + #{num}
+        where id = #{id}
     </update>
 </mapper>

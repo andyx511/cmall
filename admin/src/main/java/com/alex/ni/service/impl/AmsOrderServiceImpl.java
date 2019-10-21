@@ -77,8 +77,9 @@ public class AmsOrderServiceImpl implements AmsOrderService {
             totalGrowth  += num * product.getGiftGrowth();
             totalPoint += num * product.getGiftPoint();
             totalPrice = totalPrice.add(product.getPrice().multiply(new BigDecimal(num)));
-            //减少库存
+            //减少库存增加购买数
             Integer record = productDao.updateStock(pid, -num);
+
         }
 
         //生成订单

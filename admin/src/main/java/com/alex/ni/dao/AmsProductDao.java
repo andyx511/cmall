@@ -1,5 +1,6 @@
 package com.alex.ni.dao;
 
+import io.swagger.models.auth.In;
 import org.apache.ibatis.annotations.Param;
 
 /**
@@ -9,4 +10,5 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface AmsProductDao {
     Integer updateStock(@Param("id") Integer id,@Param("num") Integer num);
+    Integer updateNum(@Param("id") Integer id, @Param("num") Integer num);
 }
