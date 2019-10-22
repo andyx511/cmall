@@ -4,8 +4,8 @@
 
     <select id="systemVisited" resultType="java.util.Map">
         SELECT
-            cal.f_date,
-            COUNT( log.id)
+            cal.f_date as fDate,
+            COUNT( log.id) as count
         FROM
             t_sys_calendar cal
             LEFT JOIN ams_user_log log ON DATE_FORMAT(log.log_time, '%Y-%m-%d' ) = cal.f_date
