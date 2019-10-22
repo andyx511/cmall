@@ -30,8 +30,8 @@ public class AmsReportController {
     @Autowired
     private AmsReportService reportService;
 
-    @ApiOperation("商品列表")
-    @RequestMapping(value = "/list" ,method = RequestMethod.GET)
+    @ApiOperation("访问量")
+    @RequestMapping(value = "/visit" ,method = RequestMethod.GET)
     @ResponseBody
     public CommonResult list(){
         List<Map> list = reportService.systemVisied();

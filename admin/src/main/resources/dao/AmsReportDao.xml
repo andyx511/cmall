@@ -4,11 +4,12 @@
 
     <select id="systemVisited" resultType="java.util.Map">
         SELECT
-            cal.f_date as fDate,
-            COUNT( log.id) as count
+            cal.f_date AS fDate,
+            COUNT( log.id ) AS count,
+            count( log.user_id = 11 OR NULL )
         FROM
             t_sys_calendar cal
-            LEFT JOIN ams_user_log log ON DATE_FORMAT(log.log_time, '%Y-%m-%d' ) = cal.f_date
+            LEFT JOIN ams_user_log log ON DATE_FORMAT( log.log_time, '%Y-%m-%d' ) = cal.f_date
         WHERE
             cal.f_date BETWEEN DATE_FORMAT( DATE_SUB( CURRENT_DATE, INTERVAL 7 DAY ), '%Y-%m-%d' )
             AND DATE_FORMAT( DATE_SUB( CURRENT_DATE, INTERVAL 0 DAY ), '%Y-%m-%d' )
