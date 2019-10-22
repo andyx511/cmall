@@ -32,6 +32,5 @@ public interface AmsProductCommentService {
      */
     Integer delete(Integer id);
 
-    Integer changeTheLife(Integer id);
 
 }
