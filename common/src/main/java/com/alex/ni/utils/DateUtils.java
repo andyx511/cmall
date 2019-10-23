@@ -924,5 +924,17 @@ public class DateUtils extends PropertyEditorSupport {
         calendar.set(Calendar.DATE, calendar.get(Calendar.DATE) - 1);
         return calendar.getTime();
     }
+    public static Date tomorrow(Date today) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(today);
+        calendar.set(Calendar.DATE, calendar.get(Calendar.DATE) + 1);
+        return calendar.getTime();
+    }
+    public static Date today(){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String s = sdf.format(new Date());
+        Date date = str2Date(s,sdf);
+        return date;
+    }
 
 }

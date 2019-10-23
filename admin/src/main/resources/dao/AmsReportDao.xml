@@ -6,7 +6,7 @@
         SELECT
             cal.f_date AS fDate,
             COUNT( log.id ) AS count,
-            count( log.user_id = 11 OR NULL )
+            count( log.user_id = #{userId} OR NULL ) AS userCount
         FROM
             t_sys_calendar cal
             LEFT JOIN ams_user_log log ON DATE_FORMAT( log.log_time, '%Y-%m-%d' ) = cal.f_date
@@ -18,4 +18,37 @@
         ORDER BY
             cal.f_date
     </select>
+    <select id="producrtKind" resultType="java.util.Map">
+        SELECT
+            kind,
+            count( kind ) as count
+        FROM
+            ams_product
+        WHERE
+            is_delete = 0
+        GROUP BY
+            kind
+    </select>
+    <select id="productBrand" resultType="java.util.Map">
+        SELECT
+            brand,
+            count( brand) as count
+        FROM
+            ams_product
+        WHERE
+            is_delete = 0
+        GROUP BY
+            brand
+    </select>
+    <select id="order" resultType="java.util.Map">
+        SELECT
+            count(id) as num,
+            sum(total_price) as totalPrice,
+            DATE_FORMAT(create_time,'%Y-%m-%d') as date
+        FROM
+            `ams_order`
+        GROUP BY
+            DATE_FORMAT(create_time,'%Y-%m-%d')
+    </select>
 </mapper>
+

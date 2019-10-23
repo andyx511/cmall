@@ -13,7 +13,7 @@ public interface AmsReportService {
      * 系统访问量
      * @return List<Map>
      */
-    List<Map> systemVisied();
+    List<Map> systemVisied(Integer id);
 
     /**
      * 订单报表
@@ -36,6 +36,10 @@ public interface AmsReportService {
      * @return
      */
     List<Map> productBrand();
+
+    List<Map> order();
+
+    Map<String, Object> map();
 
 
 }

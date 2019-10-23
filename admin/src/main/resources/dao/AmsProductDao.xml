@@ -4,7 +4,7 @@
     <update id="updateStock">
         UPDATE ams_product
         SET stock = stock + #{num}
-        SET sales_volume = sales_volume + #{num}
+        , sales_volume = sales_volume - #{num}
         WHERE
             id = #{id}
     </update>
