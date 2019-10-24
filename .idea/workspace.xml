@@ -5,17 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c82b2aba-5ebe-44fa-aa61-d897d628550a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/SystemUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsReportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/UmsAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/UmsAdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dao/AmsReportDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dao/AmsReportDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsReportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsCartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsCartService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsReportServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsReportServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/resources/dao/AmsProductDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/resources/dao/AmsProductDao.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/src/main/resources/dao/AmsReportDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/resources/dao/AmsReportDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/alex/ni/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/alex/ni/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/DateUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/DateUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/alex/ni/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/com/alex/ni/Test.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -52,37 +48,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsReportController.java">
+        <entry file="file://$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/SystemUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="69" column="48" selection-start-line="69" selection-start-column="48" selection-end-line="69" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsReportServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="89" column="30" selection-start-line="89" selection-start-column="30" selection-end-line="89" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/DateUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="929" column="65" selection-start-line="929" selection-start-column="65" selection-end-line="929" selection-end-column="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/src/main/java/com/alex/ni/Test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="219">
+              <caret line="73" column="23" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -90,11 +59,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/pom.xml">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/UmsAdminController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+            <state relative-caret-position="143">
+              <caret line="176" column="53" selection-start-line="176" selection-start-column="53" selection-end-line="176" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dto/UmsAdminParam.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsReportController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="457">
+              <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
             </state>
           </provider>
         </entry>
@@ -102,42 +89,56 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dao/AmsReportDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="38" column="14" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
+            <state relative-caret-position="397">
+              <caret line="40" column="12" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/src/main/resources/application.yml">
+        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/BeanHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="35" column="22" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="22" />
+            <state relative-caret-position="704">
+              <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/src/main/resources/application-dev.yml">
+        <entry file="file://$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/EmailCheck.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-267" />
+            <state relative-caret-position="110">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/FileDownloadUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="6" column="29" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="29" />
+            </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/src/main/resources/dao/AmsReportDao.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="42" column="4" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
+            <state relative-caret-position="265">
+              <caret line="54" column="34" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsReportService.java">
+        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsOrderServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
+            <state relative-caret-position="256">
+              <caret line="185" column="18" selection-start-line="185" selection-start-column="11" selection-end-line="185" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -202,7 +203,6 @@
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsOrderService.java" />
         <option value="$PROJECT_DIR$/admin/src/main/resources/dao/AmsOrderDao.xml" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsOrderController.java" />
-        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsCartService.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsCartServiceImpl.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsCartController.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dto/AmsMemberQueryParam.java" />
@@ -212,8 +212,6 @@
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/UmsAdminService.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/UmsAdminServiceImpl.java" />
         <option value="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsGoodRecommend.java" />
-        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/UmsAdminController.java" />
-        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsProductCommentServiceImpl.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dao/AmsProductDao.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsOrderServiceImpl.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsCommentServiceImpl.java" />
@@ -233,16 +231,19 @@
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsHotRecommendServiceImpl.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsNewRecommendServiceImpl.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsProductCommentService.java" />
-        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dao/AmsReportDao.java" />
-        <option value="$PROJECT_DIR$/admin/src/main/resources/dao/AmsReportDao.xml" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/SystemUtil.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/SystemUtilTest.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsReportService.java" />
-        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsReportController.java" />
         <option value="$PROJECT_DIR$/admin/src/main/resources/dao/AmsProductDao.xml" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/alex/ni/Test.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/DateUtils.java" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dao/AmsReportDao.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsReportServiceImpl.java" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsProductCommentServiceImpl.java" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsCartService.java" />
+        <option value="$PROJECT_DIR$/admin/src/main/resources/dao/AmsReportDao.xml" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsReportController.java" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/UmsAdminController.java" />
       </list>
     </option>
   </component>
@@ -274,10 +275,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="165" />
-    <option name="y" value="315" />
-    <option name="width" value="1682" />
-    <option name="height" value="995" />
+    <option name="x" value="45" />
+    <option name="y" value="65" />
+    <option name="width" value="1710" />
+    <option name="height" value="920" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -339,7 +340,27 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ni" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmall" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ni" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmall" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ni" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
@@ -638,7 +659,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="355911000" />
+    <option name="totallyTimeSpent" value="366192000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -651,7 +672,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="1" />
@@ -660,7 +680,7 @@
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Web" order="6" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="7" visible="true" weight="0.2468017" />
+      <window_info content_ui="combo" id="Project" order="7" visible="true" weight="0.17004265" />
       <window_info anchor="bottom" id="Problems" order="0" weight="0.3275488" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.217064" />
@@ -677,7 +697,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.3275488" />
       <window_info anchor="bottom" id="Database Changes" order="14" weight="0.3295129" />
       <window_info anchor="bottom" id="Version Control" order="15" weight="0.3286334" />
-      <window_info active="true" anchor="bottom" id="Run Dashboard" order="16" sideWeight="0.4989339" visible="true" weight="0.37418655" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="16" sideWeight="0.4989339" visible="true" weight="0.30368763" />
       <window_info anchor="bottom" id="MyBatis Log" order="17" weight="0.3286119" />
       <window_info anchor="bottom" id="Inspection Results" order="18" weight="0.3286119" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -740,12 +760,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/TestController.java</url>
-          <line>32</line>
-          <properties />
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsProductService.java</url>
           <line>12</line>
           <properties />
@@ -765,13 +779,13 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/UmsAdminController.java</url>
-          <line>227</line>
+          <line>228</line>
           <properties />
           <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/UmsAdminController.java</url>
-          <line>156</line>
+          <line>157</line>
           <properties />
           <option name="timeStamp" value="45" />
         </line-breakpoint>
@@ -795,58 +809,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mbg/pom.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-689">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/config/GlobalCorsConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/config/MyBatisConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/config/RestTemplateConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/config/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/config/Swagger2Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="70" column="25" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsAddressController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-371">
-          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsGoodRecommendServiceImpl.java" />
     <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsGoodRecommendServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -932,23 +894,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsProductCommentServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsProductCommentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsBrandRecommendServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
@@ -963,13 +908,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsProductCommentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="39" column="43" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -994,13 +932,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
           <caret line="32" column="3" selection-start-line="32" selection-start-column="3" selection-end-line="40" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/UmsAdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="224" column="39" selection-start-line="224" selection-start-column="39" selection-end-line="224" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -1046,16 +977,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/SystemUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="39" column="37" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/util/Date.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -1098,26 +1019,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsOrderService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsOrderServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="80" column="47" lean-forward="true" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dao/AmsProductDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -1154,20 +1055,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsReportController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="69" column="48" selection-start-line="69" selection-start-column="48" selection-end-line="69" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsReportService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/cn/hutool/hutool-all/4.5.7/hutool-all-4.5.7.jar!/cn/hutool/core/date/DateUtil.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -1192,24 +1079,155 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/resources/dao/AmsReportDao.xml">
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsReportService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="42" column="4" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dao/AmsReportDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="38" column="14" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
+        <state relative-caret-position="234">
+          <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsReportServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="89" column="30" selection-start-line="89" selection-start-column="30" selection-end-line="89" selection-end-column="30" />
+        <state relative-caret-position="283">
+          <caret line="82" column="36" selection-start-line="82" selection-start-column="36" selection-end-line="82" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsOrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/TestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsCommentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="50" lean-forward="true" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsProductCommentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="39" column="42" lean-forward="true" selection-start-line="39" selection-start-column="42" selection-end-line="39" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsProductCommentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsProductCommentServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/MD5Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsCartService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/BeanHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="704">
+          <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/EmailCheck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/FileDownloadUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="6" column="29" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsOrderServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="185" column="18" selection-start-line="185" selection-start-column="11" selection-end-line="185" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/resources/dao/AmsReportDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="54" column="34" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dao/AmsReportDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="40" column="12" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/SystemUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="73" column="23" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsReportController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dto/UmsAdminParam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/UmsAdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="176" column="53" selection-start-line="176" selection-start-column="53" selection-end-line="176" selection-end-column="53" />
         </state>
       </provider>
     </entry>

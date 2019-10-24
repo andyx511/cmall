@@ -7,6 +7,7 @@ import com.alex.ni.dto.AmsProductQueryParam;
 import com.alex.ni.model.AmsProduct;
 import com.alex.ni.service.AmsReportService;
 import com.alex.ni.service.UmsAdminService;
+import com.alex.ni.utils.SystemUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
@@ -69,5 +71,17 @@ public class AmsReportController {
     public CommonResult stat(){
         Map<String, Object> map = reportService.map();
         return CommonResult.success(map);
+    }
+    @ApiOperation("内存使用率")
+    @RequestMapping(value = "/memory" ,method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult memory(){
+        double a = SystemUtil.getUsedMemory();
+        double b = SystemUtil.getTotalMemorySize();
+        double c = a/b;
+        BigDecimal bigDecimal = new BigDecimal(c);
+        //这里的 2 就是你要保留几位小数。
+        double f1 = bigDecimal.setScale(3, BigDecimal.ROUND_HALF_UP).doubleValue();
+        return CommonResult.success(f1);
     }
 }

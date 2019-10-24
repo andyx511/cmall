@@ -29,6 +29,11 @@ public interface AmsCartService {
     */
     List<AmsCart> cartList(Integer userId);
 
+    /**
+     * 劳资就是不想写注释
+     * @param userId
+     * @return
+     */
     Integer count(Integer userId);
 
 }

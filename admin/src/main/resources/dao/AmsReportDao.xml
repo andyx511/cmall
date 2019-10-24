@@ -50,5 +50,14 @@
         GROUP BY
             DATE_FORMAT(create_time,'%Y-%m-%d')
     </select>
+    <select id="orderPrcie" resultType="java.lang.Integer">
+        SELECT
+            IFNULL(SUM(total_price),0)
+        FROM
+            `ams_order`
+        WHERE
+            create_time BETWEEN DATE_FORMAT( DATE_SUB( CURRENT_DATE, INTERVAL 0 DAY ), '%Y-%m-%d' )
+            AND DATE_FORMAT( DATE_SUB( CURRENT_DATE, INTERVAL -1 DAY ), '%Y-%m-%d' )
+    </select>
 </mapper>
 

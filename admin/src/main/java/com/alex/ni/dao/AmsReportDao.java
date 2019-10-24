@@ -38,4 +38,6 @@ public interface AmsReportDao {
      */
     List<Map> order();
 
+    Integer orderPrcie();
+
 }

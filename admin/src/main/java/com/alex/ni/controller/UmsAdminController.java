@@ -139,6 +139,7 @@ public class UmsAdminController {
         data.put("name", umsAdmin.getNickName());
         List<String> list = adminService.getUserRoles(umsAdmin.getId());
         data.put("roles",list);
+        data.put("email", umsAdmin.getEmail());
         data.put("avatar", umsAdmin.getIcon());
         return CommonResult.success(data);
     }

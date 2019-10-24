@@ -80,9 +80,8 @@ public class AmsReportServiceImpl implements AmsReportService {
         Long orderCount = orderMapper.countByExample(orderExample);
         map.put("order",orderCount);
         // 订单金额
-        List<Map>list = this.order();
-        Object totalPrice = list.get(list.size()-1);
-        map.put("price", totalPrice);
+        Integer a = reportDao.orderPrcie();
+        map.put("totalPrice", a);
         // 商品总数
         AmsProductExample productExample = new AmsProductExample();
         productExample.createCriteria().andIsDeleteEqualTo(0);
