@@ -7,6 +7,13 @@
         <result column="username" property="username" />
         <result column="icon" property="icon" />
     </resultMap>
+    <update id="updateP">
+        UPDATE ams_member
+        SET growth = growth + #{growth} ,
+            point = point+ #{point}
+        WHERE
+            user_id = #{userId}
+    </update>
     <select id="getInfo" resultMap="MemberInfo">
         SELECT
             ad.username,

@@ -100,7 +100,14 @@ public class AmsOrderController  {
         Integer record = orderService.orderStatus(6, id);
         return CommonResult.success(record);
     }
+    @ApiOperation("确认收货")
+    @RequestMapping(value = "/getp/{id}", method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult getp( @PathVariable Integer id) {
+        Integer record = orderService.orderStatus(3, id);
 
+        return CommonResult.success(record);
+    }
     /*   --------------------管理员部分--------------------------  */
 
     @ApiOperation("订单列表")
@@ -152,4 +159,5 @@ public class AmsOrderController  {
         List<AmsOrderReturn> record = orderService.returnList(param, pageNum,pageSize);
         return CommonResult.success(record);
     }
+
 }

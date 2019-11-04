@@ -2,6 +2,7 @@ package com.alex.ni.service.impl;
 
 import com.alex.ni.bo.AdminUserDetails;
 import com.alex.ni.bo.UserDetail;
+import com.alex.ni.dao.AmsMemberDao;
 import com.alex.ni.dao.AmsOrderDao;
 import com.alex.ni.dao.AmsProductDao;
 import com.alex.ni.dto.AmsOrderParam;
@@ -53,6 +54,8 @@ public class AmsOrderServiceImpl implements AmsOrderService {
     private AmsAddressMapper addressMapper;
     @Autowired
     private AmsOrderReturnMapper returnMapper;
+    @Autowired
+    private AmsMemberDao memberDao;
 
     @Override
     @Transactional
@@ -186,11 +189,13 @@ public class AmsOrderServiceImpl implements AmsOrderService {
         if(members.get(0).getMoney().compareTo(order.getTotalPrice()) == -1){
             return 0;
         }
+
         //修改余额及订单状态
         BigDecimal newMoney = members.get(0).getMoney().subtract(order.getTotalPrice());
         AmsMember member = new AmsMember();
         member.setMoney(newMoney);
         Integer record = memberMapper.updateByExampleSelective(member,example);
+        memberDao.updateP(order.getGrowth(),order.getPoint(),order.getUserId());
         order.setStatus(1);
         order.setPayType("网页支付");
         Integer re = orderMapper.updateByPrimaryKeySelective(order);

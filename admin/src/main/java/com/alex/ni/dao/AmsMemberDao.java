@@ -2,6 +2,7 @@ package com.alex.ni.dao;
 
 import com.alex.ni.dto.MemberInfo;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Update;
 
 /**
  * @author NiDingbo
@@ -10,4 +11,11 @@ import org.apache.ibatis.annotations.Param;
 public interface AmsMemberDao {
 
     MemberInfo getInfo(@Param("userId") Integer userId);
+
+    /**
+     * @param growth
+     * @param point
+     * @return
+     */
+    Integer updateP(@Param("growth") Integer growth, @Param("point") Integer point, @Param("userId") Integer userId);
 }
