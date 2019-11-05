@@ -101,7 +101,7 @@ public class AmsOrderController  {
         return CommonResult.success(record);
     }
     @ApiOperation("确认收货")
-    @RequestMapping(value = "/getp/{id}", method = RequestMethod.POST)
+    @RequestMapping(value = "/getp/{id}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult getp( @PathVariable Integer id) {
         Integer record = orderService.orderStatus(3, id);
@@ -157,7 +157,7 @@ public class AmsOrderController  {
                                         @RequestParam(value = "pageNum" ,defaultValue = "1") Integer pageNum,
                                         @RequestParam(value = "pageSize",defaultValue = "10") Integer pageSize) {
         List<AmsOrderReturn> record = orderService.returnList(param, pageNum,pageSize);
-        return CommonResult.success(record);
+        return CommonResult.success(CommonPage.restPage(record));
     }
-
+    
 }

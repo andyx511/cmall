@@ -16,4 +16,8 @@ public class AmsOrderReturnParam {
     private String status;
     @ApiModelProperty("处理人")
     private String handleMan;
+    @ApiModelProperty("开始时间")
+    private String startDt;
+    @ApiModelProperty("结束时间")
+    private String endDt;
 }

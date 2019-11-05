@@ -5,15 +5,13 @@
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="order_id" jdbcType="INTEGER" property="orderId" />
     <result column="reason" jdbcType="VARCHAR" property="reason" />
-    <result column="return_money" jdbcType="VARCHAR" property="returnMoney" />
+    <result column="return_money" jdbcType="DECIMAL" property="returnMoney" />
     <result column="apply_time" jdbcType="TIMESTAMP" property="applyTime" />
     <result column="user_name" jdbcType="VARCHAR" property="userName" />
     <result column="apply_status" jdbcType="VARCHAR" property="applyStatus" />
     <result column="handle_time" jdbcType="TIMESTAMP" property="handleTime" />
     <result column="handle_note" jdbcType="VARCHAR" property="handleNote" />
     <result column="handle_man" jdbcType="VARCHAR" property="handleMan" />
-    <result column="receiver" jdbcType="VARCHAR" property="receiver" />
-    <result column="receive_time" jdbcType="TIMESTAMP" property="receiveTime" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -75,7 +73,7 @@
   </sql>
   <sql id="Base_Column_List">
     id, order_id, reason, return_money, apply_time, user_name, apply_status, handle_time, 
-    handle_note, handle_man, receiver, receive_time
+    handle_note, handle_man
   </sql>
   <select id="selectByExample" parameterType="com.alex.ni.model.AmsOrderReturnExample" resultMap="BaseResultMap">
     select
@@ -113,12 +111,12 @@
     </selectKey>
     insert into ams_order_return (order_id, reason, return_money, 
       apply_time, user_name, apply_status, 
-      handle_time, handle_note, handle_man, 
-      receiver, receive_time)
-    values (#{orderId,jdbcType=INTEGER}, #{reason,jdbcType=VARCHAR}, #{returnMoney,jdbcType=VARCHAR}, 
+      handle_time, handle_note, handle_man
+      )
+    values (#{orderId,jdbcType=INTEGER}, #{reason,jdbcType=VARCHAR}, #{returnMoney,jdbcType=DECIMAL}, 
       #{applyTime,jdbcType=TIMESTAMP}, #{userName,jdbcType=VARCHAR}, #{applyStatus,jdbcType=VARCHAR}, 
-      #{handleTime,jdbcType=TIMESTAMP}, #{handleNote,jdbcType=VARCHAR}, #{handleMan,jdbcType=VARCHAR}, 
-      #{receiver,jdbcType=VARCHAR}, #{receiveTime,jdbcType=TIMESTAMP})
+      #{handleTime,jdbcType=TIMESTAMP}, #{handleNote,jdbcType=VARCHAR}, #{handleMan,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.alex.ni.model.AmsOrderReturn">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
@@ -153,12 +151,6 @@
       <if test="handleMan != null">
         handle_man,
       </if>
-      <if test="receiver != null">
-        receiver,
-      </if>
-      <if test="receiveTime != null">
-        receive_time,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="orderId != null">
@@ -168,7 +160,7 @@
         #{reason,jdbcType=VARCHAR},
       </if>
       <if test="returnMoney != null">
-        #{returnMoney,jdbcType=VARCHAR},
+        #{returnMoney,jdbcType=DECIMAL},
       </if>
       <if test="applyTime != null">
         #{applyTime,jdbcType=TIMESTAMP},
@@ -187,12 +179,6 @@
       </if>
       <if test="handleMan != null">
         #{handleMan,jdbcType=VARCHAR},
-      </if>
-      <if test="receiver != null">
-        #{receiver,jdbcType=VARCHAR},
-      </if>
-      <if test="receiveTime != null">
-        #{receiveTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -215,7 +201,7 @@
         reason = #{record.reason,jdbcType=VARCHAR},
       </if>
       <if test="record.returnMoney != null">
-        return_money = #{record.returnMoney,jdbcType=VARCHAR},
+        return_money = #{record.returnMoney,jdbcType=DECIMAL},
       </if>
       <if test="record.applyTime != null">
         apply_time = #{record.applyTime,jdbcType=TIMESTAMP},
@@ -235,12 +221,6 @@
       <if test="record.handleMan != null">
         handle_man = #{record.handleMan,jdbcType=VARCHAR},
       </if>
-      <if test="record.receiver != null">
-        receiver = #{record.receiver,jdbcType=VARCHAR},
-      </if>
-      <if test="record.receiveTime != null">
-        receive_time = #{record.receiveTime,jdbcType=TIMESTAMP},
-      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -251,15 +231,13 @@
     set id = #{record.id,jdbcType=INTEGER},
       order_id = #{record.orderId,jdbcType=INTEGER},
       reason = #{record.reason,jdbcType=VARCHAR},
-      return_money = #{record.returnMoney,jdbcType=VARCHAR},
+      return_money = #{record.returnMoney,jdbcType=DECIMAL},
       apply_time = #{record.applyTime,jdbcType=TIMESTAMP},
       user_name = #{record.userName,jdbcType=VARCHAR},
       apply_status = #{record.applyStatus,jdbcType=VARCHAR},
       handle_time = #{record.handleTime,jdbcType=TIMESTAMP},
       handle_note = #{record.handleNote,jdbcType=VARCHAR},
-      handle_man = #{record.handleMan,jdbcType=VARCHAR},
-      receiver = #{record.receiver,jdbcType=VARCHAR},
-      receive_time = #{record.receiveTime,jdbcType=TIMESTAMP}
+      handle_man = #{record.handleMan,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -274,7 +252,7 @@
         reason = #{reason,jdbcType=VARCHAR},
       </if>
       <if test="returnMoney != null">
-        return_money = #{returnMoney,jdbcType=VARCHAR},
+        return_money = #{returnMoney,jdbcType=DECIMAL},
       </if>
       <if test="applyTime != null">
         apply_time = #{applyTime,jdbcType=TIMESTAMP},
@@ -294,12 +272,6 @@
       <if test="handleMan != null">
         handle_man = #{handleMan,jdbcType=VARCHAR},
       </if>
-      <if test="receiver != null">
-        receiver = #{receiver,jdbcType=VARCHAR},
-      </if>
-      <if test="receiveTime != null">
-        receive_time = #{receiveTime,jdbcType=TIMESTAMP},
-      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -307,15 +279,13 @@
     update ams_order_return
     set order_id = #{orderId,jdbcType=INTEGER},
       reason = #{reason,jdbcType=VARCHAR},
-      return_money = #{returnMoney,jdbcType=VARCHAR},
+      return_money = #{returnMoney,jdbcType=DECIMAL},
       apply_time = #{applyTime,jdbcType=TIMESTAMP},
       user_name = #{userName,jdbcType=VARCHAR},
       apply_status = #{applyStatus,jdbcType=VARCHAR},
       handle_time = #{handleTime,jdbcType=TIMESTAMP},
       handle_note = #{handleNote,jdbcType=VARCHAR},
-      handle_man = #{handleMan,jdbcType=VARCHAR},
-      receiver = #{receiver,jdbcType=VARCHAR},
-      receive_time = #{receiveTime,jdbcType=TIMESTAMP}
+      handle_man = #{handleMan,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

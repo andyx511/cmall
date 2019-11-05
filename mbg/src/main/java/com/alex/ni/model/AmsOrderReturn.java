@@ -2,9 +2,11 @@ package com.alex.ni.model;
 
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class AmsOrderReturn implements Serializable {
+    @ApiModelProperty(value = "id主键")
     private Integer id;
 
     @ApiModelProperty(value = "订单id")
@@ -14,10 +16,12 @@ public class AmsOrderReturn implements Serializable {
     private String reason;
 
     @ApiModelProperty(value = "返还金额")
-    private String returnMoney;
+    private BigDecimal returnMoney;
 
+    @ApiModelProperty(value = "申请时间")
     private Date applyTime;
 
+    @ApiModelProperty(value = "用户名")
     private String userName;
 
     @ApiModelProperty(value = "0：待处理；1：退货中；2：已完成；3：已拒绝")
@@ -31,12 +35,6 @@ public class AmsOrderReturn implements Serializable {
 
     @ApiModelProperty(value = "处理人")
     private String handleMan;
-
-    @ApiModelProperty(value = "收货人")
-    private String receiver;
-
-    @ApiModelProperty(value = "收货地址")
-    private Date receiveTime;
 
     private static final long serialVersionUID = 1L;
 
@@ -64,11 +62,11 @@ public class AmsOrderReturn implements Serializable {
         this.reason = reason;
     }
 
-    public String getReturnMoney() {
+    public BigDecimal getReturnMoney() {
         return returnMoney;
     }
 
-    public void setReturnMoney(String returnMoney) {
+    public void setReturnMoney(BigDecimal returnMoney) {
         this.returnMoney = returnMoney;
     }
 
@@ -120,22 +118,6 @@ public class AmsOrderReturn implements Serializable {
         this.handleMan = handleMan;
     }
 
-    public String getReceiver() {
-        return receiver;
-    }
-
-    public void setReceiver(String receiver) {
-        this.receiver = receiver;
-    }
-
-    public Date getReceiveTime() {
-        return receiveTime;
-    }
-
-    public void setReceiveTime(Date receiveTime) {
-        this.receiveTime = receiveTime;
-    }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -152,8 +134,6 @@ public class AmsOrderReturn implements Serializable {
         sb.append(", handleTime=").append(handleTime);
         sb.append(", handleNote=").append(handleNote);
         sb.append(", handleMan=").append(handleMan);
-        sb.append(", receiver=").append(receiver);
-        sb.append(", receiveTime=").append(receiveTime);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

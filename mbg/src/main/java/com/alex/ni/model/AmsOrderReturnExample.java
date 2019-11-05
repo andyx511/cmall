@@ -1,5 +1,6 @@
 package com.alex.ni.model;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -305,62 +306,52 @@ public class AmsOrderReturnExample {
             return (Criteria) this;
         }
 
-        public Criteria andReturnMoneyEqualTo(String value) {
+        public Criteria andReturnMoneyEqualTo(BigDecimal value) {
             addCriterion("return_money =", value, "returnMoney");
             return (Criteria) this;
         }
 
-        public Criteria andReturnMoneyNotEqualTo(String value) {
+        public Criteria andReturnMoneyNotEqualTo(BigDecimal value) {
             addCriterion("return_money <>", value, "returnMoney");
             return (Criteria) this;
         }
 
-        public Criteria andReturnMoneyGreaterThan(String value) {
+        public Criteria andReturnMoneyGreaterThan(BigDecimal value) {
             addCriterion("return_money >", value, "returnMoney");
             return (Criteria) this;
         }
 
-        public Criteria andReturnMoneyGreaterThanOrEqualTo(String value) {
+        public Criteria andReturnMoneyGreaterThanOrEqualTo(BigDecimal value) {
             addCriterion("return_money >=", value, "returnMoney");
             return (Criteria) this;
         }
 
-        public Criteria andReturnMoneyLessThan(String value) {
+        public Criteria andReturnMoneyLessThan(BigDecimal value) {
             addCriterion("return_money <", value, "returnMoney");
             return (Criteria) this;
         }
 
-        public Criteria andReturnMoneyLessThanOrEqualTo(String value) {
+        public Criteria andReturnMoneyLessThanOrEqualTo(BigDecimal value) {
             addCriterion("return_money <=", value, "returnMoney");
             return (Criteria) this;
         }
 
-        public Criteria andReturnMoneyLike(String value) {
-            addCriterion("return_money like", value, "returnMoney");
-            return (Criteria) this;
-        }
-
-        public Criteria andReturnMoneyNotLike(String value) {
-            addCriterion("return_money not like", value, "returnMoney");
-            return (Criteria) this;
-        }
-
-        public Criteria andReturnMoneyIn(List<String> values) {
+        public Criteria andReturnMoneyIn(List<BigDecimal> values) {
             addCriterion("return_money in", values, "returnMoney");
             return (Criteria) this;
         }
 
-        public Criteria andReturnMoneyNotIn(List<String> values) {
+        public Criteria andReturnMoneyNotIn(List<BigDecimal> values) {
             addCriterion("return_money not in", values, "returnMoney");
             return (Criteria) this;
         }
 
-        public Criteria andReturnMoneyBetween(String value1, String value2) {
+        public Criteria andReturnMoneyBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("return_money between", value1, value2, "returnMoney");
             return (Criteria) this;
         }
 
-        public Criteria andReturnMoneyNotBetween(String value1, String value2) {
+        public Criteria andReturnMoneyNotBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("return_money not between", value1, value2, "returnMoney");
             return (Criteria) this;
         }
@@ -762,136 +753,6 @@ public class AmsOrderReturnExample {
 
         public Criteria andHandleManNotBetween(String value1, String value2) {
             addCriterion("handle_man not between", value1, value2, "handleMan");
-            return (Criteria) this;
-        }
-
-        public Criteria andReceiverIsNull() {
-            addCriterion("receiver is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andReceiverIsNotNull() {
-            addCriterion("receiver is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andReceiverEqualTo(String value) {
-            addCriterion("receiver =", value, "receiver");
-            return (Criteria) this;
-        }
-
-        public Criteria andReceiverNotEqualTo(String value) {
-            addCriterion("receiver <>", value, "receiver");
-            return (Criteria) this;
-        }
-
-        public Criteria andReceiverGreaterThan(String value) {
-            addCriterion("receiver >", value, "receiver");
-            return (Criteria) this;
-        }
-
-        public Criteria andReceiverGreaterThanOrEqualTo(String value) {
-            addCriterion("receiver >=", value, "receiver");
-            return (Criteria) this;
-        }
-
-        public Criteria andReceiverLessThan(String value) {
-            addCriterion("receiver <", value, "receiver");
-            return (Criteria) this;
-        }
-
-        public Criteria andReceiverLessThanOrEqualTo(String value) {
-            addCriterion("receiver <=", value, "receiver");
-            return (Criteria) this;
-        }
-
-        public Criteria andReceiverLike(String value) {
-            addCriterion("receiver like", value, "receiver");
-            return (Criteria) this;
-        }
-
-        public Criteria andReceiverNotLike(String value) {
-            addCriterion("receiver not like", value, "receiver");
-            return (Criteria) this;
-        }
-
-        public Criteria andReceiverIn(List<String> values) {
-            addCriterion("receiver in", values, "receiver");
-            return (Criteria) this;
-        }
-
-        public Criteria andReceiverNotIn(List<String> values) {
-            addCriterion("receiver not in", values, "receiver");
-            return (Criteria) this;
-        }
-
-        public Criteria andReceiverBetween(String value1, String value2) {
-            addCriterion("receiver between", value1, value2, "receiver");
-            return (Criteria) this;
-        }
-
-        public Criteria andReceiverNotBetween(String value1, String value2) {
-            addCriterion("receiver not between", value1, value2, "receiver");
-            return (Criteria) this;
-        }
-
-        public Criteria andReceiveTimeIsNull() {
-            addCriterion("receive_time is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andReceiveTimeIsNotNull() {
-            addCriterion("receive_time is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andReceiveTimeEqualTo(Date value) {
-            addCriterion("receive_time =", value, "receiveTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andReceiveTimeNotEqualTo(Date value) {
-            addCriterion("receive_time <>", value, "receiveTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andReceiveTimeGreaterThan(Date value) {
-            addCriterion("receive_time >", value, "receiveTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andReceiveTimeGreaterThanOrEqualTo(Date value) {
-            addCriterion("receive_time >=", value, "receiveTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andReceiveTimeLessThan(Date value) {
-            addCriterion("receive_time <", value, "receiveTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andReceiveTimeLessThanOrEqualTo(Date value) {
-            addCriterion("receive_time <=", value, "receiveTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andReceiveTimeIn(List<Date> values) {
-            addCriterion("receive_time in", values, "receiveTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andReceiveTimeNotIn(List<Date> values) {
-            addCriterion("receive_time not in", values, "receiveTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andReceiveTimeBetween(Date value1, Date value2) {
-            addCriterion("receive_time between", value1, value2, "receiveTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andReceiveTimeNotBetween(Date value1, Date value2) {
-            addCriterion("receive_time not between", value1, value2, "receiveTime");
             return (Criteria) this;
         }
     }

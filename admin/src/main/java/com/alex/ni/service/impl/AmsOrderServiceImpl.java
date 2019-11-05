@@ -12,6 +12,7 @@ import com.alex.ni.mapper.*;
 import com.alex.ni.model.*;
 import com.alex.ni.service.AmsOrderService;
 import com.alex.ni.service.UmsAdminService;
+import com.alex.ni.utils.DateUtils;
 import com.alex.ni.utils.StringUtil;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -25,6 +26,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
+
+import static com.alex.ni.utils.DateUtils.date_sdf;
+import static com.alex.ni.utils.DateUtils.datetimeFormat;
 
 /**
  * @author NiDingbo
@@ -218,6 +222,12 @@ public class AmsOrderServiceImpl implements AmsOrderService {
         }
         if (!StringUtils.isEmpty(param.getStatus())){
             criteria.andApplyStatusEqualTo(param.getStatus());
+        }
+        if (!StringUtils.isEmpty(param.getStartDt())){
+            criteria.andApplyTimeGreaterThanOrEqualTo(DateUtils.str2Date(param.getStartDt(),date_sdf));
+        }
+        if (!StringUtils.isEmpty(param.getEndDt())){
+            criteria.andApplyTimeLessThanOrEqualTo(DateUtils.str2Date(param.getEndDt(),date_sdf));
         }
         if (param.getId() != null){
             criteria.andIdEqualTo(param.getId());
