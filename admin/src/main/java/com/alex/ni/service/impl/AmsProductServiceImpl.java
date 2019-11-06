@@ -62,6 +62,7 @@ public class AmsProductServiceImpl implements AmsProductService {
         if (param.getMaxPrice()!=null){
             criteria.andPriceLessThanOrEqualTo(param.getMaxPrice());
         }
+        criteria.andIsPublicEqualTo(1);
         criteria.andIsDeleteEqualTo(0);
         example.setOrderByClause(" id desc ");
         List<AmsProduct> list = amsProductMapper.selectByExample(example);

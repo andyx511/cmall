@@ -28,11 +28,13 @@ import java.util.List;
  * #                   (vvv(VVV)(VVV)vvv)
  * #                  神兽保佑
  * #                代码无BUG!
+ *                  结果™的全是bug
  * #
  */
 
 public interface AmsBrandRecommendService {
-    List<AmsBrandRecommend> list();
+    List<AmsBrandRecommend> list(Integer PageNum, Integer PageSize);
+    List<AmsBrandRecommend> listHome();
     Integer add(AmsBrandRecommend brandRecommend);
     Integer edit(AmsBrandRecommend brandRecommend);
     Integer delete(Integer id);

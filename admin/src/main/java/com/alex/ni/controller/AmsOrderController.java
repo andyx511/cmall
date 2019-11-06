@@ -144,7 +144,7 @@ public class AmsOrderController  {
         UmsAdmin admin = details.getUmsAdmin();
         orderService.orderStatus(8,amsOrderReturn.getOrderId());
         amsOrderReturn.setUserName(admin.getNickName());
-        amsOrderReturn.setApplyStatus("1");
+        amsOrderReturn.setApplyStatus("0");
         amsOrderReturn.setApplyTime(new Date());
         Integer record= orderService.applyReturn(amsOrderReturn);
         return CommonResult.success(record);
@@ -159,5 +159,47 @@ public class AmsOrderController  {
         List<AmsOrderReturn> record = orderService.returnList(param, pageNum,pageSize);
         return CommonResult.success(CommonPage.restPage(record));
     }
-    
+
+    @ApiOperation("订单申请退款列表")
+    @RequestMapping(value = "/applyReturnDetail/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult applyReturnDetail(@PathVariable Integer id) {
+        AmsOrderReturn record = orderService.returnDetail(id);
+        return CommonResult.success(record);
+    }
+
+    @ApiOperation("确认退货")
+    @RequestMapping(value = "/querentui",method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult querentui(@RequestBody AmsOrderReturn orderReturn){
+        AdminUserDetails details = adminService.getCurrentUser();
+        orderReturn.setHandleMan(details.getUmsAdmin().getNickName());
+        orderReturn.setApplyStatus("1");
+        orderReturn.setHandleTime(new Date());
+        Integer record = orderService.changeReturnStatus(orderReturn);
+        return  CommonResult.success(record);
+    }
+    @ApiOperation("确认退货")
+    @RequestMapping(value = "/jujue",method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult jujue(@RequestBody AmsOrderReturn orderReturn){
+        AdminUserDetails details = adminService.getCurrentUser();
+        orderReturn.setHandleMan(details.getUmsAdmin().getNickName());
+        orderReturn.setApplyStatus("2");
+        orderReturn.setHandleTime(new Date());
+        Integer record = orderService.changeReturnStatus(orderReturn);
+        return  CommonResult.success(record);
+    }
+    @ApiOperation("确认收货")
+    @RequestMapping(value = "/querenshou",method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult querenshou(@RequestBody AmsOrderReturn orderReturn){
+        AdminUserDetails details = adminService.getCurrentUser();
+        orderReturn.setHandleMan(details.getUmsAdmin().getNickName());
+        orderReturn.setApplyStatus("3");
+        orderReturn.setHandleTime(new Date());
+        Integer record = orderService.changeReturnStatus(orderReturn);
+        return  CommonResult.success(record);
+    }
+
 }

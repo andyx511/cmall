@@ -236,4 +236,18 @@ public class AmsOrderServiceImpl implements AmsOrderService {
         return list;
     }
 
+    @Override
+    public AmsOrderReturn returnDetail(Integer id) {
+        AmsOrderReturnExample example = new AmsOrderReturnExample();
+        example.createCriteria().andOrderIdEqualTo(id);
+        List<AmsOrderReturn> list = returnMapper.selectByExample(example);
+        return list.get(0);
+    }
+
+    @Override
+    public Integer changeReturnStatus(AmsOrderReturn orderReturn) {
+        Integer record = returnMapper.updateByPrimaryKey(orderReturn);
+        return record;
+    }
+
 }

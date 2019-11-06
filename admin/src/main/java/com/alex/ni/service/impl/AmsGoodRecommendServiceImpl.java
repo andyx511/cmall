@@ -5,6 +5,7 @@ import com.alex.ni.model.AmsGoodRecommend;
 import com.alex.ni.model.AmsGoodRecommendExample;
 import com.alex.ni.service.AmsGoodRecommendService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -13,6 +14,7 @@ import java.util.List;
  * @date 2019/10/21
  * @des
  */
+@Service
 public class AmsGoodRecommendServiceImpl implements AmsGoodRecommendService {
     @Autowired
     private AmsGoodRecommendMapper recommendMapper;

@@ -68,4 +68,18 @@ public interface AmsOrderService {
      */
     List<AmsOrderReturn> returnList(AmsOrderReturnParam param,Integer pageNum,Integer pageSize);
 
+    /**
+     * 退货订单详情
+     * @param id 订单id
+     * @return
+     */
+    AmsOrderReturn returnDetail(Integer id);
+
+    /**
+     * 更改退货状态
+     * @param orderReturn
+     * @return
+     */
+    Integer changeReturnStatus(AmsOrderReturn orderReturn);
+
 }

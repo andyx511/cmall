@@ -4,6 +4,7 @@ import com.alex.ni.mapper.AmsBrandRecommendMapper;
 import com.alex.ni.model.AmsBrandRecommend;
 import com.alex.ni.model.AmsBrandRecommendExample;
 import com.alex.ni.service.AmsBrandRecommendService;
+import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,8 +21,19 @@ public class AmsBrandRecommendServiceImpl implements AmsBrandRecommendService {
     private AmsBrandRecommendMapper recommendMapper;
 
     @Override
-    public List<AmsBrandRecommend> list() {
-        List<AmsBrandRecommend> list  = recommendMapper.selectByExample(new AmsBrandRecommendExample());
+    public List<AmsBrandRecommend> list(Integer pageNum, Integer pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        AmsBrandRecommendExample example = new AmsBrandRecommendExample();
+        example.setOrderByClause(" sort desc ");
+        List<AmsBrandRecommend> list  = recommendMapper.selectByExample(example);
+        return list;
+    }
+
+    @Override
+    public List<AmsBrandRecommend> listHome() {
+        AmsBrandRecommendExample example = new AmsBrandRecommendExample();
+        example.setOrderByClause(" sort desc ");
+        List<AmsBrandRecommend> list = recommendMapper.selectByExample(example);
         return list;
     }
 
