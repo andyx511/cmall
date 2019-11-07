@@ -44,7 +44,11 @@
         pr.`name` it_name
         FROM
         (
-            SELECT * FROM ams_order order by id DESC LIMIT #{pageNum},#{pageSize}
+            SELECT * FROM ams_order la where 1= 1
+            <if test="param.userId != null and param.userId != ''">
+                and
+                la.user_id = #{param.userId}
+            </if>order by id DESC LIMIT #{pageNum},#{pageSize}
         )
          ord
         LEFT JOIN ams_order_item it ON it.order_id = ord.id

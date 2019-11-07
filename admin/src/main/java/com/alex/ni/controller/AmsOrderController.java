@@ -179,13 +179,13 @@ public class AmsOrderController  {
         Integer record = orderService.changeReturnStatus(orderReturn);
         return  CommonResult.success(record);
     }
-    @ApiOperation("确认退货")
+    @ApiOperation("拒绝")
     @RequestMapping(value = "/jujue",method = RequestMethod.POST)
     @ResponseBody
     public CommonResult jujue(@RequestBody AmsOrderReturn orderReturn){
         AdminUserDetails details = adminService.getCurrentUser();
         orderReturn.setHandleMan(details.getUmsAdmin().getNickName());
-        orderReturn.setApplyStatus("2");
+        orderReturn.setApplyStatus("3");
         orderReturn.setHandleTime(new Date());
         Integer record = orderService.changeReturnStatus(orderReturn);
         return  CommonResult.success(record);
@@ -196,7 +196,7 @@ public class AmsOrderController  {
     public CommonResult querenshou(@RequestBody AmsOrderReturn orderReturn){
         AdminUserDetails details = adminService.getCurrentUser();
         orderReturn.setHandleMan(details.getUmsAdmin().getNickName());
-        orderReturn.setApplyStatus("3");
+        orderReturn.setApplyStatus("2");
         orderReturn.setHandleTime(new Date());
         Integer record = orderService.changeReturnStatus(orderReturn);
         return  CommonResult.success(record);
