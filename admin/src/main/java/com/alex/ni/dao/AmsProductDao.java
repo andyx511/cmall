@@ -10,5 +10,6 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface AmsProductDao {
     Integer updateStock(@Param("id") Integer id,@Param("num") Integer num);
+    Integer addStock(@Param("id") Integer id,@Param("num") Integer num);
     Integer updateNum(@Param("id") Integer id, @Param("num") Integer num);
 }

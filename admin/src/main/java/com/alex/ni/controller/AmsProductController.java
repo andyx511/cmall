@@ -88,7 +88,7 @@ public class AmsProductController {
     @RequestMapping(value = "/updateStock",method = RequestMethod.POST)
     @ResponseBody
     public CommonResult updateStock(@RequestParam("id")Integer id, @RequestParam("num")Integer num){
-        Integer record = amsProductService.updateStock(id,num);
+        Integer record = amsProductService.addStock(id,num);
         return CommonResult.success(record);
     }
     @ApiOperation("更新审核状态")

@@ -1,7 +1,13 @@
 package com.alex.ni.service.impl;
 
+import com.alex.ni.dao.HotDao;
+import com.alex.ni.mapper.AmsHotRecommendMapper;
+import com.alex.ni.model.AmsHotRecommend;
 import com.alex.ni.model.AmsHotRecommend;
 import com.alex.ni.service.AmsHotRecommendService;
+import com.alex.ni.service.AmsHotRecommendService;
+import com.alex.ni.vo.HotVo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,23 +19,31 @@ import java.util.List;
  */
 @Service
 public class AmsHotRecommendServiceImpl implements AmsHotRecommendService {
+    @Autowired
+    private AmsHotRecommendMapper recommendMapper;
+    @Autowired
+    private HotDao hotDao;
     @Override
-    public List<AmsHotRecommend> list() {
-        return null;
+    public List<HotVo> list() {
+        List<HotVo> list = hotDao.getList();
+        return list;
     }
 
     @Override
     public Integer add(AmsHotRecommend recommend) {
-        return null;
+        Integer record = recommendMapper.insertSelective(recommend);
+        return record;
     }
 
     @Override
     public Integer edit(AmsHotRecommend recommend) {
-        return null;
+        Integer record = recommendMapper.updateByPrimaryKeySelective(recommend);
+        return record;
     }
 
     @Override
     public Integer delete(Integer id) {
-        return null;
+        Integer record = recommendMapper.deleteByPrimaryKey(id);
+        return record;
     }
 }

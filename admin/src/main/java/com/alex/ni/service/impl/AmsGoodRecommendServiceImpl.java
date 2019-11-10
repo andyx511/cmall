@@ -1,9 +1,11 @@
 package com.alex.ni.service.impl;
 
+import com.alex.ni.dao.GoodDao;
 import com.alex.ni.mapper.AmsGoodRecommendMapper;
 import com.alex.ni.model.AmsGoodRecommend;
 import com.alex.ni.model.AmsGoodRecommendExample;
 import com.alex.ni.service.AmsGoodRecommendService;
+import com.alex.ni.vo.GoodVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,9 +20,11 @@ import java.util.List;
 public class AmsGoodRecommendServiceImpl implements AmsGoodRecommendService {
     @Autowired
     private AmsGoodRecommendMapper recommendMapper;
+    @Autowired
+    private GoodDao goodDao;
     @Override
-    public List<AmsGoodRecommend> list() {
-        List<AmsGoodRecommend> list = recommendMapper.selectByExample(new AmsGoodRecommendExample());
+    public List<GoodVo> list() {
+        List<GoodVo> list = goodDao.getList();
         return list;
     }
 

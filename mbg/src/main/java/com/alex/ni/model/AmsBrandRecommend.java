@@ -12,6 +12,10 @@ public class AmsBrandRecommend implements Serializable {
 
     private Integer sort;
 
+    private String brandName;
+
+    private String url;
+
     private static final long serialVersionUID = 1L;
 
     public Integer getId() {
@@ -46,6 +50,22 @@ public class AmsBrandRecommend implements Serializable {
         this.sort = sort;
     }
 
+    public String getBrandName() {
+        return brandName;
+    }
+
+    public void setBrandName(String brandName) {
+        this.brandName = brandName;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -56,6 +76,8 @@ public class AmsBrandRecommend implements Serializable {
         sb.append(", brandId=").append(brandId);
         sb.append(", isRecomend=").append(isRecomend);
         sb.append(", sort=").append(sort);
+        sb.append(", brandName=").append(brandName);
+        sb.append(", url=").append(url);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

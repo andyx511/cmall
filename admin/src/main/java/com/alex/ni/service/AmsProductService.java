@@ -37,4 +37,6 @@ public interface AmsProductService {
    * 更新库存
    */
    Integer updateStock(Integer id,Integer num);
+
+   Integer addStock(Integer id,Integer num);
 }

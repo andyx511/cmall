@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.alex.ni.dao.NewDao">
+    <select id="getList" resultType="com.alex.ni.vo.NewVo">
+        SELECT
+            t1.id,
+            t1.product_id productId,
+            t1.sort,
+            t2.name newName,
+            t2.pic url,
+            t2.sales_volume salesVolume,
+            t2.price
+        FROM
+            ams_new_recommend t1,
+            ams_product t2
+        WHERE
+            t1.product_id = t2.id
+            ORDER BY sort DESC
+    </select>
+</mapper>

@@ -2,6 +2,8 @@ package com.alex.ni.service;
 
 import com.alex.ni.model.AmsGoodRecommend;
 import com.alex.ni.model.AmsHotRecommend;
+import com.alex.ni.vo.GoodVo;
+import com.alex.ni.vo.HotVo;
 
 import java.util.List;
 
@@ -11,7 +13,7 @@ import java.util.List;
  * @des
  */
 public interface AmsHotRecommendService {
-    List<AmsHotRecommend> list();
+    List<HotVo> list();
     Integer add(AmsHotRecommend recommend);
     Integer edit(AmsHotRecommend recommend);
     Integer delete(Integer id);

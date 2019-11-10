@@ -1,6 +1,7 @@
 package com.alex.ni.service;
 
 import com.alex.ni.model.AmsGoodRecommend;
+import com.alex.ni.vo.GoodVo;
 import io.swagger.models.auth.In;
 
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.List;
  * @des
  */
 public interface AmsGoodRecommendService {
-    List<AmsGoodRecommend> list();
+    List<GoodVo> list();
     Integer add(AmsGoodRecommend recommend);
     Integer edit(AmsGoodRecommend recommend);
     Integer delete(Integer id);
