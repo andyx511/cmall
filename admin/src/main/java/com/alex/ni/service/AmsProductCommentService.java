@@ -16,7 +16,7 @@ public interface AmsProductCommentService {
      * @param productId
      * @return
      */
-    List<AmsProductComment> list(Integer productId);
+    List<AmsProductComment> list(Integer productId,Integer pageNum,Integer pageSize);
 
     /**
      * 添加评论

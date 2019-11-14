@@ -7,6 +7,7 @@ import com.alex.ni.model.AmsProductCommentExample;
 import com.alex.ni.model.UmsAdmin;
 import com.alex.ni.service.AmsProductCommentService;
 import com.alex.ni.service.UmsAdminService;
+import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,9 +27,11 @@ public class AmsProductCommentServiceImpl implements AmsProductCommentService {
     private UmsAdminService adminService;
 
     @Override
-    public List<AmsProductComment> list(Integer productId) {
+    public List<AmsProductComment> list(Integer productId,Integer pageNum,Integer pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
         AmsProductCommentExample example = new AmsProductCommentExample();
         example.createCriteria().andProductIdEqualTo(productId);
+        example.setOrderByClause(" create_time desc ");
         List<AmsProductComment> list = commentMapper.selectByExample(example);
         return list;
     }

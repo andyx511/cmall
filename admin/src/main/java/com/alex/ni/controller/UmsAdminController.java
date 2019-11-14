@@ -121,6 +121,10 @@ public class UmsAdminController {
         if (token == null) {
             return CommonResult.validateFailed("用户名或密码错误");
         }
+        UmsAdmin admin = adminService.getAdminByUsername(umsAdminLoginParam.getUsername());
+        if (admin.getStatus()==0){
+            return CommonResult.failed("该用户已被冻结，请及时联系管理员");
+        }
         redisTemplate.opsForValue().get("code");
         Map<String, String> tokenMap = new HashMap<>();
         tokenMap.put("token", token);
@@ -131,7 +135,7 @@ public class UmsAdminController {
     @ApiOperation(value = "获取当前登录用户信息")
     @RequestMapping(value = "/info", method = RequestMethod.GET)
     @ResponseBody
-    public CommonResult getAdminInfo(Principal principal) {
+    public CommonResult getAdminInfo(Principal principal) throws  Exception{
         String username = principal.getName();
         UmsAdmin umsAdmin = adminService.getAdminByUsername(username);
         Map<String, Object> data = new HashMap<>();
