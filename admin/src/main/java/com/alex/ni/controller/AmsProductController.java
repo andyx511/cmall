@@ -3,20 +3,19 @@ package com.alex.ni.controller;
 import com.alex.ni.api.CommonPage;
 import com.alex.ni.api.CommonResult;
 import com.alex.ni.dto.AmsProductQueryParam;
-import com.alex.ni.model.AmsBrand;
 import com.alex.ni.model.AmsProduct;
 import com.alex.ni.service.AmsProductService;
+import com.alex.ni.util.ExcelUtiles;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.concurrent.CompletionService;
 
 /**
  * @author NiDingbo
@@ -37,6 +36,15 @@ public class AmsProductController {
                                                    @RequestParam(value = "pageNum" ,defaultValue = "1") Integer pageNum,
                                                    @RequestParam(value = "pageSize",defaultValue = "10") Integer pageSize){
         List<AmsProduct> list = amsProductService.list(amsProductQueryParam, pageNum, pageSize);
+        return CommonResult.success(CommonPage.restPage(list));
+    }
+    @ApiOperation("商品列表游客")
+    @RequestMapping(value = "/listuser" ,method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult<CommonPage<AmsProduct>> listuser(AmsProductQueryParam amsProductQueryParam,
+                                                     @RequestParam(value = "pageNum" ,defaultValue = "1") Integer pageNum,
+                                                     @RequestParam(value = "pageSize",defaultValue = "10") Integer pageSize){
+        List<AmsProduct> list = amsProductService.listuser(amsProductQueryParam, pageNum, pageSize);
         return CommonResult.success(CommonPage.restPage(list));
     }
 
@@ -109,8 +117,29 @@ public class AmsProductController {
         if (amsProduct.getIsDiscount()==0){
             amsProduct.setDiscountPrice(BigDecimal.ZERO);
         }
+        amsProduct.setStatus(0);
         Integer record = amsProductService.update(amsProduct);
         return CommonResult.success(record);
     }
+
+    @ApiOperation("商品数据导出")
+    @RequestMapping(value = "/export",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @ResponseBody
+    public CommonResult export(HttpServletResponse response){
+        AmsProductQueryParam amsProductQueryParam = new AmsProductQueryParam();
+        List<AmsProduct> list = amsProductService.list(amsProductQueryParam, 1, 1000);
+        ExcelUtiles.exportExcel(list, "商品数据表", "商品数据表", AmsProduct.class, "商品数据表.xls", response);
+        return CommonResult.success();
+    }
+
+
+//
+//    @ApiOperation("导入ES")
+//    @RequestMapping(value = "/importEs",method = RequestMethod.GET)
+//    @ResponseBody
+//    public CommonResult importEs(){
+//        Integer record = esService.importAll();
+//        return CommonResult.success(record);
+//    }
 
 }

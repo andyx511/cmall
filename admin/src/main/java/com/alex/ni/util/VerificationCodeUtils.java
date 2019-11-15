@@ -73,7 +73,7 @@ public class VerificationCodeUtils {
         //保存验证码到redis
         setVerificationCodeByType(phone,code,TIME_OUT);
         // 调用阿里云短信
-        boolean flag = aliyunSmsUtils.sendMsg("18257198894", code);
+        boolean flag = aliyunSmsUtils.sendMsg(phone, code);
         return flag;
     }
 

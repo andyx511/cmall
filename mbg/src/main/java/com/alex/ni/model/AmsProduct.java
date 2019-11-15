@@ -1,67 +1,90 @@
 package com.alex.ni.model;
 
+import cn.afterturn.easypoi.excel.annotation.Excel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
 public class AmsProduct implements Serializable {
+
+    @Excel(name="id")
     private Integer id;
 
+    @Excel(name="商品名")
     private String name;
 
+    @Excel(name="种类")
     @ApiModelProperty(value = "种类")
     private String kind;
 
+    @Excel(name="品牌")
     @ApiModelProperty(value = "品牌")
     private String brand;
 
+    @Excel(name="图片")
     @ApiModelProperty(value = "图片")
     private String pic;
 
+    @Excel(name="是否是新品")
     @ApiModelProperty(value = "0-bushi；1-shi，是否是新品")
     private Integer isNew;
 
+    @Excel(name="是否上架")
     @ApiModelProperty(value = "0-bushi;1-shi，是否上架")
     private Integer isPublic;
 
+    @Excel(name="排序")
     @ApiModelProperty(value = "排序")
     private Integer sort;
 
+    @Excel(name="价格")
     @ApiModelProperty(value = "价格")
     private BigDecimal price;
 
+    @Excel(name="单位")
     @ApiModelProperty(value = "单位")
     private String unit;
 
+    @Excel(name="赠送成长值")
     @ApiModelProperty(value = "赠送成长值")
     private Integer giftGrowth;
 
+    @Excel(name="赠送积分")
     @ApiModelProperty(value = "赠送积分")
     private Integer giftPoint;
 
+    @Excel(name="详细图片")
     @ApiModelProperty(value = "详细图片")
     private String detailPic;
 
+    @Excel(name="状态")
     @ApiModelProperty(value = "审核状态0待，1Y，2N，3打折待审核")
     private Integer status;
 
+    @Excel(name="是否删除")
     private Integer isDelete;
 
+    @Excel(name="销量")
     @ApiModelProperty(value = "销量")
     private Integer salesVolume;
 
+    @Excel(name="评价数")
     @ApiModelProperty(value = "评价数")
     private Integer commentNum;
 
+    @Excel(name="库存")
     @ApiModelProperty(value = "库存")
     private Integer stock;
 
+    @Excel(name="是否打折")
     @ApiModelProperty(value = "是否打折0否1是")
     private Integer isDiscount;
 
+    @Excel(name="打折的价格")
     @ApiModelProperty(value = "打折后的价格")
     private BigDecimal discountPrice;
 
+    @Excel(name="描述")
     @ApiModelProperty(value = "描述")
     private String des;
 

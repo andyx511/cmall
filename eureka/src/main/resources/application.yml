@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: eureka
+  security:
+    basic:
+      enabled: true
+    user:
+      name: admin # login username
+      password: admin
+server:
+  port: 3300
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/ssp-eureka/eureka/
+    fetchRegistry: false
+    registerWithEureka: false

@@ -100,12 +100,12 @@ public class UmsAdminController {
             if(umsAdmin != null){
                 return CommonResult.failed("该手机号已被注册");
             }
-            boolean flag = verificationCodeUtils.sendrVerificationCode("18257198894");
+            boolean flag = verificationCodeUtils.sendrVerificationCode(phone);
         }else if("reset".equalsIgnoreCase(jsonObject.getString("type"))){
             if(umsAdmin == null){
                 return CommonResult.failed("该手机号未被注册");
             }
-            boolean flag = verificationCodeUtils.sendrVerificationCode("18257198894");
+            boolean flag = verificationCodeUtils.sendrVerificationCode(phone);
         }
         return CommonResult.success();
     }

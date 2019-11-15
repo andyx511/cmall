@@ -20,6 +20,14 @@ public interface AmsProductService {
    * 列表
    */
    List<AmsProduct> list(AmsProductQueryParam param,Integer pageNum,Integer pageSize);
+
+   /**
+    * @param param
+    * @param pageNum
+    * @param pageSize
+    * @return
+    */
+   List<AmsProduct> listuser(AmsProductQueryParam param,Integer pageNum,Integer pageSize);
    /*
     *查看详情
     */

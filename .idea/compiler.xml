@@ -8,6 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="mbg" />
         <module name="common" />
+        <module name="config" />
+        <module name="eureka" />
         <module name="admin" />
       </profile>
     </annotationProcessing>
@@ -20,6 +22,8 @@
       <module name="admin" options="-parameters" />
       <module name="cmall" options="-parameters" />
       <module name="common" options="-parameters" />
+      <module name="config" options="-parameters" />
+      <module name="eureka" options="-parameters" />
       <module name="mbg" options="-parameters" />
       <module name="member" options="-parameters" />
     </option>

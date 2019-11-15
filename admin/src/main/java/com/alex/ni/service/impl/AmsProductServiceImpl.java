@@ -70,6 +70,44 @@ public class AmsProductServiceImpl implements AmsProductService {
     }
 
     @Override
+    public List<AmsProduct> listuser(AmsProductQueryParam param, Integer pageNum, Integer pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        AmsProductExample example = new AmsProductExample();
+        AmsProductExample.Criteria criteria = example.createCriteria();
+        if (!StringUtils.isEmpty(param.getBrand())){
+            criteria.andBrandEqualTo(param.getBrand());
+        }
+        if (param.getIsNew()!=null){
+            criteria.andIsNewEqualTo(param.getIsNew());
+        }
+        if (param.getIsPublic()!=null){
+            criteria.andIsPublicEqualTo(param.getIsPublic());
+        }
+        if (!StringUtils.isEmpty(param.getKind())){
+            criteria.andKindEqualTo(param.getKind());
+        }
+
+        if (!StringUtil.isEmpty(param.getName())){
+            criteria.andNameLike("%" + param.getName() + "%");
+        }
+        if (param.getStatus() != null){
+            criteria.andStatusEqualTo(param.getStatus());
+        }
+        if (param.getMinPrice()!=null){
+            criteria.andPriceGreaterThanOrEqualTo(param.getMinPrice());
+        }
+        if (param.getMaxPrice()!=null){
+            criteria.andPriceLessThanOrEqualTo(param.getMaxPrice());
+        }
+//        criteria.andIsPublicEqualTo(1);
+        criteria.andIsDeleteEqualTo(0);
+        criteria.andIsPublicEqualTo(1);
+        example.setOrderByClause(" id desc ");
+        List<AmsProduct> list = amsProductMapper.selectByExample(example);
+        return list;
+    }
+
+    @Override
     public AmsProduct detail(Integer id) {
         AmsProduct amsProduct = amsProductMapper.selectByPrimaryKey(id);
         return amsProduct;

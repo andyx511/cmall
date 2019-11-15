@@ -1,0 +1,9 @@
+#spring:
+#  application:
+#    name: eureka
+#  security:
+#    basic:
+#      enabled: true
+#    user:
+#      name: admin # login username
+#      password: admin
