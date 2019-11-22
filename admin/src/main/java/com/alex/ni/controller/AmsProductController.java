@@ -117,7 +117,7 @@ public class AmsProductController {
         if (amsProduct.getIsDiscount()==0){
             amsProduct.setDiscountPrice(BigDecimal.ZERO);
         }
-        amsProduct.setStatus(0);
+        amsProduct.setStatus(3);
         Integer record = amsProductService.update(amsProduct);
         return CommonResult.success(record);
     }

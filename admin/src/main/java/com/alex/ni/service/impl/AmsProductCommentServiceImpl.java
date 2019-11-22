@@ -1,13 +1,15 @@
 package com.alex.ni.service.impl;
 
 import com.alex.ni.bo.AdminUserDetails;
+import com.alex.ni.dao.AmsProductDao;
 import com.alex.ni.mapper.AmsProductCommentMapper;
-import com.alex.ni.model.AmsProductComment;
-import com.alex.ni.model.AmsProductCommentExample;
-import com.alex.ni.model.UmsAdmin;
+import com.alex.ni.mapper.AmsProductMapper;
+import com.alex.ni.model.*;
 import com.alex.ni.service.AmsProductCommentService;
+import com.alex.ni.service.AmsProductService;
 import com.alex.ni.service.UmsAdminService;
 import com.github.pagehelper.PageHelper;
+import org.aspectj.lang.annotation.Aspect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +27,8 @@ public class AmsProductCommentServiceImpl implements AmsProductCommentService {
     private AmsProductCommentMapper commentMapper;
     @Autowired
     private UmsAdminService adminService;
+    @Autowired
+    private AmsProductMapper productMapper;
 
     @Override
     public List<AmsProductComment> list(Integer productId,Integer pageNum,Integer pageSize) {
@@ -42,6 +46,9 @@ public class AmsProductCommentServiceImpl implements AmsProductCommentService {
         UmsAdmin admin = details.getUmsAdmin();
         comment.setUserId(admin.getId().intValue());
         comment.setUserName(admin.getNickName());
+        AmsProduct p = productMapper.selectByPrimaryKey(comment.getProductId());
+        p.setCommentNum(p.getCommentNum()+1);
+        productMapper.updateByPrimaryKeySelective(p);
         Integer record = commentMapper.insertSelective(comment);
         return record;
     }

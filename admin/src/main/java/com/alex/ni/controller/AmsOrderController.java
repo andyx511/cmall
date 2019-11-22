@@ -61,9 +61,9 @@ public class AmsOrderController  {
     @ApiOperation("付款")
     @RequestMapping(value = "/payForOrder/{id}", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult chooseAddress( @PathVariable Integer id) {
+    public CommonResult pay( @PathVariable Integer id,@RequestParam Boolean isUsePoint) {
         //id为订单id
-        Integer record = orderService.payForOrder(id);
+        Integer record = orderService.payForOrder(id, isUsePoint);
         if(record == 0){
             return CommonResult.failed("余额不足");
         }

@@ -16,6 +16,7 @@ import com.alex.ni.utils.DateUtils;
 import com.alex.ni.utils.StringUtil;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
@@ -180,7 +181,7 @@ public class AmsOrderServiceImpl implements AmsOrderService {
 
     @Override
     @Transactional
-    public Integer payForOrder(Integer id) {
+    public Integer payForOrder(Integer id, Boolean isUsePoint) {
         AdminUserDetails details = adminService.getCurrentUser();
         UmsAdmin admin = details.getUmsAdmin();
         //查询会员信息
@@ -189,17 +190,34 @@ public class AmsOrderServiceImpl implements AmsOrderService {
         List<AmsMember> members = memberMapper.selectByExample(example);
         //查询订单信息
         AmsOrder order = orderMapper.selectByPrimaryKey(id);
+
+            BigDecimal discount = BigDecimal.ONE;
+        // members.get(0)
+        if (members.get(0).getGrowth() >= 10000 && members.get(0).getGrowth()<50000){
+            discount=new BigDecimal(0.9);
+        }
+        if (members.get(0).getGrowth() >= 50000 && members.get(0).getGrowth()<100000){
+            discount=new BigDecimal(0.8);
+        }
+        if (members.get(0).getGrowth() >= 100000 ){
+            discount=new BigDecimal(0.7);
+        }
+        order.setTotalPrice(discount.multiply(order.getTotalPrice()));
+        if (isUsePoint){
+            order.setTotalPrice(order.getTotalPrice().subtract(new BigDecimal(100)));
+            memberDao.updateP(0,-1000,order.getUserId());
+        }
         //会员余额小于订单总价
         if(members.get(0).getMoney().compareTo(order.getTotalPrice()) == -1){
             return 0;
         }
-
         //修改余额及订单状态
         BigDecimal newMoney = members.get(0).getMoney().subtract(order.getTotalPrice());
         AmsMember member = new AmsMember();
         member.setMoney(newMoney);
         Integer record = memberMapper.updateByExampleSelective(member,example);
         memberDao.updateP(order.getGrowth(),order.getPoint(),order.getUserId());
+
         order.setStatus(1);
         order.setPayType("网页支付");
         Integer re = orderMapper.updateByPrimaryKeySelective(order);

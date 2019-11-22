@@ -8,11 +8,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="mbg" />
         <module name="common" />
-        <module name="config" />
         <module name="admin" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="config" target="1.8" />
       <module name="eureka" target="1.8" />
       <module name="member" target="1.8" />
     </bytecodeTargetLevel>

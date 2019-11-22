@@ -83,11 +83,7 @@
             <version>5.6.7</version>
         </dependency>
 
-        <!--elasticsearch-->
-<!--        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
-        </dependency>-->
+
     </dependencies>
 
     <build>

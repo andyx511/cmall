@@ -52,7 +52,7 @@ public interface AmsOrderService {
     /**
     * 对指定订单进行支付
     */
-    Integer payForOrder(Integer id);
+    Integer payForOrder(Integer id,Boolean isUsePoint);
 
     /**
      * @param orderReturn
