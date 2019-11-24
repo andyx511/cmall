@@ -97,9 +97,4 @@ public class BigDecimalUtli {
     	arg1.setScale(2,BigDecimal.ROUND_HALF_UP);
 		return dformat.format(arg1);
 	}
-
-    public static void main(String[] args) {
-    	System.err.println(bigDecimalToStr(new BigDecimal("100.198"),new DecimalFormat("0.00")));
-	}
-
 }

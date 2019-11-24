@@ -25,7 +25,7 @@ public class LoginPWDCheck {
         return false;
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         String pw1 = "ABCDEFGHIG";
         String pw2 = "abcdefghig";
         String pw3 = "0123456789";
@@ -60,5 +60,5 @@ public class LoginPWDCheck {
         System.out.println("14~~~" + isPassword(pw14));
         System.out.println("15~~~" + isPassword(pw15));
         System.out.println("16~~~" + isPassword(pw16));
-    }
+    }*/
 }

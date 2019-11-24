@@ -181,7 +181,7 @@ public class PasswordUtil {
 		return (byte) "0123456789ABCDEF".indexOf(c);
 	}
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		String password = "123456";
 		String text = "9779J9265v2n41aB9y97";
 		try {
@@ -207,5 +207,5 @@ public class PasswordUtil {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
+	}*/
 }

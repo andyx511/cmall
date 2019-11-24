@@ -192,11 +192,11 @@ public class IdCardCheck {
         }
     }
 
-    public static void main(String[] args) throws ParseException {
+   /* public static void main(String[] args) throws ParseException {
         String IdCard="61082120001129612X";
         // 将身份证最后一位的x转换为大写，便于统一
         IdCard = IdCard.toUpperCase();
         System.out.println(IdCardCheck.IDCardValidate(IdCard));
     }
-
+*/
 }

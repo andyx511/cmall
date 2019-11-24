@@ -2,6 +2,7 @@ package com.alex.ni.utils;
 
 public class IDMaskTest {
 
+/*
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -14,6 +15,7 @@ public class IDMaskTest {
 		String recovered = IDMask.decode(masked, key);
 		System.out.println("Recovered ID is: " + recovered);
 	}
+*/
 
 
 
