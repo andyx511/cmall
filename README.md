@@ -1,4 +1,4 @@
-# 毕业设计 Cmll
+# Alex Ni 毕业设计 CMall
 #### 后端技术
 | 技术         | 说 明         |
 |--------------|---------------|
@@ -16,8 +16,19 @@
 |JWT|JSON Web Token|
 |LogStash|日志收集工具|
 |Lombok|简化对象封装工具|
-
-
+#### 开发工具
+| 工具         | 说 明         |
+|--------------|---------------|
+|IDEA|Java开发工具|
+|RedisDesktopManager|Redis客户端连接工具|
+|XShell|Linux远程连接工具|
+|Navicat|MySQL连接工具|
+#### 开发环境
+| 环境         | 版本         |
+|--------------|---------------|
+|JDk|1.8|
+|Redis|3.2|
+|MySQL|5.7|
 #### 本地安装
 > 本地安装
   *  git clone  https://github.com/andyx511/cmall1.git 
