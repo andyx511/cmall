@@ -37,3 +37,4 @@
   * 修改application-dev中关于datebase的配置
   * 启动admin模块中的MallAdminApplication方法
   * 打开浏览器，输入 http://localhost:8888/doc.html ，看到swagger页面上，说明项目已成功启动
+  * 前端传送门： https://github.com/andyx511/vueadmin.git 
