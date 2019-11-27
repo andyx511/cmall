@@ -58,6 +58,7 @@ public class UmsAdminController {
 
     private final static Logger logger = LoggerFactory.getLogger(UmsAdminController.class);
 
+    @ApiOperation(value = "获取图片验证码")
     //生成登录时的图片验证码
     @RequestMapping(value = "/getTCode", method = RequestMethod.GET)
     @ResponseBody
@@ -115,8 +116,11 @@ public class UmsAdminController {
     @ResponseBody
     public CommonResult login(@RequestBody UmsAdminLoginParam umsAdminLoginParam,HttpServletRequest request) {
         HttpSession session = request.getSession();
-//        String random = (String) session.getAttribute(RandomValidateCodeUtil.RANDOMCODEKEY);
-//        String tcode = umsAdminLoginParam.getTCode();
+        /*String random = (String) session.getAttribute(RandomValidateCodeUtil.RANDOMCODEKEY);
+        String tcode = umsAdminLoginParam.getTCode();
+        if (!random.equals(String.valueOf(tcode)) ){
+            return CommonResult.failed("验证码错误");
+        }*/
         String token = adminService.login(umsAdminLoginParam.getUsername(), umsAdminLoginParam.getPassword());
         if (token == null) {
             return CommonResult.validateFailed("用户名或密码错误");

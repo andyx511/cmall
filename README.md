@@ -32,7 +32,7 @@
 |MySQL|5.7|
 #### 本地安装
 > 本地安装
-  *  git clone  https://github.com/andyx511/cmall1.git 
+  *  git clone  https://github.com/andyx511/cmall.git 
   * 安装redis，并启动
   * 创建mall数据库，运行mall.sql
   * 修改application-dev中关于datebase的配置

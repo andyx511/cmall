@@ -10,6 +10,7 @@ import org.apache.commons.lang.StringUtils;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Iterator;
+import java.util.Scanner;
 
 /**
  * @author NiDingbo
@@ -17,13 +18,26 @@ import java.util.Iterator;
  * @des
  */
 public class test {
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         AmsProduct product = new AmsProduct();
         BeanHelper.nullToEmpty(product);
         System.out.println(product.getGiftGrowth());
 
+    }*/
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        String[] strs = str.split(" ");
+        int n = Integer.valueOf(strs[0]);
+        int k = Integer.valueOf(strs[1]);
+        int[] ks = new int[k];
+        for(int i=0;i<k;i++ ){
+            ks[i] = sc.nextInt();
+        }
+        for (int i = 0; i < k-2; i++){
+            for (int j = i+1;j<k-)
+        }
     }
-
    /* public static Object checkNull(Object obj) {
         Class<? extends Object> clazz = obj.getClass();
         // 获取实体类的所有属性，返回Field数组
