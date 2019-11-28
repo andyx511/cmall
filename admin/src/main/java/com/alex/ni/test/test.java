@@ -24,7 +24,7 @@ public class test {
         System.out.println(product.getGiftGrowth());
 
     }*/
-    public static void main(String[] args){
+   /* public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
         String[] strs = str.split(" ");
@@ -37,7 +37,7 @@ public class test {
         for (int i = 0; i < k-2; i++){
             for (int j = i+1;j<k-)
         }
-    }
+    }*/
    /* public static Object checkNull(Object obj) {
         Class<? extends Object> clazz = obj.getClass();
         // 获取实体类的所有属性，返回Field数组
