@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -77,6 +78,13 @@ public class AmsMemberController {
     @ResponseBody
     public CommonResult jie(@RequestParam Integer memberId) {
         Integer record =  memberService.jie(memberId);
+        return CommonResult.success(record);
+    }
+    @ApiOperation("充值")
+    @RequestMapping(value = "/chong", method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult chong(@RequestParam BigDecimal money) {
+        Integer record =  memberService.chong(money);
         return CommonResult.success(record);
     }
 }

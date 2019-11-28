@@ -3,6 +3,7 @@ package com.alex.ni.service;
 import com.alex.ni.dto.MemberInfo;
 import com.alex.ni.model.AmsMember;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -39,8 +40,15 @@ public interface AmsMemberService {
     Integer dong(Integer memberId);
 
     /**
-     * @param memberID
+     * @param memberId
      * @return
      */
     Integer jie(Integer memberId);
+
+    /**
+     * 充值
+     * @param money
+     * @return
+     */
+    Integer chong (BigDecimal money);
 }

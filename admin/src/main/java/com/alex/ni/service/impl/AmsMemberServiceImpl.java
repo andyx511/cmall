@@ -5,13 +5,16 @@ import com.alex.ni.dto.MemberInfo;
 import com.alex.ni.mapper.AmsMemberMapper;
 import com.alex.ni.model.AmsMember;
 import com.alex.ni.model.AmsMemberExample;
+import com.alex.ni.model.UmsAdmin;
 import com.alex.ni.service.AmsMemberService;
+import com.alex.ni.service.UmsAdminService;
 import com.github.pagehelper.PageHelper;
 import io.swagger.models.auth.In;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -25,6 +28,8 @@ public class AmsMemberServiceImpl implements AmsMemberService {
     private AmsMemberDao memberDao;
     @Autowired
     private AmsMemberMapper memberMapper;
+    @Autowired
+    private UmsAdminService adminService;
 
     @Override
     public MemberInfo getInfo(Integer userId) {
@@ -72,6 +77,13 @@ public class AmsMemberServiceImpl implements AmsMemberService {
         AmsMember amsMember = new AmsMember();
         amsMember.setStatus(0);
         Integer record = memberMapper.updateByExampleSelective(amsMember, example);
+        return record;
+    }
+
+    @Override
+    public Integer chong(BigDecimal money) {
+        Integer userId = adminService.getCurrentUser().getUmsAdmin().getId().intValue();
+        Integer record = memberDao.updateM(money, userId);
         return record;
     }
 

@@ -14,6 +14,12 @@
         WHERE
             user_id = #{userId}
     </update>
+    <update id="updateM">
+        UPDATE ams_member
+        SET money = money + #{money}
+        WHERE
+            user_id = #{userId}
+    </update>
     <select id="getInfo" resultMap="MemberInfo">
         SELECT
             ad.username,
