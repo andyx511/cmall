@@ -12,7 +12,7 @@
 |Redis|分布式缓存数据库|
 |Docker|应用容器|
 |COS|腾讯云对象存储|
-|OSS|阿里云短信|
+|SMS|阿里云短信|
 |Druid|数据库连接池|
 |JWT|JSON Web Token|
 |LogStash|日志收集工具|
