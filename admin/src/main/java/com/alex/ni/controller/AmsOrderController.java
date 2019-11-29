@@ -119,13 +119,11 @@ public class AmsOrderController  {
         PageInfo<OrderInfo> list = orderService.list(param,pageNum,pageSize);
         return CommonResult.success(CommonPage.restPage(list));
     }
-//    @ApiOperation("订单列表")
-//    @RequestMapping(value = "/export", method = RequestMethod.GET)
-//    @ResponseBody
-//    public CommonResult export() {
-//        PageInfo<OrderInfo> list = orderService.list(param,pageNum,pageSize);
-//        return CommonResult.success(CommonPage.restPage(list));
-//    }
+
+    /**
+     * @param id
+     * @return
+     */
     @ApiOperation("订单详情")
     @RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)
     @ResponseBody
