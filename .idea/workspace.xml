@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c82b2aba-5ebe-44fa-aa61-d897d628550a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/config/AlipayConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/PayController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/component/RestAuthenticationEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/component/RestAuthenticationEntryPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/resources/application-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/target/classes/com/alex/ni/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/admin/target/classes/com/alex/ni/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/admin/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsAddress.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -50,92 +47,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/src/main/resources/application.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/src/main/resources/application-prod.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/src/main/resources/application-dev.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/component/SpringTask.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/component/RestAuthenticationEntryPoint.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsOrderController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="125" column="7" selection-start-line="125" selection-start-column="7" selection-end-line="125" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/config/SecurityConfig.java">
+        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/PayController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1032">
-              <caret line="91" column="15" lean-forward="true" selection-start-line="91" selection-start-column="15" selection-end-line="91" selection-end-column="15" />
+            <state relative-caret-position="553">
+              <caret line="40" column="50" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/UmsAdminService.java">
+        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsReportController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+            <state relative-caret-position="-14">
+              <caret line="38" selection-start-line="38" selection-end-line="40" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/UmsAdminController.java">
+        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsBrandController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="619">
-              <caret line="122" column="11" selection-start-line="122" selection-start-column="11" selection-end-line="122" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/5.1.4.RELEASE/spring-security-config-5.1.4.RELEASE.jar!/org/springframework/security/config/annotation/web/configurers/ExceptionHandlingConfigurer.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+            <state relative-caret-position="132">
+              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -154,9 +91,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>用户名或密码错误</find>
-      <find>admin</find>
-      <find>Realm</find>
       <find>insert</find>
       <find>debug</find>
       <find>detail</find>
@@ -184,6 +118,9 @@
       <find>login</find>
       <find>applyReturnList</find>
       <find>RestAuthenticationEntryPoint</find>
+      <find>poi</find>
+      <find>fastjson</find>
+      <find>alipay</find>
     </findStrings>
     <replaceStrings>
       <replace>AmsPermissionList</replace>
@@ -203,12 +140,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/es/EsProduct.java" />
-        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/es/document/EsProduct.java" />
-        <option value="$PROJECT_DIR$/admin/src/main/resources/dao/EsProductDao.xml" />
-        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/EsProductService.java" />
-        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/EsProductServiceImpl.java" />
-        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/es/repository/EsProductRepository.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dao/EsProductDao.java" />
         <option value="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsProduct.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/util/ExcelUtiles.java" />
@@ -236,7 +167,6 @@
         <option value="$PROJECT_DIR$/mbg/pom.xml" />
         <option value="$PROJECT_DIR$/.gitattributes" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/BigDecimalUtil.java" />
-        <option value="$PROJECT_DIR$/admin/pom.xml" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/util/RandomValidateCodeUtil.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/UmsAdminController.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/test/test.java" />
@@ -254,6 +184,13 @@
         <option value="$PROJECT_DIR$/admin/src/main/resources/application-dev.yml" />
         <option value="$PROJECT_DIR$/admin/src/main/resources/application-prod.yml" />
         <option value="$PROJECT_DIR$/admin/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/admin/src/main/resources/logback-spring.xml" />
+        <option value="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsAddress.java" />
+        <option value="$PROJECT_DIR$/admin/pom.xml" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AliPayService.java" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AlipayConfig.java" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/config/AliPayConfig.java" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/PayController.java" />
       </list>
     </option>
   </component>
@@ -273,11 +210,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="90" />
-    <option name="y" value="98" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="839" />
+    <option name="y" value="116" />
     <option name="width" value="1499" />
-    <option name="height" value="849" />
+    <option name="height" value="947" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -287,6 +224,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -337,16 +276,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ni" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cmall" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ni" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -369,110 +298,10 @@
               <item name="ni" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cmall" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ni" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cmall" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ni" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cmall" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cmall" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cmall" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cmall" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cmall" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cmall" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cmall" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ni" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cmall" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ni" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cmall" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cmall" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="generated-sources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cmall" type="462c0819:PsiDirectoryNode" />
-              <item name="mbg" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -504,7 +333,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -531,6 +360,7 @@
       <recent name="E:\bysj\cmall\admin\src\main\java\com\alex\ni\util" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.alex.ni.controller" />
       <recent name="com.alex.ni.service.impl" />
       <recent name="com.alex.ni.service" />
     </key>
@@ -567,7 +397,7 @@
     </option>
     <option name="contentProportion" value="0.18781006" />
   </component>
-  <component name="RunManager" selected="Application.test">
+  <component name="RunManager" selected="Remote.aliyun">
     <configuration name="Generator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.alex.ni.Generator" />
       <module name="mbg" />
@@ -606,6 +436,20 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="aliyun" type="Remote">
+      <module name="admin" />
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" />
+      <option name="HOST" value="114.55.95.250" />
+      <option name="PORT" value="8888" />
+      <option name="AUTO_RESTART" value="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="8888" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <method v="2" />
     </configuration>
     <configuration name="CommonApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="common" />
@@ -648,6 +492,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Generator" />
+      <item itemvalue="Application.sha1" />
+      <item itemvalue="Application.test" />
+      <item itemvalue="Remote.aliyun" />
+      <item itemvalue="Spring Boot.CommonApplication" />
+      <item itemvalue="Spring Boot.MbgApplication" />
+      <item itemvalue="Spring Boot.EurekaApplication" />
+      <item itemvalue="Spring Boot.MallAdminApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.MallAdminApplication" />
@@ -728,11 +582,16 @@
       <workItem from="1575006214317" duration="255000" />
       <workItem from="1575006550247" duration="2518000" />
       <workItem from="1575013303588" duration="3412000" />
+      <workItem from="1575867433904" duration="4490000" />
+      <workItem from="1575942114000" duration="1924000" />
+      <workItem from="1575971940944" duration="197000" />
+      <workItem from="1576198971829" duration="7000" />
+      <workItem from="1576474638036" duration="3402000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="519137000" />
+    <option name="totallyTimeSpent" value="529857000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -744,7 +603,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="90" y="98" width="1499" height="849" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="1" />
@@ -753,31 +612,31 @@
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Web" order="6" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="7" visible="true" weight="0.26754692" />
+      <window_info content_ui="combo" id="Project" order="7" visible="true" weight="0.21321961" />
       <window_info anchor="bottom" id="Problems" order="0" weight="0.3275488" />
       <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.45878524" />
+      <window_info anchor="bottom" id="Find" order="2" sideWeight="0.600395" weight="0.4587766" />
       <window_info anchor="bottom" id="Run" order="3" sideWeight="0.827748" weight="0.35664335" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.36334056" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.28091106" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.43266475" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.20281996" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3275488" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.17225201" side_tool="true" weight="0.3479491" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.399605" side_tool="true" weight="0.4587766" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49968535" weight="0.31344903" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.3275488" />
       <window_info anchor="bottom" id="Database Changes" order="14" weight="0.3295129" />
       <window_info anchor="bottom" id="Version Control" order="15" weight="0.3286334" />
-      <window_info anchor="bottom" id="Run Dashboard" order="16" sideWeight="0.4989339" weight="0.33006993" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="16" sideWeight="0.4989339" visible="true" weight="0.335141" />
       <window_info anchor="bottom" id="MyBatis Log" order="17" weight="0.3286119" />
       <window_info anchor="bottom" id="Inspection Results" order="18" weight="0.3286119" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24961948" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="RestServices" order="3" weight="0.24865952" />
-      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.27588603" />
+      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.0858209" />
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Database" order="7" weight="0.3293954" />
@@ -894,176 +753,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitattributes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/config/WebConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#1434#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/config/Swagger2Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsKind.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/jre/lib/ext/jaccess.jar!/com/sun/java/accessibility/util/GUIInitializedListener.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/jre/lib/ext/jaccess.jar!/com/sun/java/accessibility/util/package-info.class">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/jre/lib/ext/jaccess.jar!/com/sun/java/accessibility/util/TopLevelWindowMulticaster.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/BigDecimalUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-          <folding>
-            <element signature="e#205#206#0" expanded="true" />
-            <element signature="e#231#232#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" selection-start-line="10" selection-end-line="10" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mbg/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/test/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="3" selection-end-line="39" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/util/RandomValidateCodeUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1012">
-          <caret line="62" column="50" selection-start-line="62" selection-start-column="50" selection-end-line="62" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/TestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsUserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsUserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="57" column="18" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/util/JwtTokenUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/util/NodeUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dto/AmsOrderReturnParam.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsUserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="101" column="5" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsMember.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/mapper/AmsMemberMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dao/AmsMemberDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="23" column="15" lean-forward="true" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/resources/dao/AmsMemberDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsMemberServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -1124,13 +813,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="85" selection-start-line="85" selection-end-line="85" />
         </state>
       </provider>
     </entry>
@@ -1221,6 +903,105 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/config/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1032">
+          <caret line="91" column="15" lean-forward="true" selection-start-line="91" selection-start-column="15" selection-end-line="91" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/bo/test.java" />
+    <entry file="file://$PROJECT_DIR$/common/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" selection-start-line="10" selection-end-line="10" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/CosController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1078">
+          <caret line="80" column="26" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsOrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2134">
+          <caret line="118" column="23" selection-start-line="118" selection-start-column="23" selection-end-line="118" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dto/OrderInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsOrderItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/EmailCheck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/LoginPWDCheck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.16/tomcat-embed-core-9.0.16.jar!/javax/servlet/http/HttpServletResponse.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1298">
+          <caret line="59" column="19" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsProduct.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/resources/logback-spring.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="64" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/admin/src/main/resources/application-dev.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -1235,24 +1016,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/resources/application.yml">
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsProductController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+        <state relative-caret-position="2530">
+          <caret line="130" column="28" selection-start-line="130" selection-start-column="28" selection-end-line="130" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsOrderController.java">
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/util/ExcelUtiles.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="125" column="7" selection-start-line="125" selection-start-column="7" selection-end-line="125" selection-end-column="7" />
+        <state relative-caret-position="682">
+          <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/config/SecurityConfig.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/cn/afterturn/easypoi-base/4.1.0/easypoi-base-4.1.0.jar!/cn/afterturn/easypoi/excel/ExcelExportUtil.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1032">
-          <caret line="91" column="15" lean-forward="true" selection-start-line="91" selection-start-column="15" selection-end-line="91" selection-end-column="15" />
+        <state relative-caret-position="550">
+          <caret line="43" column="27" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsAddress.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="95" column="21" selection-start-line="95" selection-start-column="21" selection-end-line="95" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AlipayConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AliPayService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/config/AlipayConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/OssController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="35" selection-start-line="35" selection-end-line="35" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsUserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="36" selection-start-line="36" selection-end-line="38" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsBrandController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsReportController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14">
+          <caret line="38" selection-start-line="38" selection-end-line="40" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/PayController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="553">
+          <caret line="40" column="50" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
