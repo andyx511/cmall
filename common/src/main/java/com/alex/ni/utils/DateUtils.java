@@ -11,10 +11,17 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+/**
+ * @author NiDingbo
+ * @date 2019/12/11 22:34
+ */
+
 public class DateUtils extends PropertyEditorSupport {
     // 各种时间格式
     public static final SimpleDateFormat date_sdf_mm = new SimpleDateFormat(
             "yyyy-MM");
+    public static final SimpleDateFormat date_sdf_yyyy = new SimpleDateFormat(
+            "yyyy");
 
     public static final SimpleDateFormat date_sdf = new SimpleDateFormat(
             "yyyy-MM-dd");

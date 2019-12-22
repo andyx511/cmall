@@ -5,11 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c82b2aba-5ebe-44fa-aa61-d897d628550a" name="Default Changelist" comment="">
+<<<<<<< HEAD
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/bo/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/DateUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/DateUtils.java" afterDir="false" />
+=======
       <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/config/AlipayConfig.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/PayController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/admin/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsAddress.java" afterDir="false" />
+>>>>>>> 538755ee82182f90609cb4a7809c4559e234534c
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -47,11 +53,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/PayController.java">
+<<<<<<< HEAD
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/bo/test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="553">
-              <caret line="40" column="50" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
+            <state relative-caret-position="176">
+              <caret line="174" column="29" selection-start-line="174" selection-start-column="29" selection-end-line="174" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/UmsAdminController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="130">
+              <caret line="124" selection-start-line="124" selection-end-line="124" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/DateUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -60,10 +88,71 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/bo/UserDetail.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/pom.xml">
+          <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1615">
+              <caret line="85" selection-start-line="85" selection-end-line="85" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/component/RestfulAccessDeniedHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.4.RELEASE/spring-security-core-5.1.4.RELEASE.jar!/org/springframework/security/access/AccessDeniedException.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/PayController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="553">
+              <caret line="40" column="50" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+>>>>>>> 538755ee82182f90609cb4a7809c4559e234534c
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsReportController.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="836">
+              <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
+=======
             <state relative-caret-position="-14">
               <caret line="38" selection-start-line="38" selection-end-line="40" selection-end-column="17" />
+>>>>>>> 538755ee82182f90609cb4a7809c4559e234534c
             </state>
           </provider>
         </entry>
@@ -71,8 +160,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsBrandController.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="399">
+              <caret line="35" column="42" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
+=======
             <state relative-caret-position="132">
               <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+>>>>>>> 538755ee82182f90609cb4a7809c4559e234534c
             </state>
           </provider>
         </entry>
@@ -91,6 +185,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+<<<<<<< HEAD
+      <find>admin</find>
+      <find>Realm</find>
+=======
+>>>>>>> 538755ee82182f90609cb4a7809c4559e234534c
       <find>insert</find>
       <find>debug</find>
       <find>detail</find>
@@ -118,9 +217,13 @@
       <find>login</find>
       <find>applyReturnList</find>
       <find>RestAuthenticationEntryPoint</find>
+<<<<<<< HEAD
+      <find>t_area_info</find>
+=======
       <find>poi</find>
       <find>fastjson</find>
       <find>alipay</find>
+>>>>>>> 538755ee82182f90609cb4a7809c4559e234534c
     </findStrings>
     <replaceStrings>
       <replace>AmsPermissionList</replace>
@@ -140,6 +243,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/es/EsProduct.java" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/es/document/EsProduct.java" />
+        <option value="$PROJECT_DIR$/admin/src/main/resources/dao/EsProductDao.xml" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/EsProductService.java" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/EsProductServiceImpl.java" />
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/es/repository/EsProductRepository.java" />
+=======
+>>>>>>> 538755ee82182f90609cb4a7809c4559e234534c
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/dao/EsProductDao.java" />
         <option value="$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsProduct.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/util/ExcelUtiles.java" />
@@ -150,7 +262,6 @@
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/bo/sha1.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/config/SpringTaskConfig.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/component/SpringTask.java" />
-        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/bo/test.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/StringUtil.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsProductController.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/AmsOrderService.java" />
@@ -178,6 +289,10 @@
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsMemberController.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/component/RestfulAccessDeniedHandler.java" />
         <option value="$PROJECT_DIR$/README.md" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/bo/test.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/DateUtils.java" />
+=======
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsOrderController.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/component/RestAuthenticationEntryPoint.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/config/SecurityConfig.java" />
@@ -191,6 +306,7 @@
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AlipayConfig.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/config/AliPayConfig.java" />
         <option value="$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/PayController.java" />
+>>>>>>> 538755ee82182f90609cb4a7809c4559e234534c
       </list>
     </option>
   </component>
@@ -211,10 +327,17 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+<<<<<<< HEAD
+    <option name="x" value="130" />
+    <option name="y" value="45" />
+    <option name="width" value="1900" />
+    <option name="height" value="910" />
+=======
     <option name="x" value="839" />
     <option name="y" value="116" />
     <option name="width" value="1499" />
     <option name="height" value="947" />
+>>>>>>> 538755ee82182f90609cb4a7809c4559e234534c
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -276,6 +399,29 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ni" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+              <item name="bo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmall" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ni" type="462c0819:PsiDirectoryNode" />
+              <item name="component" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmall" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ni" type="462c0819:PsiDirectoryNode" />
+=======
+>>>>>>> 538755ee82182f90609cb4a7809c4559e234534c
               <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -298,6 +444,117 @@
               <item name="ni" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
+<<<<<<< HEAD
+            <path>
+              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmall" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ni" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmall" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ni" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmall" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmall" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmall" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmall" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmall" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmall" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmall" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ni" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmall" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ni" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmall" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ni" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmall" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmall" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="generated-sources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmall" type="462c0819:PsiDirectoryNode" />
+              <item name="mbg" type="462c0819:PsiDirectoryNode" />
+            </path>
+=======
+>>>>>>> 538755ee82182f90609cb4a7809c4559e234534c
           </expand>
           <select />
         </subPane>
@@ -305,7 +562,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="MyBatisLogPluginindexNum" value="32128" />
+    <property name="MyBatisLogPluginindexNum" value="33505" />
     <property name="MyBatisLogPluginparameters" value="Parameters:" />
     <property name="MyBatisLogPluginpreparing" value="Preparing:" />
     <property name="MyBatisLogPluginrunning" value="true" />
@@ -397,13 +654,20 @@
     </option>
     <option name="contentProportion" value="0.18781006" />
   </component>
+<<<<<<< HEAD
+  <component name="RunManager" selected="Application.test (1)">
+    <configuration name="sha1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.alex.ni.bo.sha1" />
+      <module name="admin" />
+=======
   <component name="RunManager" selected="Remote.aliyun">
     <configuration name="Generator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.alex.ni.Generator" />
       <module name="mbg" />
+>>>>>>> 538755ee82182f90609cb4a7809c4559e234534c
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.alex.ni.*" />
+          <option name="PATTERN" value="com.alex.ni.bo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -411,8 +675,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="sha1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.alex.ni.bo.sha1" />
+    <configuration name="test (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.alex.ni.bo.test" />
       <module name="admin" />
       <extension name="coverage">
         <pattern>
@@ -505,10 +769,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.MallAdminApplication" />
+        <item itemvalue="Application.test (1)" />
         <item itemvalue="Application.test" />
         <item itemvalue="Application.sha1" />
         <item itemvalue="Spring Boot.EurekaApplication" />
-        <item itemvalue="Application.Generator" />
       </list>
     </recent_temporary>
   </component>
@@ -577,6 +841,14 @@
       <workItem from="1574644465866" duration="9934000" />
       <workItem from="1574849006333" duration="1845000" />
       <workItem from="1574906494291" duration="722000" />
+<<<<<<< HEAD
+      <workItem from="1574919296604" duration="8341000" />
+      <workItem from="1575459713823" duration="1232000" />
+      <workItem from="1575550265580" duration="1325000" />
+      <workItem from="1576029227748" duration="123000" />
+      <workItem from="1576066172461" duration="1870000" />
+      <workItem from="1576108712223" duration="774000" />
+=======
       <workItem from="1574919296604" duration="9027000" />
       <workItem from="1575002996908" duration="1443000" />
       <workItem from="1575006214317" duration="255000" />
@@ -587,11 +859,16 @@
       <workItem from="1575971940944" duration="197000" />
       <workItem from="1576198971829" duration="7000" />
       <workItem from="1576474638036" duration="3402000" />
+>>>>>>> 538755ee82182f90609cb4a7809c4559e234534c
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="516147000" />
+=======
     <option name="totallyTimeSpent" value="529857000" />
+>>>>>>> 538755ee82182f90609cb4a7809c4559e234534c
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -603,7 +880,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+=======
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+>>>>>>> 538755ee82182f90609cb4a7809c4559e234534c
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="1" />
@@ -612,12 +894,21 @@
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Web" order="6" side_tool="true" />
+<<<<<<< HEAD
+      <window_info content_ui="combo" id="Project" order="7" visible="true" weight="0.2419571" />
+      <window_info anchor="bottom" id="Problems" order="0" weight="0.3275488" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.45878524" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.827748" weight="0.3555241" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.36334056" />
+=======
       <window_info content_ui="combo" id="Project" order="7" visible="true" weight="0.21321961" />
       <window_info anchor="bottom" id="Problems" order="0" weight="0.3275488" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" sideWeight="0.600395" weight="0.4587766" />
       <window_info anchor="bottom" id="Run" order="3" sideWeight="0.827748" weight="0.35664335" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.28091106" />
+>>>>>>> 538755ee82182f90609cb4a7809c4559e234534c
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.43266475" />
@@ -629,14 +920,22 @@
       <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.3275488" />
       <window_info anchor="bottom" id="Database Changes" order="14" weight="0.3295129" />
       <window_info anchor="bottom" id="Version Control" order="15" weight="0.3286334" />
+<<<<<<< HEAD
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="16" sideWeight="0.4989339" visible="true" weight="0.40651557" />
+=======
       <window_info active="true" anchor="bottom" id="Run Dashboard" order="16" sideWeight="0.4989339" visible="true" weight="0.335141" />
+>>>>>>> 538755ee82182f90609cb4a7809c4559e234534c
       <window_info anchor="bottom" id="MyBatis Log" order="17" weight="0.3286119" />
       <window_info anchor="bottom" id="Inspection Results" order="18" weight="0.3286119" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24961948" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="RestServices" order="3" weight="0.24865952" />
+<<<<<<< HEAD
+      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.07707775" />
+=======
       <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.0858209" />
+>>>>>>> 538755ee82182f90609cb4a7809c4559e234534c
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Database" order="7" weight="0.3293954" />
@@ -711,13 +1010,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/UmsAdminController.java</url>
-          <line>236</line>
-          <properties />
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/UmsAdminController.java</url>
-          <line>165</line>
+          <line>169</line>
           <properties />
           <option name="timeStamp" value="45" />
         </line-breakpoint>
@@ -733,12 +1026,6 @@
           <properties />
           <option name="timeStamp" value="55" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/UmsAdminController.java</url>
-          <line>120</line>
-          <properties />
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
         <line-breakpoint type="java-field">
           <url>file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsOrderServiceImpl.java</url>
           <line>47</line>
@@ -753,6 +1040,12 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/mall.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitattributes">
+=======
     <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/service/impl/AmsMemberServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -775,6 +1068,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/common/src/main/java/com/alex/ni/api/CommonPage.java">
+>>>>>>> 538755ee82182f90609cb4a7809c4559e234534c
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
@@ -823,6 +1117,13 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/BigDecimalUtil.java" />
+    <entry file="file://$PROJECT_DIR$/admin/src/main/resources/application-prod.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+=======
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.4.RELEASE/spring-security-core-5.1.4.RELEASE.jar!/org/springframework/security/access/AccessDeniedException.class">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -837,6 +1138,7 @@
             <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
           </first_editor>
           <second_editor />
+>>>>>>> 538755ee82182f90609cb4a7809c4559e234534c
         </state>
       </provider>
     </entry>
@@ -939,6 +1241,9 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/mapper/AmsMemberMapper.java">
+=======
     <entry file="file://$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsOrder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -947,6 +1252,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsOrderItem.java">
+>>>>>>> 538755ee82182f90609cb4a7809c4559e234534c
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
@@ -1030,15 +1336,75 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="285">
+            <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/alex/ni/api/CommonResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1615">
+          <caret line="89" column="38" selection-start-line="89" selection-start-column="38" selection-end-line="89" selection-end-column="38" />
+=======
     <entry file="jar://$MAVEN_REPOSITORY$/cn/afterturn/easypoi-base/4.1.0/easypoi-base-4.1.0.jar!/cn/afterturn/easypoi/excel/ExcelExportUtil.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
           <caret line="43" column="27" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
+>>>>>>> 538755ee82182f90609cb4a7809c4559e234534c
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mbg/src/main/java/com/alex/ni/model/AmsAddress.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="209">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/resources/application-dev.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/alex/ni/utils/DateUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/bo/UserDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1615">
+          <caret line="85" selection-start-line="85" selection-end-line="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+=======
         <state relative-caret-position="154">
           <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
         </state>
@@ -1082,11 +1448,54 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="35" selection-start-line="35" selection-end-line="35" selection-end-column="41" />
+>>>>>>> 538755ee82182f90609cb4a7809c4559e234534c
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/AmsUserController.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="361">
+          <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.4.RELEASE/spring-security-core-5.1.4.RELEASE.jar!/org/springframework/security/access/AccessDeniedException.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/config/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="836">
+          <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/5.1.4.RELEASE/spring-security-config-5.1.4.RELEASE.jar!/org/springframework/security/config/annotation/web/configurers/ExceptionHandlingConfigurer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="35" column="42" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/bo/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="174" column="29" selection-start-line="174" selection-start-column="29" selection-end-line="174" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/main/java/com/alex/ni/controller/UmsAdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="124" selection-start-line="124" selection-end-line="124" />
+=======
         <state relative-caret-position="88">
           <caret line="36" selection-start-line="36" selection-end-line="38" selection-end-column="24" />
         </state>
@@ -1113,6 +1522,7 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+>>>>>>> 538755ee82182f90609cb4a7809c4559e234534c
         </state>
       </provider>
     </entry>
