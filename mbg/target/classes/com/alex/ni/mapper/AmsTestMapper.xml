@@ -4,7 +4,6 @@
   <resultMap id="BaseResultMap" type="com.alex.ni.model.AmsTest">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="address" jdbcType="VARCHAR" property="address" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -65,7 +64,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, name, address
+    id, name
   </sql>
   <select id="selectByExample" parameterType="com.alex.ni.model.AmsTestExample" resultMap="BaseResultMap">
     select
@@ -101,8 +100,8 @@
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into ams_test (name, address)
-    values (#{name,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR})
+    insert into ams_test (name)
+    values (#{name,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.alex.ni.model.AmsTest">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
@@ -113,16 +112,10 @@
       <if test="name != null">
         name,
       </if>
-      <if test="address != null">
-        address,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="address != null">
-        #{address,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -141,9 +134,6 @@
       <if test="record.name != null">
         name = #{record.name,jdbcType=VARCHAR},
       </if>
-      <if test="record.address != null">
-        address = #{record.address,jdbcType=VARCHAR},
-      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -152,8 +142,7 @@
   <update id="updateByExample" parameterType="map">
     update ams_test
     set id = #{record.id,jdbcType=INTEGER},
-      name = #{record.name,jdbcType=VARCHAR},
-      address = #{record.address,jdbcType=VARCHAR}
+      name = #{record.name,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -164,16 +153,12 @@
       <if test="name != null">
         name = #{name,jdbcType=VARCHAR},
       </if>
-      <if test="address != null">
-        address = #{address,jdbcType=VARCHAR},
-      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.alex.ni.model.AmsTest">
     update ams_test
-    set name = #{name,jdbcType=VARCHAR},
-      address = #{address,jdbcType=VARCHAR}
+    set name = #{name,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

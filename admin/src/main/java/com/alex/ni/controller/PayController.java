@@ -75,7 +75,9 @@ public class PayController {
         }
         response.setContentType("text/html;charset=" + AlipayConfig.CHARSET);
         response.getWriter().write(form);//直接将完整的表单html输出到页面
+        // todo w未来整合一下支付宝吧，可惜我没营业执照，只能用用沙箱
         response.getWriter().flush();
         response.getWriter().close();
     }
+
 }

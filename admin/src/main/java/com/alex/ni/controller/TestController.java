@@ -1,10 +1,13 @@
 package com.alex.ni.controller;
 
 import com.alex.ni.api.CommonResult;
+import com.alex.ni.mapper.AmsTestMapper;
+import com.alex.ni.model.AmsTest;
 import com.alex.ni.util.RandomValidateCodeUtil;
 import com.aliyuncs.exceptions.ClientException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,17 +29,18 @@ public class TestController {
     @Resource
     private RedisTemplate<String,String> redisTemplate;
 
-    @ApiOperation("获取验证码")
-    @RequestMapping(value = "/test", method = RequestMethod.POST)
+    @Autowired
+    private AmsTestMapper mapper;
+
+    @ApiOperation("test")
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult test() {
-        String b = "asda ";
-        redisTemplate.opsForValue().set("code", "213454");
-        redisTemplate.opsForValue().set("code", "1111");
-        String a = redisTemplate.opsForValue().get("code");
-        RandomValidateCodeUtil randomValidateCodeUtil = new RandomValidateCodeUtil();
-        randomValidateCodeUtil.set();
-        a = redisTemplate.opsForValue().get("code");
-        return CommonResult.success(a);
+        AmsTest test = new AmsTest();
+        for (int i = 0; i<10000; i++){
+            test.setName(i+"ndb");
+            mapper.insertSelective(test);
+        }
+        return CommonResult.success();
     }
 }

@@ -8,8 +8,6 @@ public class AmsTest implements Serializable {
 
     private String name;
 
-    private String address;
-
     private static final long serialVersionUID = 1L;
 
     public Integer getId() {
@@ -28,14 +26,6 @@ public class AmsTest implements Serializable {
         this.name = name;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -44,7 +34,6 @@ public class AmsTest implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
         sb.append(", name=").append(name);
-        sb.append(", address=").append(address);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();
